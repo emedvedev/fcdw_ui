@@ -39,16 +39,16 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 <meta name="verify-v1" content="" />
 
 <!-- jQuery -->
-<script src="/js/jquery-1.10.2.min.js"
+<script src="<c:url value='/js/jquery-1.10.2.min.js'/>"
 	type="text/javascript"></script>
 <script
-	src="/js/jquery-ui-1.8.16.min.js"
+	src="<c:url value='/js/jquery-ui-1.8.16.min.js'/>"
 	type="text/javascript"></script>
 <link rel="stylesheet" type="text/css"
-	href="/css/jquery-ui-1.8.16.css" />
+	href="<c:url value='/css/jquery-ui-1.8.16.css'/>" />
 
 <link rel="stylesheet" type="text/css" media="screen"
-	href="/css/fcdw.css">
+	href="<c:url value='/css/fcdw.css'/>">
 
 <script type="text/javascript">
 	$(function() {
@@ -80,14 +80,14 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 				<li>
 					<h2>Navigation</h2>
 					<ul>
-						<li><a href="/home.html?satelliteId=${satelliteId}">Home</a></li>
-						<li><a href="/realtime.html?satelliteId=${satelliteId}">Real Time Data</a></li>
-						<li><a href="/highres.html?satelliteId=${satelliteId}">High Resolution Data</a></li>
-						<li><a href="/wod.html?satelliteId=${satelliteId}">Whole Orbit Data</a></li>
-						<li><a href="/fitter.html?satelliteId=${satelliteId}">Fitter Messages</a></li>
-						<li><a href="/radio.html?satelliteId=${satelliteId}">Amateur Radio Info</a></li>
-						<li><a href="/observer.html?satelliteId=${satelliteId}">Observer Map</a></li>
-						<li><a href="/ranking.html?satelliteId=${satelliteId}">Upload Ranking</a></li>
+						<li><a href="<c:url value='/home.html?satelliteId=${satelliteId}'/>">Home</a></li>
+						<li><a href="<c:url value='/realtime.html?satelliteId=${satelliteId}'/>">Real Time Data</a></li>
+						<li><a href="<c:url value='/highres.html?satelliteId=${satelliteId}'/>">High Resolution Data</a></li>
+						<li><a href="<c:url value='/wod.html?satelliteId=${satelliteId}'/>">Whole Orbit Data</a></li>
+						<li><a href="<c:url value='/fitter.html?satelliteId=${satelliteId}'/>">Fitter Messages</a></li>
+						<li><a href="<c:url value='/radio.html?satelliteId=${satelliteId}'/>">Amateur Radio Info</a></li>
+						<li><a href="<c:url value='/observer.html?satelliteId=${satelliteId}'/>">Observer Map</a></li>
+						<li><a href="<c:url value='/ranking.html?satelliteId=${satelliteId}'/>">Upload Ranking</a></li>
 
 					</ul>
 				</li>
@@ -96,7 +96,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 					<li>
 						<h2>Admin</h2>
 						<ul>
-							<li><a href="/admin/cctDebug.html?satelliteId=${satelliteId}">CCT Debug</a></li>
+							<li><a href="<c:url value='/admin/cctDebug.html?satelliteId=${satelliteId}'/>">CCT Debug</a></li>
 						</ul>
 					</li>
 				</sec:authorize>

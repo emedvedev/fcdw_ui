@@ -5,8 +5,8 @@
 	
 <div id="tabs" style="width: 100%;">
 	<ul>
-		<li><a href="#tabs-eps" title="Electrical Power Subsystem">EPS</a></li>
-		<li><a href="#tabs-asib" title="Sensor Subsystem">ASIB</a></li>
+		<li><a href="<c:url value='#tabs-eps'/>" title="Electrical Power Subsystem">EPS</a></li>
+		<li><a href="<c:url value='#tabs-asib'/>" title="Sensor Subsystem">ASIB</a></li>
 	</ul>
 	
 	<div id="tabs-eps">

@@ -9,12 +9,12 @@
 <div id="tabs" style="width: 100%;">
 	<ul>
 
-		<li><a href="#tabs-eps" title="Electrical Power Subsystem">EPS</a></li>
-		<li><a href="#tabs-asib" title="Sensor Subsystem">ASIB</a></li>
-		<li><a href="#tabs-rf" title="Communication Subsystem">RF</a></li>
-		<li><a href="#tabs-pa" title="RF Power Amplifier">PA</a></li>
-		<li><a href="#tabs-ants" title="Antenna Subsystem">ANTS</a></li>
-		<li><a href="#tabs-sw" title="Software State">SW</a></li>
+		<li><a href="<c:url value='#tabs-eps'/>" title="Electrical Power Subsystem">EPS</a></li>
+		<li><a href="<c:url value='#tabs-asib'/>" title="Sensor Subsystem">ASIB</a></li>
+		<li><a href="<c:url value='#tabs-rf'/>" title="Communication Subsystem">RF</a></li>
+		<li><a href="<c:url value='#tabs-pa'/>" title="RF Power Amplifier">PA</a></li>
+		<li><a href="<c:url value='#tabs-ants'/>" title="Antenna Subsystem">ANTS</a></li>
+		<li><a href="<c:url value='#tabs-sw'/>" title="Software State">SW</a></li>
 
 	</ul>
 

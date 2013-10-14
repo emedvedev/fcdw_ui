@@ -4,13 +4,13 @@
 <div id="tabs" style="width: 100%;">
 	<ul>
 
-		<li><a href="#tabs-misc" title="Miscellaneous">MISC</a></li>
-		<li><a href="#tabs-ants" title="Antenna Subsystem">ANTS</a></li>
-		<li><a href="#tabs-state" title="Software State">STATE</a></li>
-		<li><a href="#tabs-eclipse" title="Eclipse State">ECLIPSE</a></li>
-		<li><a href="#tabs-safe" title="Safe State">SAFE</a></li>
-		<li><a href="#tabs-burn" title="Burn State">BURN</a></li>
-		<li><a href="#tabs-auto" title="Auto State">AUTO</a></li>
+		<li><a href="<c:url value='#tabs-misc'/>" title="Miscellaneous">MISC</a></li>
+		<li><a href="<c:url value='#tabs-ants'/>" title="Antenna Subsystem">ANTS</a></li>
+		<li><a href="<c:url value='#tabs-state'/>" title="Software State">STATE</a></li>
+		<li><a href="<c:url value='#tabs-eclipse'/>" title="Eclipse State">ECLIPSE</a></li>
+		<li><a href="<c:url value='#tabs-safe'/>" title="Safe State">SAFE</a></li>
+		<li><a href="<c:url value='#tabs-burn'/>" title="Burn State">BURN</a></li>
+		<li><a href="<c:url value='#tabs-auto'/>" title="Auto State">AUTO</a></li>
 
 	</ul>
 
