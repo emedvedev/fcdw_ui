@@ -1,0 +1,449 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+Adapted: 20130330 - Dave Johnson, G4DPZ
+*/
+
+
+/* jQuery UI theme fix */
+.ui-widget, .ui-widget-content
+{
+    font-size : 13px; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #BBBBBB;
+}
+.ui-widget-content td
+{
+    padding: 2px;
+}
+
+
+body {
+	margin-top: 30px;
+	padding: 0px;
+	background: #242424;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #BBBBBB;
+}
+
+h1, h2, h3 {
+	margin: 0px;
+	font-weight: normal;
+	color: #48ACDE;
+}
+
+h1 {
+	letter-spacing: -1px;
+	font-size: 32px;
+}
+
+h2 {
+	font-size: 23px;
+}
+
+p, ul, ol {
+	margin: 17px 0px 17px 0px;
+	text-align: justify;
+	line-height: 22px;
+}
+
+a:link {
+	color: #48ACDE;
+}
+
+a:hover, a:active {
+	text-decoration: none;
+	color: #48ACDE;
+}
+
+a:visited {
+	color: #48ACDE;
+}
+
+img {
+	border: none;
+}
+
+img.left {
+	float: left;
+	margin-right: 15px;
+}
+
+img.right {
+	float: right;
+	margin-left: 15px;
+}
+
+hr {
+    height: 1px;
+    background-color: #48ACDE;
+    border-style: none;
+}
+
+/* Banner
+************************************************/
+#banner {
+	width: 860px;
+	height: 140px;
+	margin: 10px auto 0px auto;
+    background: #242424 url(images/funcube_logo.png) no-repeat;
+}
+
+#banner h1, #banner h2 {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	line-height: normal;
+}
+
+#banner span
+{
+    display: none;
+}
+
+#banner h1  
+{
+    width: 180px;
+    height: 130px;
+    margin-left: 15px;
+}
+
+#banner h2 {
+	padding: 38px 0px 0px 0px;
+	font: italic 13px Georgia, "Times New Roman", Times, serif;
+	color: #48ACDE;
+}
+
+#banner div {
+	float: right;
+	margin-top: 40px;
+	margin-right: 15px;
+}
+
+#banner div a {
+	text-decoration: none;
+	color: #B6ACA2;
+}
+
+#banner div a:hover { text-decoration: underline; }
+
+/* Menu
+************************************************/
+#menu-wrap {
+	clear: both;
+	width: 860px;
+	height: 52px;
+	margin: 0px auto 0px auto;
+}
+
+#menu {
+	float: left;
+	width: 860px;
+	height: 54px;
+	padding-left: 10px;
+	background: url(images/menu.jpg) no-repeat left top;
+}
+
+#menu ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li {
+	display: block;
+	float: left;
+	padding: 10px 16px 10px 17px;
+}
+
+#menu a {
+	display: block;
+	float: left;
+	margin-right: 3px;
+	text-decoration: none;
+	font: 13px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+}
+
+#menu a:hover { 
+	text-decoration: none; 
+	color: #48ACDE;
+}
+
+#menu .current_page_item {
+	color: #48ACDE;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+/* Page
+************************************************/
+#page-wrap 
+{
+    position: relative;
+	width: 860px;
+	margin: 0px auto 0px auto;
+	background: #000000 url(images/page-top.jpg) no-repeat left top;
+}
+
+#page {
+	width: 860px;
+	background: url(images/page-bottom.jpg) no-repeat left bottom;
+	margin: 0px auto 0px auto;
+	padding-top: 16px;
+}
+
+img.banner 
+{
+    float: right;
+}
+
+/* Content
+************************************************/
+#content-wrap {
+	float: right;
+	width: 620px;
+}
+
+#content {
+	margin-right: 30px;
+}
+
+/* Sidebar
+************************************************/
+#sidebar {
+	float: left;
+	width: 210px;
+	margin: 0px;
+	padding: 0px 0px 0px 30px;
+	list-style: none;
+}
+
+#sidebar ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+#sidebar li {
+	margin-bottom: 40px;
+}
+
+#sidebar li li {
+	margin: 0px;
+}
+
+#sidebar h2 {
+	margin: 0px;
+	font-size: 18px;
+	color: #DADADA;
+}
+
+/* Sponsors
+************************************************/
+#sponsors-wrap 
+{
+    width: 860px;
+	margin: 12px auto 0px auto;
+	background: #000000 url(images/page-top.jpg) no-repeat left top;
+}
+
+#sponsors {
+	width: 860px;
+	background: url(images/page-bottom.jpg) no-repeat left bottom;
+	margin: 0px auto 0px auto;
+	padding-top: 16px;
+}
+
+#sponsors ul
+{
+    clear: both;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	margin: 0px 0px 0px 30px;
+	height: 105px;
+}
+
+#sponsors li {
+	display: block;
+	float: left;
+	margin: 0px 17px 0px 0px;
+}
+
+/* Footer
+************************************************/
+#footer {
+	clear: both;
+	padding-top: 10px;
+	text-align: center;
+	color: #999999;
+	font-size: 10px;
+	height: 64px;
+}
+
+#footer a {
+	color: #999999;
+}
+
+#fitter-marqee {
+	text-decoration: none;
+	font: 25px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+}
+
+
+
+/* MISC - TEMP
+************************************************/
+#search {
+}
+
+#search h2 {
+	margin-bottom: 20px;
+}
+
+#s {
+	width: 115px;
+	margin-right: 5px;
+	padding: 3px;
+	border: 1px solid #BED99C;
+}
+
+#x {
+	padding: 3px;
+	border: none;
+	background: #48ACDE;
+	text-transform: lowercase;
+	font-size: 11px;
+	color: #FFFFFF;
+}
+
+.post {
+	padding: 15px 15px;
+}
+
+.post .title {
+	margin-bottom: 20px;
+	padding-bottom: 5px;
+}
+
+.post h1 {
+}
+
+.post h2 {
+	height: 32px;
+	padding: 8px 0 0 15px;
+	font-size: 18px;
+	color: #DADADA;
+}
+
+.post .entry {
+	padding: 0 15px;
+}
+
+.post .meta {
+	margin-left: 15px;
+	margin-right: 15px;
+	padding: 15px 0px 30px 0px;
+	border-top: 1px dashed #333333;
+	font-size: 10px;
+}
+
+.post .meta p {
+	margin: 0;
+	line-height: normal;
+	color: #999999;
+}
+
+.post .meta .byline {
+	float: left;
+}
+
+.post .meta .links {
+	float: right;
+}
+
+.post .meta .more {
+	padding: 0 20px 0 18px;
+	background: url(images/img11.gif) no-repeat left center;
+}
+
+.post .meta .comments {
+	padding-left: 22px;
+	background: url(images/img12.gif) no-repeat left center;
+}
+
+.post .meta b {
+	display: none;
+}
+
+
+
+/* Form */
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+legend {
+	display: none;
+}
+
+input, textarea, select, button {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #333333;
+}
+
+input, textarea, select {
+	width: 200px;
+}
+
+#rememberMe
+{
+    width: 20px;
+}
+
+.field-validation-error
+{
+    color: #F00;
+}
+
+.input-validation-error
+{
+    border: 1px solid #F00;
+    background-color: #Fee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #F00;
+}
+
+
+
+.bold
+{
+    font-weight: bold;
+}
+
+tr.Sun
+{
+    background-color: #222222;
+}
+tr.Night
+{
+}
