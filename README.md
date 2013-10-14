@@ -1,4 +1,4 @@
-fcdw_data
+fcdw_ui
 ==========
 FUNcube Warehouse User Interface
 Copyright 2013 (c) David A.Johnson, G4DPZ, AMSAT-UK
