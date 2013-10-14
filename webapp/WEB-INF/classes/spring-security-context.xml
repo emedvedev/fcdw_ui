@@ -1,0 +1,72 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<global-method-security pre-post-annotations="enabled" />
+
+	<http auto-config='true'>
+		<intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
+		<intercept-url pattern="/user/**" access="ROLE_ADMIN,ROLE_USER" />
+		<intercept-url pattern="**/login.html*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="**/register.html*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="**/realtime.html*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="**/home.html*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/api/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/css/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/js/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<custom-filter before="SECURITY_CONTEXT_FILTER" ref="basicProcessingFilter" />
+
+		<form-login login-page="/login.html"
+			default-target-url="/home.html"
+			authentication-success-handler-ref="targetableAuthHandler"
+			authentication-failure-url="/login.html?error=true" />
+		<logout logout-success-url="/home.html" delete-cookies="JSESSIONID" />
+		<access-denied-handler error-page="/error/accessdenied.html" />
+		<session-management>
+			<concurrency-control max-sessions="1" />    
+		</session-management>
+	</http>
+
+
+	<!-- allows the use of SpEL expressions in JSP <sec:> tags -->
+	<beans:bean
+		class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
+
+	<beans:bean id="basicProcessingFilter"
+		class="org.springframework.security.web.authentication.www.BasicAuthenticationFilter">
+		<beans:property name="authenticationManager">
+			<beans:ref bean="authenticationManager" />
+		</beans:property>
+		<beans:property name="authenticationEntryPoint">
+			<beans:ref bean="authenticationEntryPoint" />
+		</beans:property>
+	</beans:bean>
+
+	<beans:bean id="authenticationEntryPoint"
+		class="org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint">
+		<beans:property name="realmName" value="fcdw" />
+	</beans:bean>
+    
+    <beans:bean id="passwordGenerator"
+          class="uk.org.funcube.fcdw.web.security.ReasonablePasswordGenerator"/>
+
+	<beans:bean id="accountAuthenticationProvider"
+		class="uk.org.funcube.fcdw.web.security.AccountAuthenticator">
+		<beans:constructor-arg ref="passwordGenerator"/>
+		<beans:constructor-arg ref="userDao"/>
+	</beans:bean>
+
+	<beans:bean id="targetableAuthHandler"
+		class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+		<beans:property name="targetUrlParameter" value="targetUrl" />
+		<beans:property name="defaultTargetUrl" value="/home.html" />
+	</beans:bean>
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider ref="accountAuthenticationProvider" />
+	</authentication-manager>
+
+</beans:beans>
+

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:security="http://www.springframework.org/schema/security"	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/tx 
+       		http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+    
+    <tx:annotation-driven/>
+
+	<bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+		<property name="database" value="MYSQL" />
+		<property name="generateDdl" value="false" />
+		<property name="showSql" value="false" />
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+    
+    <tx:annotation-driven/>
+
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceXmlLocation" value="classpath:persistence.xml" />
+		
+		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
+	<bean id="hexFrameDao" class="uk.org.funcube.fcdw.server.dao.impl.HexFrameDaoImpl"/>
+	<bean id="userDao" class="uk.org.funcube.fcdw.server.dao.impl.UserDaoImpl"/>
+	<bean id="authorityDao" class="uk.org.funcube.fcdw.server.dao.impl.AuthorityDaoImpl"/>
+	<bean id="highPrecisionDao" class="uk.org.funcube.fcdw.server.dao.impl.HighPrecisionDaoImpl"/>
+	<bean id="wholeOrbitDataDao" class="uk.org.funcube.fcdw.server.dao.impl.WholeOrbitDataDaoImpl"/>
+	<bean id="fitterMessageDao" class="uk.org.funcube.fcdw.server.dao.impl.FitterMessageDaoImpl"/>
+	<bean id="userRankingDao" class="uk.org.funcube.fcdw.server.dao.impl.UserRankingDaoImpl"/>
+	<bean id="realtimeDao" class="uk.org.funcube.fcdw.server.dao.impl.RealTimeDaoImpl"/>
+	
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <value>
+                hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+                hibernate.query.substitutions=true 'Y', false 'N'
+                hibernate.cache.use_second_level_cache=true
+                hibernate.cache.provider_class=net.sf.ehcache.hibernate.EhCacheProvider
+	 	  	    hibernate.connection.release_mode=auto
+            </value>
+        </property>
+		<property name="annotatedClasses">
+			<list>
+				<value>uk.org.funcube.fcdw.server.model.HexFrameEntity</value>
+				<value>uk.org.funcube.fcdw.server.model.UserEntity</value>
+				<value>uk.org.funcube.fcdw.server.model.AuthorityEntity</value>
+				<value>uk.org.funcube.fcdw.server.model.HPEntity</value>
+		        <value>uk.org.funcube.fcdw.server.model.ClydeSpaceHPEntity</value>
+		        <value>uk.org.funcube.fcdw.server.model.GomSpaceHPEntity</value>
+				<value>uk.org.funcube.fcdw.server.model.WODEntity</value>
+				<value>uk.org.funcube.fcdw.server.model.ClydeSpaceWODEntity</value>
+				<value>uk.org.funcube.fcdw.server.model.GomSpaceWODEntity</value>
+				<value>uk.org.funcube.fcdw.server.model.FitterMessageEntity</value>
+				<value>uk.org.funcube.fcdw.server.model.UserRankingEntity</value>
+				<value>uk.org.funcube.fcdw.server.model.RealTimeEntity</value>
+			</list>
+		</property>
+    </bean>
+	
+	<!--
+	<beans profile ="dev"> 
+		<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+			destroy-method="close">
+			<property name="user" value="funcubeuser" />
+			<property name="password" value="funcubepassword" />
+			<property name="driverClass" value="com.mysql.jdbc.Driver" />
+			<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/funcube_dev" />
+			<property name="initialPoolSize" value="3" />
+			<property name="maxPoolSize" value="10" />
+			<property name="minPoolSize" value="2" />
+			<property name="acquireIncrement" value="1" />
+	        <property name="acquireRetryAttempts" value="10"/>
+	        <property name="preferredTestQuery" value="SELECT 1"/> 
+	        <property name="testConnectionOnCheckin" value="true"/>
+	        <property name="testConnectionOnCheckout" value="false"/>
+	        <property name="maxIdleTime" value="600"/>
+	        <property name="checkoutTimeout" value="1000"/>
+	        <property name="maxStatements" value="50"/>
+	        <property name="idleConnectionTestPeriod" value="300"/>
+		
+		</bean>
+	</beans>
+	
+	<beans profile = "prod"> 
+		<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+			destroy-method="close">
+			<property name="user" value="funcubeuser" />
+			<property name="password" value="funcubepassword" />
+			<property name="driverClass" value="com.mysql.jdbc.Driver" />
+			<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/funcube" />
+			<property name="initialPoolSize" value="10" />
+			<property name="maxPoolSize" value="20" />
+			<property name="minPoolSize" value="10" />
+			<property name="acquireIncrement" value="1" />
+	        <property name="acquireRetryAttempts" value="10"/>
+	        <property name="preferredTestQuery" value="SELECT 1"/> 
+	        <property name="testConnectionOnCheckin" value="true"/>
+	        <property name="testConnectionOnCheckout" value="false"/>
+	        <property name="maxIdleTime" value="600"/>
+	        <property name="checkoutTimeout" value="1000"/>
+	        <property name="maxStatements" value="50"/>
+	        <property name="idleConnectionTestPeriod" value="300"/>
+		</bean>
+	</beans>
+	-->
+	
+	<!-- <beans profile = "local"> --> 
+		<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+			destroy-method="close">
+			<property name="user" value="funcubeuser" />
+			<property name="password" value="funcubepassword" />
+			<property name="driverClass" value="com.mysql.jdbc.Driver" />
+			<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/funcube" />
+			<property name="initialPoolSize" value="10" />
+			<property name="maxPoolSize" value="20" />
+			<property name="minPoolSize" value="10" />
+			<property name="acquireIncrement" value="1" />
+	        <property name="acquireRetryAttempts" value="10"/>
+	        <property name="preferredTestQuery" value="SELECT 1"/> 
+	        <property name="testConnectionOnCheckin" value="true"/>
+	        <property name="testConnectionOnCheckout" value="false"/>
+	        <property name="maxIdleTime" value="600"/>
+	        <property name="checkoutTimeout" value="1000"/>
+	        <property name="maxStatements" value="50"/>
+	        <property name="idleConnectionTestPeriod" value="300"/>
+		</bean>
+	<!-- </beans> -->
+</beans>

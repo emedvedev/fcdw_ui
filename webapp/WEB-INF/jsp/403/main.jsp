@@ -1,0 +1,1 @@
+<p id="access-denied-message">You don't have access to the resource you requested</p>

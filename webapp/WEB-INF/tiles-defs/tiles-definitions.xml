@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+       
+<tiles-definitions>
+    
+  <definition name="home" template="/WEB-INF/jsp/layout/fcdw.jsp">
+    <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
+    <put-attribute name="page-title" value="Home"/> 
+    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+    <put-attribute name="main" value="/WEB-INF/jsp/home/main.jsp" />
+    <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
+  </definition>
+  
+  <definition name="login" template="/WEB-INF/jsp/layout/fcdw.jsp">
+    <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
+    <put-attribute name="page-title" value="Login"/> 
+    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+    <put-attribute name="main" value="/WEB-INF/jsp/logIn/main.jsp" />
+    <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
+  </definition>
+  
+  <definition name="register" template="/WEB-INF/jsp/layout/fcdw.jsp">
+    <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
+    <put-attribute name="page-title" value="Register"/> 
+    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+    <put-attribute name="main" value="/WEB-INF/jsp/register/main.jsp" />
+    <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
+  </definition>
+  
+  <definition name="profile" template="/WEB-INF/jsp/layout/fcdw.jsp">
+    <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
+    <put-attribute name="page-title" value="Register"/> 
+    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+    <put-attribute name="main" value="/WEB-INF/jsp/profile/main.jsp" />
+    <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
+  </definition>
+  
+  <definition name="realtime" template="/WEB-INF/jsp/layout/fcdw.jsp">
+    <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
+    <put-attribute name="page-title" value="Real Time Data"/> 
+    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+    <put-attribute name="main" value="/WEB-INF/jsp/realtime/main.jsp" />
+    <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
+  </definition>
+  
+  <definition name="highres" template="/WEB-INF/jsp/layout/fcdw.jsp">
+    <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
+    <put-attribute name="page-title" value="High Resolution Data"/> 
+    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+    <put-attribute name="main" value="/WEB-INF/jsp/highres/main.jsp" />
+    <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
+  </definition>
+  
+  <definition name="wod" template="/WEB-INF/jsp/layout/fcdw.jsp">
+    <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
+    <put-attribute name="page-title" value="Whole Orbit Data"/> 
+    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+    <put-attribute name="main" value="/WEB-INF/jsp/wod/main.jsp" />
+    <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
+  </definition>
+  
+  <definition name="fitter" template="/WEB-INF/jsp/layout/fcdw.jsp">
+    <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
+    <put-attribute name="page-title" value="Fitter Messages"/> 
+    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+    <put-attribute name="main" value="/WEB-INF/jsp/fitter/main.jsp" />
+    <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
+  </definition>
+  
+  <definition name="radio" template="/WEB-INF/jsp/layout/fcdw.jsp">
+    <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
+    <put-attribute name="page-title" value="Amateur Radio Info"/> 
+    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+    <put-attribute name="main" value="/WEB-INF/jsp/radio/main.jsp" />
+    <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
+  </definition>
+  
+  <definition name="observer" template="/WEB-INF/jsp/layout/fcdw.jsp">
+    <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
+    <put-attribute name="page-title" value="Observers"/> 
+    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+    <put-attribute name="main" value="/WEB-INF/jsp/observer/main.jsp" />
+    <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
+  </definition>
+  
+  <definition name="ranking" template="/WEB-INF/jsp/layout/fcdw.jsp">
+    <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
+    <put-attribute name="page-title" value="Upload Ranking"/> 
+    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+    <put-attribute name="main" value="/WEB-INF/jsp/ranking/main.jsp" />
+    <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
+  </definition>
+  
+  <definition name="admin/cctDebug" template="/WEB-INF/jsp/layout/fcdw.jsp">
+    <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
+    <put-attribute name="page-title" value="CCT Debug"/> 
+    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+    <put-attribute name="main" value="/WEB-INF/jsp/admin/cctDebug/main.jsp" />
+    <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
+  </definition>
+
+  <definition name="403" template="/WEB-INF/jsp/layout/fcdw.jsp">
+    <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
+    <put-attribute name="page-title" value="Access Denied"/> 
+    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+    <put-attribute name="main" value="/WEB-INF/jsp/403/main.jsp" />
+    <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
+  </definition>
+  
+</tiles-definitions>

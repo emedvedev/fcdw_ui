@@ -1,0 +1,77 @@
+package uk.org.funcube.fcdw.server.dao.impl;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import uk.org.funcube.fcdw.server.dao.AbstractDataAccessObject;
+import uk.org.funcube.fcdw.server.dao.UserDao;
+import uk.org.funcube.fcdw.server.model.User;
+import uk.org.funcube.fcdw.server.model.UserEntity;
+
+public class UserDaoImpl extends AbstractDataAccessObject<User, UserEntity, String> implements UserDao {
+
+	public UserDaoImpl() {
+		// Nothing to be done.
+	}
+
+	@Override
+	public List<User> findByEither(final String userName, final String siteId) {
+
+		final Map<String, Object> parameters = new HashMap<String, Object>();
+
+		final String query = "SELECT ue FROM UserEntity ue " + "WHERE ue.username = :username OR ue.siteId = :siteId";
+
+		parameters.put("username", userName);
+		parameters.put("siteId", siteId);
+
+		return findMany(query, parameters);
+	}
+
+	@Override
+	public User getByUserName(final String userName) {
+
+		final Map<String, Object> parameters = new HashMap<String, Object>();
+
+		final String query = "SELECT ue FROM UserEntity ue " + "WHERE ue.username = :username";
+
+		parameters.put("username", userName);
+
+		return getSingleResult(query, parameters);
+	}
+
+	@Override
+	public List<User> findBySiteId(final String siteId) {
+
+		final Map<String, Object> parameters = new HashMap<String, Object>();
+
+		final String query = "SELECT ue FROM UserEntity ue " + "WHERE ue.siteId = :siteId";
+
+		parameters.put("siteId", siteId);
+
+		return findMany(query, parameters);
+	}
+
+	@Override
+	public User findByUserName(final String username) {
+
+		final Map<String, Object> parameters = new HashMap<String, Object>();
+
+		final String query = "SELECT ue FROM UserEntity ue " + "WHERE ue.username = :username";
+
+		parameters.put("username", username);
+
+		return getSingleResult(query, parameters);
+	}
+
+	@Override
+	public User saveOrUpdate(UserEntity user) {
+		return super.save(user);
+	}
+
+	@Override
+	public List<User> getRanking(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
