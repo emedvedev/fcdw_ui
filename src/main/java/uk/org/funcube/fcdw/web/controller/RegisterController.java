@@ -61,7 +61,7 @@ public class RegisterController extends AbstractService {
 			return "register";
 		}
 
-		String password = passwordGenerator.generatePassword();
+		String password = registerUserRequest.getPassword1();
 		String authKey = RandomStringUtils.random(20, true, true);
 		String passwordHash;
 		try {
