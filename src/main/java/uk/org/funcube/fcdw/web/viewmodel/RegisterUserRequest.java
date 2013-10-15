@@ -17,7 +17,10 @@ import uk.org.funcube.fcdw.web.validator.LatLong;
 import uk.org.funcube.fcdw.web.validator.SiteName;
 import uk.org.funcube.fcdw.web.validator.SiteNameNotDuplicate;
 
-@FieldMatch(first = "email1", second = "email2", message = "The password fields must match")
+@FieldMatch.List({
+	@FieldMatch(first = "password1", second = "password2", message = "The password fields must match"),
+	@FieldMatch(first = "email1", second = "email2", message = "The email fields must match")
+})
 public class RegisterUserRequest {
 
 	@SiteName
@@ -44,9 +47,11 @@ public class RegisterUserRequest {
 	private String email2;
 
 	@NotEmpty
+	@Size(min = 8, max = 20)
 	private String password1;
 
 	@NotEmpty
+	@Size(min = 8, max = 20)
 	private String password2;
 
 	private Boolean detailsEmailed;

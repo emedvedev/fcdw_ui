@@ -6,7 +6,7 @@
 <form:form action = "" commandName="registerUserRequest">
 	<table>
 		<tr>
-			<td width="220px">
+			<td width="215px">
     			<label>Callsign/School/Name:</label>
 			</td>
 			<td>
@@ -18,7 +18,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="220px">
+			<td width="215px">
     			<label>Email:</label>
 			</td>
 			<td>
@@ -29,7 +29,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="220px">
+			<td width="215px">
     			<label>Email (again):</label>
 			</td>
 			<td>
@@ -40,7 +40,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="220px">
+			<td width="215px">
     			<label>Latitude (decimal) N(+) S(-):</label>
 			</td>
 			<td>
@@ -52,7 +52,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="220px">
+			<td width="215px">
     			<label>Longitude (decimal) E(+) W(-):</label>
 			</td>
 			<td>
@@ -64,7 +64,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="220px">
+			<td width="215px">
     			<label>Password:</label>
 			</td>
 			<td>
@@ -75,7 +75,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="220px">
+			<td width="215px">
     			<label>Password (again):</label>
 			</td>
 			<td>
