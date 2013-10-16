@@ -3,7 +3,9 @@
 <h2>Register</h2>
 <p>In order to be able to upload data to the warehouse from the FUNcube Dashboard program, you will need to register some details.</p>
 <p>As part of the registration process, we will send and 'authorisation key' to the email address you have entered. When you receive this, please log in giving the 'authorisation key' you received.</p>
-<form:form action = "" commandName="registerUserRequest">
+
+<c:url var="url" value="/register.html" /> 
+<form:form action = "${url}" commandName="registerUserRequest">
 	<table>
 		<tr>
 			<td width="217px">
@@ -68,7 +70,7 @@
     			<label>Password:</label>
 			</td>
 			<td>
-    			<form:input path="password1" id="password1Input"></form:input>
+    			<form:password path="password1" id="password1Input"></form:password>
 			</td>
 			<td>
     			<font color="red"><form:errors path="password1"></form:errors></font>
@@ -79,7 +81,7 @@
     			<label>Password (again):</label>
 			</td>
 			<td>
-    			<form:input path="password2" id="password2Input"></form:input>
+    			<form:password path="password2" id="password2Input"></form:password>
 			</td>
 			<td>
     			<font color="red"><form:errors path="password2"></form:errors></font>
