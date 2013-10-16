@@ -6,11 +6,11 @@
 	your registration email.</p>
 <p>
 	If you don't have an account, please <a
-		href="<c:url value='/register.html?satelliteId=${satelliteId}'/>">register</a>.
+		href="<c:url value='/register.html?satelliteId=2'/>">register</a>.
 </p>
 
 <form id="login-form"
-	action="<c:url value='/j_spring_security_check?satelliteId=${satelliteId}'/>"
+	action="<c:url value='/j_spring_security_check?satelliteId=2'/>"
 	method="post">
 	<div>
 		<table>

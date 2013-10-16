@@ -58,6 +58,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 
 </head>
 <body>
+	
 	<tiles:insertAttribute name="header" />
 
 	<div id="menu-wrap">
@@ -80,14 +81,28 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 				<li>
 					<h2>Navigation</h2>
 					<ul>
-						<li><a href="<c:url value='/home.html?satelliteId=${satelliteId}'/>">Home</a></li>
-						<li><a href="<c:url value='/realtime.html?satelliteId=${satelliteId}'/>">Real Time Data</a></li>
-						<li><a href="<c:url value='/highres.html?satelliteId=${satelliteId}'/>">High Resolution Data</a></li>
-						<li><a href="<c:url value='/wod.html?satelliteId=${satelliteId}'/>">Whole Orbit Data</a></li>
-						<li><a href="<c:url value='/fitter.html?satelliteId=${satelliteId}'/>">Fitter Messages</a></li>
-						<li><a href="<c:url value='/radio.html?satelliteId=${satelliteId}'/>">Amateur Radio Info</a></li>
-						<li><a href="<c:url value='/observer.html?satelliteId=${satelliteId}'/>">Observer Map</a></li>
-						<li><a href="<c:url value='/ranking.html?satelliteId=${satelliteId}'/>">Upload Ranking</a></li>
+						<c:choose>
+							<c:when test="${satelliteId == null}">
+								<li><a href="<c:url value='/realtime.html?satelliteId=2'/>">Real Time Data</a></li>
+								<li><a href="<c:url value='/highres.html?satelliteId=2'/>">High Resolution Data</a></li>
+								<li><a href="<c:url value='/wod.html?satelliteId=2'/>">Whole Orbit Data</a></li>
+								<li><a href="<c:url value='/fitter.html?satelliteId=2'/>">Fitter Messages</a></li>
+								<li><a href="<c:url value='/radio.html?satelliteId=2'/>">Amateur Radio Info</a></li>
+								<li><a href="<c:url value='/observer.html?satelliteId=2'/>">Observer Map</a></li>
+								<li><a href="<c:url value='/ranking.html?satelliteId=2'/>">Upload Ranking</a></li>
+								<li><a href="<c:url value='/home.html?satelliteId=2'/>">About</a></li>
+							</c:when>
+							<c:otherwise>
+								<li><a href="<c:url value='/realtime.html?satelliteId=${satelliteId}'/>">Real Time Data</a></li>
+								<li><a href="<c:url value='/highres.html?satelliteId=${satelliteId}'/>">High Resolution Data</a></li>
+								<li><a href="<c:url value='/wod.html?satelliteId=${satelliteId}'/>">Whole Orbit Data</a></li>
+								<li><a href="<c:url value='/fitter.html?satelliteId=${satelliteId}'/>">Fitter Messages</a></li>
+								<li><a href="<c:url value='/radio.html?satelliteId=${satelliteId}'/>">Amateur Radio Info</a></li>
+								<li><a href="<c:url value='/observer.html?satelliteId=${satelliteId}'/>">Observer Map</a></li>
+								<li><a href="<c:url value='/ranking.html?satelliteId=${satelliteId}'/>">Upload Ranking</a></li>
+								<li><a href="<c:url value='/home.html?satelliteId=${satelliteId}'/>">About</a></li>
+							</c:otherwise>
+						</c:choose>
 
 					</ul>
 				</li>

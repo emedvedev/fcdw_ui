@@ -1,5 +1,5 @@
 <html>
 <body>
-<jsp:forward page="/home.html?satelliteId=2" />
+<jsp:forward page="/realtime.html?satelliteId=2" />
 </body>
 </html>

@@ -206,7 +206,7 @@ img.banner
 ************************************************/
 #content-wrap {
 	float: right;
-	width: 620px;
+	width: 630px;
 }
 
 #content {
@@ -217,7 +217,7 @@ img.banner
 ************************************************/
 #sidebar {
 	float: left;
-	width: 210px;
+	width: 200px;
 	margin: 0px;
 	padding: 0px 0px 0px 30px;
 	list-style: none;
