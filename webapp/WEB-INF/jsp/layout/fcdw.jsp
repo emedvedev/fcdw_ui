@@ -80,7 +80,6 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 				<li>
 					<h2>Navigation</h2>
 					<ul>
-						<li><a href="<c:url value='/home.html?satelliteId=${satelliteId}'/>">Home</a></li>
 						<li><a href="<c:url value='/realtime.html?satelliteId=${satelliteId}'/>">Real Time Data</a></li>
 						<li><a href="<c:url value='/highres.html?satelliteId=${satelliteId}'/>">High Resolution Data</a></li>
 						<li><a href="<c:url value='/wod.html?satelliteId=${satelliteId}'/>">Whole Orbit Data</a></li>
@@ -88,6 +87,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 						<li><a href="<c:url value='/radio.html?satelliteId=${satelliteId}'/>">Amateur Radio Info</a></li>
 						<li><a href="<c:url value='/observer.html?satelliteId=${satelliteId}'/>">Observer Map</a></li>
 						<li><a href="<c:url value='/ranking.html?satelliteId=${satelliteId}'/>">Upload Ranking</a></li>
+						<li><a href="<c:url value='/home.html?satelliteId=${satelliteId}'/>">About</a></li>
 
 					</ul>
 				</li>
