@@ -103,7 +103,6 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 								<li><a href="<c:url value='/home.html?satelliteId=${satelliteId}'/>">About</a></li>
 							</c:otherwise>
 						</c:choose>
-
 					</ul>
 				</li>
 
