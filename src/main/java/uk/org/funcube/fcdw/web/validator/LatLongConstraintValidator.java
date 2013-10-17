@@ -20,6 +20,6 @@ public class LatLongConstraintValidator implements ConstraintValidator<LatLong, 
 		if (latLongField == null) {
 			return false;
 		}
-		return latLongField.matches("^-?[0-9]{1,3}(?:\\.[0-9]{1,4})?$");
+		return latLongField.matches("^[+-]?[0-9]{1,3}(?:\\.[0-9]{1,4})?$");
 	}
 }

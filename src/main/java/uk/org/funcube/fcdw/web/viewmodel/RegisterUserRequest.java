@@ -10,6 +10,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
 
 import uk.org.funcube.fcdw.web.validator.EmailNotDuplicate;
 import uk.org.funcube.fcdw.web.validator.FieldMatch;
@@ -25,32 +26,30 @@ public class RegisterUserRequest {
 
 	@SiteName
 	@Size(min = 5, max = 30)
-	@SiteNameNotDuplicate
+	@SiteNameNotDuplicate(message = "Already registered")
 	private String siteName;
 
-	@LatLong
-	@NotEmpty
+	@LatLong(message = "Incorrect format")
+	@Range(min = -90, max = 90)
 	private String latitude;
 
-	@LatLong
-	@NotEmpty
+	@LatLong(message = "Incorrect format")
+	@Range(min = -360, max = 360)
 	private String longitude;
 
 	@NotEmpty
 	@Email
-	@EmailNotDuplicate
+	@EmailNotDuplicate(message = "Already registered")
 	private String email1;
 
 	@NotEmpty
 	@Email
-	@EmailNotDuplicate
+	@EmailNotDuplicate(message = "Already registered")
 	private String email2;
 
-	@NotEmpty
 	@Size(min = 8, max = 20)
 	private String password1;
 
-	@NotEmpty
 	@Size(min = 8, max = 20)
 	private String password2;
 
