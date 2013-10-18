@@ -22,6 +22,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import uk.org.funcube.fcdw.server.dao.impl.UserDaoImpl;
 import uk.org.funcube.fcdw.server.model.User;
@@ -55,10 +56,12 @@ public class RegisterController extends AbstractService {
 
 	@RequestMapping(method = RequestMethod.POST)
 	@Transactional(readOnly = false)
-	public String submitForm(@ModelAttribute("registerUserRequest") @Valid RegisterUserRequest registerUserRequest, BindingResult result,
-			Model m) {
+	public ModelAndView submitForm(@ModelAttribute("registerUserRequest") @Valid RegisterUserRequest registerUserRequest, BindingResult result) {
+		
+		ModelAndView model = new ModelAndView("register");
+		
 		if (result.hasErrors()) {
-			return "register";
+			return model;
 		}
 
 		String password = registerUserRequest.getPassword1();
@@ -88,17 +91,13 @@ public class RegisterController extends AbstractService {
 		emailTags.put("password", password);
 		emailTags.put("authKey", authKey);
 
-		if (existingUser != null) {
-			m.addAttribute("error", "The email address is already registered in the system");
-			return "register";
-		}
-
 		userDao.save(newUser);
 
-		mailService.sendUsingTemplate(registerUserRequest.getEmail1(), emailTags, "registrationConfirmationEmail");
+		//mailService.sendUsingTemplate(registerUserRequest.getEmail1(), emailTags, "registrationConfirmationEmail");
 
-		m.addAttribute("message", "An email with your login/authentication details will be sent in a couple of minutes");
-		return "register";
+		model.addObject("message", "An email with your login/authentication details will be sent in a couple of minutes");
+		
+		return model;
 	}
 
 }
