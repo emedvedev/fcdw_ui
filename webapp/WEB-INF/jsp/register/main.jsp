@@ -2,7 +2,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <h2>Register</h2>
 <p>In order to be able to upload data to the warehouse from the FUNcube Dashboard program, you will need to register some details.</p>
-<p>As part of the registration process, we will send and 'authorisation key' to the email address you have entered. When you receive this, please log in giving the 'authorisation key' you received.</p>
+<p>As part of the registration process, we will send an 'authorisation code' to the email address you have entered. When you receive this, please log in giving the 'authorisation code' you received.</p>
 
 <c:url var="url" value="/register.html" /> 
 <form:form action = "${url}" commandName="registerUserRequest">

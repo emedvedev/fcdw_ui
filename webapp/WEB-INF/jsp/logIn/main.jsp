@@ -15,11 +15,11 @@
 	<div>
 		<table>
 			<tr>
-				<td style="width: 70px;">Email address:</td>
+				<td style="width: 195px;">Email address:</td>
 				<td><input id="username" name="j_username" type="text" value="" /></td>
 			</tr>
 			<tr>
-				<td>Password:</td>
+				<td>Password (case sensitive):</td>
 				<td><input id="password" name="j_password" type="password" /></td>
 			</tr>
 			<c:if test="${param.error == 'true'}">
@@ -30,12 +30,6 @@
 			<tr>
 				<td>Auth. Code:</td>
 				<td><input id="authCode" name="authCode" type="text" /></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input id="rememberMe" name="rememberMe" type="checkbox"
-					value="true" /><input name="rememberMe" type="hidden"
-					value="false" /> Remember me?</td>
 			</tr>
 			<tr>
 				<td></td>

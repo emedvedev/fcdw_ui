@@ -96,9 +96,8 @@ public class RegisterController extends AbstractService {
 		userDao.save(newUser);
 
 		mailService.sendUsingTemplate(registerUserRequest.getEmail1(), emailTags, "registrationConfirmationEmail");
-
-		m.addAttribute("message", "An email with your login/authentication details will be sent in a couple of minutes");
-		return "register";
+		
+		return "registration_confirmation";
 	}
 
 }
