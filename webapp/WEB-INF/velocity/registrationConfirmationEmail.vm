@@ -1,15 +1,19 @@
-Thank you for registering your site ($siteName) for use with the FUNcube Data Warehouse.
+Thank you for registering your site ($siteName) to take part in the data upload 
+for the FUNcube project.
 
 Your password is: $password
 
-The key: 
+The key: $authKey should be entered into the Auth. Code box when you log 
+in for the first time.
 
-$authKey
+Once this has been done, please set up the PC Dashboard in the:
 
-should be entered into the Registration Code box when you log in for the first time.
+File -> Settings -> Warehouse menu
 
-If you need to recover your password or registration code in the future, please use 
-the buttons at the bottom of the login page.
+Site Id: enter the Callsign/School/Name you chose
+Auth Code: enter the authorisation code you received
+URL: enter http://data.funcube.org.uk
+Stream data to warehouse: check the box 
 
 Regards
 
