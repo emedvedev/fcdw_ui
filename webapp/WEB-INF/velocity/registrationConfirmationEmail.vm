@@ -1,4 +1,4 @@
-Thank you for registering ($siteName) to take part in the data upload 
+Thank you for registering ($siteName) to take part in the data upload
 for the FUNcube project.
 
 Your password is: $password
@@ -9,16 +9,20 @@ To activate your account you should now log in to the FUNcube Warehouse:
 
  http://warehouse.funcube.org.uk
 
-using your email address, password AND Auth Code into the form.
+entering your email address, password AND Auth Code into the form.
 
-Once this has been done, please set up the PC Dashboard in the:
+Once this has been done, please go to the FUNcube Dashboard on you PC and 
+enter in the:
 
 File -> Settings -> Warehouse menu
 
-Site Id: enter ($siteName)
-Auth Code: enter the authorisation code you received
+Site Id: enter $siteName
+Auth Code: enter $authCode
 URL: enter http://data.funcube.org.uk
 Stream data to warehouse: check the box
+
+If you have any queries or problems please check the http://forum.funcube.org.uk site  
+and – THANK YOU for supporting the FUNcube project!
 
 Regards
 
