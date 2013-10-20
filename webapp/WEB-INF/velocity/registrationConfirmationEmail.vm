@@ -5,13 +5,15 @@ Your password is: $password
 
 Your authorisation code is: $authKey
 
-To activate your account you should now log in to the FUNcube Warehouse:
+Your account on the FUNcube Warehouse is now active and you
+will be able to log into the site:
 
-https://warehouse.funcube.org.uk/login.html
+https://warehouse.funcube.org.uk
 
-entering your email address, password AND Auth Code into the form.
+N.B.: WE ARE STILL WORKING ON THE PRIVATE AREAS, ALL OF THE DATA IS
+IN THE PUBLIC AREA
 
-Once this has been done, please go to the FUNcube Dashboard on you PC and 
+To upload data to the Warehouse, please go to the FUNcube Dashboard on you PC and 
 enter in the:
 
 File -> Settings -> Warehouse menu
@@ -21,8 +23,9 @@ Auth Code: enter $authKey
 URL: enter http://data.funcube.org.uk
 Stream data to warehouse: check the box
 
-If you have any queries or problems please check the http://forum.funcube.org.uk site  
-and – THANK YOU for supporting the FUNcube project!
+If you have any queries or problems please check the http://forum.funcube.org.uk site.  
+
+THANK YOU for supporting the FUNcube project!
 
 Regards
 

@@ -74,14 +74,14 @@ public class RegisterController extends AbstractService {
 
 		UserEntity newUser = new UserEntity(registerUserRequest.getEmail1(), passwordHash, registerUserRequest.getLatitude(),
 				registerUserRequest.getLongitude(), registerUserRequest.getSiteName(),
-				/* enabled */false,
+				/* enabled */true,
 				/* admin */false,
 				/* expired */false,
 				/* locked */false,
 				/* credentialsExpired */false, authKey,
 				/* emailSent */false);
 
-		User existingUser = userDao.findByUserName(registerUserRequest.getEmail1());
+		userDao.findByUserName(registerUserRequest.getEmail1());
 
 		Map<String, Object> emailTags = new HashMap<String, Object>();
 
