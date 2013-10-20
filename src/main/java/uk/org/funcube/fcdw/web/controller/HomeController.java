@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
-
+	
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public ModelAndView login(@QueryParam(value = "satelliteId") Long satelliteId) {
 		ModelAndView modelAndView = new ModelAndView("login");
@@ -33,9 +33,19 @@ public class HomeController {
 		return modelAndView;
 	}
 
+	@RequestMapping(value = "secure/home", method = RequestMethod.GET)
+	public ModelAndView secureHome(@QueryParam(value = "satelliteId") Long satelliteId) {
+
+		satelliteId = (satelliteId != null) ? satelliteId : new Long(2L);
+
+		ModelAndView modelAndView = new ModelAndView("home");
+		modelAndView.addObject("satelliteId", satelliteId);
+		return modelAndView;
+	}
+
 	@RequestMapping(value = "/accessDenied")
 	public String accessDenied() {
-		return "accessDenied";
+		return "error/accessDenied";
 	}
 
 }

@@ -11,6 +11,7 @@
 		<intercept-url pattern="/j_spring_security_check" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 		<intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
 		<intercept-url pattern="/user/**" access="ROLE_ADMIN,ROLE_USER" />
+		<intercept-url pattern="**/secure/home.html*" access="ROLE_ADMIN,ROLE_USER" />
 		<intercept-url pattern="**/login.html*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<intercept-url pattern="**/register.html*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<intercept-url pattern="**/registration_confirmation.html*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
@@ -20,9 +21,10 @@
 		<intercept-url pattern="/css/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<intercept-url pattern="/js/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<custom-filter before="SECURITY_CONTEXT_FILTER" ref="basicProcessingFilter" />
+		
 
 		<form-login login-page="/login.html"
-			default-target-url="/home.html"
+			default-target-url="/secure/home.html"
 			authentication-success-handler-ref="targetableAuthHandler"
 			authentication-failure-url="/login.html?error=true" />
 		<logout logout-success-url="/home.html" delete-cookies="JSESSIONID" />
@@ -54,8 +56,8 @@
     
     <beans:bean id="passwordGenerator"
           class="uk.org.funcube.fcdw.web.security.ReasonablePasswordGenerator"/>
-
-	<beans:bean id="accountAuthenticationProvider"
+    
+    <beans:bean id="accountAuthenticationProvider"
 		class="uk.org.funcube.fcdw.web.security.AccountAuthenticator">
 		<beans:constructor-arg ref="passwordGenerator"/>
 		<beans:constructor-arg ref="userDao"/>
@@ -64,7 +66,7 @@
 	<beans:bean id="targetableAuthHandler"
 		class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
 		<beans:property name="targetUrlParameter" value="targetUrl" />
-		<beans:property name="defaultTargetUrl" value="/home.html" />
+		<beans:property name="defaultTargetUrl" value="/secure/home.html" />
 	</beans:bean>
 	<authentication-manager alias="authenticationManager">
 		<authentication-provider ref="accountAuthenticationProvider" />

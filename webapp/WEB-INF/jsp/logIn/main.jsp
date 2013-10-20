@@ -28,10 +28,6 @@
 				</tr>
 			</c:if>
 			<tr>
-				<td>Auth. Code:</td>
-				<td><input id="authCode" name="authCode" type="text" /></td>
-			</tr>
-			<tr>
 				<td></td>
 				<td><button type="submit">Login</button></td>
 			</tr>
