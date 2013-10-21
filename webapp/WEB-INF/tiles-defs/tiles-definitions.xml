@@ -45,6 +45,16 @@
     <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
   </definition>
   
+  <definition name="authemail" template="/WEB-INF/jsp/layout/fcdw.jsp">
+    <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
+    <put-attribute name="page-title" value="Registration Confirmation"/> 
+    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+    <put-attribute name="main" value="/WEB-INF/jsp/authemail/main.jsp" />
+    <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
+  </definition>
+  
   <definition name="profile" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="Register"/> 

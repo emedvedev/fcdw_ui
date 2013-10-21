@@ -7,6 +7,7 @@
 package uk.org.funcube.fcdw.server.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -53,6 +54,10 @@ public class UserEntity implements UserDetails, User {
 	private String authKey;
 	@Column
 	private boolean emailSent;
+	@Column
+	private Date createdDate;
+	@Column
+	private String registrationCode;
 
 	@ManyToMany(mappedBy = "users", fetch = FetchType.LAZY)
 	private List<HexFrameEntity> hexFrames;
@@ -63,7 +68,7 @@ public class UserEntity implements UserDetails, User {
 
 	public UserEntity(final String username, final String password, final String latitude, final String longitude, final String siteId,
 			final boolean enabled, final boolean admin, final boolean expired, final boolean locked, final boolean credentialsExpired,
-			final String authKey, final boolean emailSent) {
+			final String authKey, final boolean emailSent, final Date createdDate, final String registrationCode) {
 		this.username = username;
 		this.password = password;
 		this.latitude = latitude;
@@ -75,6 +80,8 @@ public class UserEntity implements UserDetails, User {
 		this.locked = locked;
 		this.credentialsExpired = credentialsExpired;
 		this.authKey = authKey;
+		this.createdDate = createdDate;
+		this.registrationCode = registrationCode;
 		this.setEmailSent(emailSent);
 
 		hexFrames = new ArrayList<HexFrameEntity>();
@@ -191,6 +198,22 @@ public class UserEntity implements UserDetails, User {
 
 	public void setEmailSent(boolean emailSent) {
 		this.emailSent = emailSent;
+	}
+
+	public final Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public final void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public final String getRegistrationCode() {
+		return registrationCode;
+	}
+
+	public final void setRegistrationCode(String registrationCode) {
+		this.registrationCode = registrationCode;
 	}
 
 	@Override

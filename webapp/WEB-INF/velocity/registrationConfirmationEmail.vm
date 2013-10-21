@@ -5,8 +5,11 @@ Your password is: $password
 
 Your authorisation code is: $authKey
 
-Your account on the FUNcube Warehouse is now active and you
-will be able to log into the site:
+Please click on the link below (or past it into a browser) to activate vour account
+
+https://warehouse.funcube.org.uk/authemail.html?s=$siteName&r=$registrationCode
+
+Once your account is active on the FUNcube Warehouse, you will be able to log into the site:
 
 https://warehouse.funcube.org.uk
 

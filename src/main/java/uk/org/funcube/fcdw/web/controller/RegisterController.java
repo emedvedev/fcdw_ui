@@ -22,10 +22,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
+import uk.org.funcube.fcdw.server.clock.UTCClock;
 import uk.org.funcube.fcdw.server.dao.impl.UserDaoImpl;
-import uk.org.funcube.fcdw.server.model.User;
 import uk.org.funcube.fcdw.server.model.UserEntity;
 import uk.org.funcube.fcdw.server.service.impl.AbstractService;
 import uk.org.funcube.fcdw.server.service.impl.MailService;
@@ -47,6 +46,9 @@ public class RegisterController extends AbstractService {
 
 	@Autowired
 	MailService mailService;
+	
+	@Autowired
+	UTCClock clock;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String loadFormPage(Model m) {
@@ -64,6 +66,7 @@ public class RegisterController extends AbstractService {
 
 		String password = registerUserRequest.getPassword1();
 		String authKey = RandomStringUtils.random(20, true, true);
+		String registrationCode = RandomStringUtils.random(30, true, true);
 		String passwordHash;
 		try {
 			passwordHash = passwordGenerator.hashPassword(password);
@@ -74,12 +77,14 @@ public class RegisterController extends AbstractService {
 
 		UserEntity newUser = new UserEntity(registerUserRequest.getEmail1(), passwordHash, registerUserRequest.getLatitude(),
 				registerUserRequest.getLongitude(), registerUserRequest.getSiteName(),
-				/* enabled */true,
+				/* enabled */false,
 				/* admin */false,
 				/* expired */false,
 				/* locked */false,
 				/* credentialsExpired */false, authKey,
-				/* emailSent */false);
+				/* emailSent */true,
+				/* createdDate */clock.currentDate(),
+				registrationCode);
 
 		userDao.findByUserName(registerUserRequest.getEmail1());
 
@@ -88,6 +93,7 @@ public class RegisterController extends AbstractService {
 		emailTags.put("siteName", registerUserRequest.getSiteName());
 		emailTags.put("password", password);
 		emailTags.put("authKey", authKey);
+		emailTags.put("registrationCode", registrationCode);
 
 		userDao.save(newUser);
 
