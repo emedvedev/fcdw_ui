@@ -42,10 +42,10 @@ public class RealtimeController extends AbstractService {
 
 	private static final String PA_MILLI_WATT_FORMAT = "%4.1f mW";
 	private static final String MILLI_VOLT_FORMAT = "%4d mV";
-	private static final String TEMPERATURE_FORMAT = "%4d °C";
-	private static final String SOL_TEMPERATURE_FORMAT = "%5.1f °C";
-	private static final String ANTS_TEMPERATURE_FORMAT = "%5.1f °C";
-	private static final String PA_TEMPERATURE_FORMAT = "%4.1f °C";
+	private static final String TEMPERATURE_FORMAT = "%4d &deg;C";
+	private static final String SOL_TEMPERATURE_FORMAT = "%5.1f &deg;C";
+	private static final String ANTS_TEMPERATURE_FORMAT = "%5.1f &deg;C";
+	private static final String PA_TEMPERATURE_FORMAT = "%4.1f &deg;C";
 	private static final String PA_MILLI_AMPS_FORMAT = "%4.1f mA";
 	private static final String MILLI_AMPS_FORMAT = "%4d mA";
 	private static final String N_A = "N/A";
