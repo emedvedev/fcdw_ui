@@ -17,6 +17,7 @@
 		<class>uk.org.funcube.fcdw.server.model.FitterMessageEntity</class>
 		<class>uk.org.funcube.fcdw.server.model.UserRankingEntity</class>
 		<class>uk.org.funcube.fcdw.server.model.RealTimeEntity</class>
+		<class>uk.org.funcube.fcdw.server.model.MinMaxEntity</class>
 		<exclude-unlisted-classes/>
 	</persistence-unit>
 </persistence>

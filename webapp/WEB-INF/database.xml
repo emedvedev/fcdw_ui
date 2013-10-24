@@ -40,6 +40,7 @@
 	<bean id="fitterMessageDao" class="uk.org.funcube.fcdw.server.dao.impl.FitterMessageDaoImpl"/>
 	<bean id="userRankingDao" class="uk.org.funcube.fcdw.server.dao.impl.UserRankingDaoImpl"/>
 	<bean id="realtimeDao" class="uk.org.funcube.fcdw.server.dao.impl.RealTimeDaoImpl"/>
+	<bean id="minMaxDao" class="uk.org.funcube.fcdw.server.dao.impl.MinMaxDaoImpl"/>
 	
 	
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
@@ -67,6 +68,7 @@
 				<value>uk.org.funcube.fcdw.server.model.FitterMessageEntity</value>
 				<value>uk.org.funcube.fcdw.server.model.UserRankingEntity</value>
 				<value>uk.org.funcube.fcdw.server.model.RealTimeEntity</value>
+				<value>uk.org.funcube.fcdw.server.model.MinMaxEntity</value>
 			</list>
 		</property>
     </bean>
