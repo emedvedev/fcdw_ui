@@ -118,14 +118,30 @@ public class RealtimeController extends AbstractService {
 		String minValue = "";
 		String maxValue = "";
 		
-		minValue = format("4d", minMaxValues.get(0).getMinimum());
-		minValue = format("4d", minMaxValues.get(0).getMaximum());
+		minValue = format("%4d", minMaxValues.get(0).getMinimum());
+		maxValue = format("%4d", minMaxValues.get(0).getMaximum());
 		epsValues.add(new ValMinMax("Photo Voltage 1", String.format(MILLI_VOLT_FORMAT, eps.getC1()), minValue, maxValue));
-		epsValues.add(new ValMinMax("Photo Voltage 2", String.format(MILLI_VOLT_FORMAT, eps.getC2()), " 0.00", "11.00"));
-		epsValues.add(new ValMinMax("Photo Voltage 3", String.format(MILLI_VOLT_FORMAT, eps.getC3()), " 0.00", " 9.50"));
-		epsValues.add(new ValMinMax("Total Photo Current", String.format(MILLI_AMPS_FORMAT, eps.getC4()), "-9", "11"));
-		epsValues.add(new ValMinMax("Battery Voltage", String.format(MILLI_VOLT_FORMAT, eps.getC5()), "-10", "10"));
-		epsValues.add(new ValMinMax("Total System Current", String.format(MILLI_AMPS_FORMAT, eps.getC6()), "-9", "11"));
+		
+		minValue = format("%4d", minMaxValues.get(1).getMinimum());
+		maxValue = format("%4d", minMaxValues.get(1).getMaximum());
+		epsValues.add(new ValMinMax("Photo Voltage 2", String.format(MILLI_VOLT_FORMAT, eps.getC2()), minValue, maxValue));
+		
+		minValue = format("%4d", minMaxValues.get(2).getMinimum());
+		maxValue = format("%4d", minMaxValues.get(2).getMaximum());
+		epsValues.add(new ValMinMax("Photo Voltage 3", String.format(MILLI_VOLT_FORMAT, eps.getC3()), minValue, maxValue));
+		
+		minValue = format("%4d", minMaxValues.get(3).getMinimum());
+		maxValue = format("%4d", minMaxValues.get(3).getMaximum());
+		epsValues.add(new ValMinMax("Total Photo Current", String.format(MILLI_AMPS_FORMAT, eps.getC4()), minValue, maxValue));
+		
+		minValue = format("%4d", minMaxValues.get(4).getMinimum());
+		maxValue = format("%4d", minMaxValues.get(4).getMaximum());
+		epsValues.add(new ValMinMax("Battery Voltage", String.format(MILLI_VOLT_FORMAT, eps.getC5()), minValue, maxValue));
+		
+		minValue = format("%4d", minMaxValues.get(5).getMinimum());
+		maxValue = format("%4d", minMaxValues.get(5).getMaximum());
+		epsValues.add(new ValMinMax("Total System Current", String.format(MILLI_AMPS_FORMAT, eps.getC6()), minValue, maxValue));
+		
 		epsValues.add(new ValMinMax("Reboot Count", String.format("%4d", eps.getC7()), N_A, N_A));
 		epsValues.add(new ValMinMax("EPS Software Errors", String.format("%4d", eps.getC8()), N_A, N_A));
 		epsValues.add(new ValMinMax("Boost Converter Temp 1", String.format(TEMPERATURE_FORMAT, eps.getC9()), N_A, N_A));
