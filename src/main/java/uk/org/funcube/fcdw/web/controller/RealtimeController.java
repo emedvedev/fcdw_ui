@@ -114,8 +114,13 @@ public class RealtimeController extends AbstractService {
 		List<StringPair> swValues = new ArrayList<StringPair>();
 
 		EPS eps = realTime.getEps();
-
-		epsValues.add(new ValMinMax("Photo Voltage 1", String.format(MILLI_VOLT_FORMAT, eps.getC1()), " 0.00", "10.00"));
+		
+		String minValue = "";
+		String maxValue = "";
+		
+		minValue = format("4d", minMaxValues.get(0).getMinimum());
+		minValue = format("4d", minMaxValues.get(0).getMaximum());
+		epsValues.add(new ValMinMax("Photo Voltage 1", String.format(MILLI_VOLT_FORMAT, eps.getC1()), minValue, maxValue));
 		epsValues.add(new ValMinMax("Photo Voltage 2", String.format(MILLI_VOLT_FORMAT, eps.getC2()), " 0.00", "11.00"));
 		epsValues.add(new ValMinMax("Photo Voltage 3", String.format(MILLI_VOLT_FORMAT, eps.getC3()), " 0.00", " 9.50"));
 		epsValues.add(new ValMinMax("Total Photo Current", String.format(MILLI_AMPS_FORMAT, eps.getC4()), "-9", "11"));
@@ -205,6 +210,14 @@ public class RealtimeController extends AbstractService {
 		mv.addObject("siteList", siteList);
 		mv.addObject("satelliteId", satelliteId);
 		return mv;
+	}
+
+	private String format(String format, Long value) {
+		if (value == 99999 || value == -99999) {
+			return N_A;
+		}
+		
+		return String.format(format, value);
 	}
 
 	private void calculateMinMax(int satelliteId, Date createdDate) {
