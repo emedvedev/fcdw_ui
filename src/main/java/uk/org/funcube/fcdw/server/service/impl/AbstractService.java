@@ -140,6 +140,9 @@ public class AbstractService {
 	}
 
 	public static final double getPaTemp(final long value) {
+		if (value == 99999 || value == -99999) {
+			return 0.0;
+		}
 		return PA_TEMPS[(int) value];
 	}
 
