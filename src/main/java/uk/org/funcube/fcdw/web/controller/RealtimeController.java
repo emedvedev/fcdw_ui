@@ -166,9 +166,9 @@ public class RealtimeController extends AbstractService {
 		epsValues.add(new ValMinMax("Reset Cause", String.format("%4d", eps.getC15()), N_A, N_A));
 		epsValues.add(new ValMinMax("Power Point Tracking Mode", String.format("%4d", eps.getC16()), N_A, N_A));
 
-		asibValues.add(new ValMinMax("Sun Sensor X+", String.format("%4d", eps.getC17()), N_A, N_A));
-		asibValues.add(new ValMinMax("Sun Sensor Y+", String.format("%4d", eps.getC18()), N_A, N_A));
-		asibValues.add(new ValMinMax("Sun Sensor Z+", String.format("%4d", eps.getC19()), N_A, N_A));
+		asibValues.add(new ValMinMax("Sun Sensor X+", String.format("%4.2f", SOL_ILLUMINATION[eps.getC17().intValue()]), N_A, N_A));
+		asibValues.add(new ValMinMax("Sun Sensor Y+", String.format("%4.2f", SOL_ILLUMINATION[eps.getC18().intValue()]), N_A, N_A));
+		asibValues.add(new ValMinMax("Sun Sensor Z+", String.format("%4.2f", SOL_ILLUMINATION[eps.getC19().intValue()]), N_A, N_A));
 		
 		minValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(10).getMinimum(), -0.2073, 158.239);		
 		maxValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(10).getMaximum(), -0.2073, 158.239);

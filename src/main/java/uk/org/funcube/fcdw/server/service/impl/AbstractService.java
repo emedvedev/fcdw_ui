@@ -20,6 +20,7 @@ public class AbstractService {
 	private static final TimeZone UTC = TimeZone.getTimeZone("UTC");
 	private static final double[] PA_TEMPS = new double[I_256];
 	protected static final double[] ANTS_TEMPS = new double[I_256];
+	protected static double[] SOL_ILLUMINATION = new double[1024];
 
 	static {
 		SDF.setTimeZone(UTC);
@@ -65,6 +66,50 @@ public class AbstractService {
 					PA_TEMPS[adc] = value;
 					break;
 				}
+			}
+		}
+	}
+
+	private static void setupSunSensors() {
+		double[][] tempToAdc 
+			= new double[][] {
+				{5,0},{9,2.158},{19,2.477},{23,2.64},{33,2.8},
+				{50,2.881},{56,2.889},{100,3.04},{133,3.14},
+				{200,3.25},{265,3.346},{333,3.475},{400,3.58},
+				{467,3.69},{533,3.81},{600,3.92},{666,4.03},
+				{700,4.079},{732,4.13},{800,4.245},{866,4.325},
+				{933,4.38},{984,4.42},{992,4.5319},{999,4.6438},
+				{1007,4.7557},{1015,4.8676},{1023,4.9795}};
+		
+		for (int i = 0; i < 1024; ++i) {
+			if (i < 984) {
+				// calc values for all possible 8bit values
+				for (int j = 0; j < tempToAdc.length; j++) {
+					if (i < tempToAdc[j][0]) {
+						// get this current value
+						double[] currentPair = tempToAdc[j];
+						// get the previous value
+						double[] previousPair = new double[] {0,0};
+						if (j != 0) {
+							previousPair = tempToAdc[j - 1];
+						}
+						// get the adc difference
+						double adcDiff = currentPair[0] - previousPair[0];
+						// get the value difference
+						double valueDiff = currentPair[1] - previousPair[1];
+						// scale per unit
+						double increment = valueDiff / adcDiff;
+						// calculate the sol value for this adc value
+						double value = previousPair[1] + (i - previousPair[0]) * increment;
+						// save it in the array
+						SOL_ILLUMINATION[i] = value;
+						// break;
+						break;
+					}
+				}
+			}
+			else {
+				SOL_ILLUMINATION[i] = 4.420;
 			}
 		}
 	}
