@@ -147,15 +147,15 @@ public class RealtimeController extends AbstractService {
 		
 		minValue = format("%4d", minMaxValues.get(6).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(6).getMaximum());
-		epsValues.add(new ValMinMax("Boost Converter Temp 1", String.format(TEMPERATURE_FORMAT, eps.getC9()), minValue, maxValue));
+		epsValues.add(new ValMinMax("Boost Converter Temp X", String.format(TEMPERATURE_FORMAT, eps.getC9()), minValue, maxValue));
 		
 		minValue = format("%4d", minMaxValues.get(7).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(7).getMaximum());
-		epsValues.add(new ValMinMax("Boost Converter Temp 2", String.format(TEMPERATURE_FORMAT, eps.getC10()), minValue, maxValue));
+		epsValues.add(new ValMinMax("Boost Converter Temp Y", String.format(TEMPERATURE_FORMAT, eps.getC10()), minValue, maxValue));
 		
 		minValue = format("%4d", minMaxValues.get(8).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(8).getMaximum());
-		epsValues.add(new ValMinMax("Boost Converter Temp 3", String.format(TEMPERATURE_FORMAT, eps.getC11()), minValue, maxValue));
+		epsValues.add(new ValMinMax("Boost Converter Temp Z", String.format(TEMPERATURE_FORMAT, eps.getC11()), minValue, maxValue));
 		
 		minValue = format("%4d", minMaxValues.get(9).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(9).getMaximum());
@@ -209,7 +209,7 @@ public class RealtimeController extends AbstractService {
 		
 		minValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(19).getMinimum(), -0.857, 193.672);		
 		maxValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(19).getMaximum(), -0.857, 193.672);
-		rfValues.add(new ValMinMax("Temperature", String.format(SOL_TEMPERATURE_FORMAT, scaleAndOffset(rf.getC3(), -0.857, 193.672)), minValue, maxValue));
+		rfValues.add(new ValMinMax("Temperature", String.format(SOL_TEMPERATURE_FORMAT, scaleAndOffset(rf.getC3(), -0.857, 193.672)), maxValue, minValue));
 
 
 		minValue = format("%4d", minMaxValues.get(20).getMinimum());
@@ -229,7 +229,7 @@ public class RealtimeController extends AbstractService {
 
 		minValue = format("%4d", (long)getPaTemp(minMaxValues.get(21).getMinimum()));
 		maxValue = format("%4d", (long)getPaTemp(minMaxValues.get(21).getMaximum()));
-		paValues.add(new ValMinMax("Device Temperature", String.format(PA_TEMPERATURE_FORMAT, getPaTemp(rf.getC9().intValue())), minValue, maxValue));
+		paValues.add(new ValMinMax("Device Temperature", String.format(PA_TEMPERATURE_FORMAT, getPaTemp(rf.getC9().intValue())), maxValue, minValue));
 		
 		minValue = format("%4d", (long)getPaCurrent(minMaxValues.get(22).getMinimum()));
 		maxValue = format("%4d", (long)getPaCurrent(minMaxValues.get(22).getMaximum()));
