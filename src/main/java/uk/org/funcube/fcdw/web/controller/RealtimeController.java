@@ -241,10 +241,10 @@ public class RealtimeController extends AbstractService {
 				.intValue()))));
 		antsValues.add(new StringPair("Antenna Temp 1", String.format(ANTS_TEMPERATURE_FORMAT, getAntsTemp(antenna.getAntennaTemp1()
 				.intValue()))));
-		antsValues.add(new StringPair("Antenna Deployment 0", (antenna.isAntennaDeployment0()) ? DEPLOYED : UNDEPLOYED));
-		antsValues.add(new StringPair("Antenna Deployment 1", (antenna.isAntennaDeployment1()) ? DEPLOYED : UNDEPLOYED));
-		antsValues.add(new StringPair("Antenna Deployment 2", (antenna.isAntennaDeployment2()) ? DEPLOYED : UNDEPLOYED));
-		antsValues.add(new StringPair("Antenna Deployment 3", (antenna.isAntennaDeployment3()) ? DEPLOYED : UNDEPLOYED));
+		antsValues.add(new StringPair("Antenna Deployment VHF-A", (antenna.isAntennaDeployment0()) ? DEPLOYED : UNDEPLOYED));
+		antsValues.add(new StringPair("Antenna Deployment UHF-A", (antenna.isAntennaDeployment1()) ? DEPLOYED : UNDEPLOYED));
+		antsValues.add(new StringPair("Antenna Deployment VHF-B", (antenna.isAntennaDeployment2()) ? DEPLOYED : UNDEPLOYED));
+		antsValues.add(new StringPair("Antenna Deployment UHF-B", (antenna.isAntennaDeployment3()) ? DEPLOYED : UNDEPLOYED));
 
 		DTMF dtmf = realTime.getDTMF();
 

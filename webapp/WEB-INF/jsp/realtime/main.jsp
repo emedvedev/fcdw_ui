@@ -1,4 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+   // Set refresh, autoload time as 5 seconds
+   response.setIntHeader("Refresh", 5);
+%>
 <h2>Real Time Data</h2>
 <p>
 	This page shows the latest value of all the housekeeping parameters in
