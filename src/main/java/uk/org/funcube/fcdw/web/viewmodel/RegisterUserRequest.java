@@ -25,7 +25,7 @@ import uk.org.funcube.fcdw.web.validator.SiteNameNotDuplicate;
 public class RegisterUserRequest {
 
 	@SiteName
-	@Size(min = 5, max = 30)
+	@Size(min = 3, max = 30)
 	@SiteNameNotDuplicate(message = "Already registered")
 	private String siteName;
 

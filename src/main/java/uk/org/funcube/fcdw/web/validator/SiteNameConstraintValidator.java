@@ -20,6 +20,6 @@ public class SiteNameConstraintValidator implements ConstraintValidator<SiteName
 		if (siteNameField == null) {
 			return false;
 		}
-		return siteNameField.matches("[0-9a-zA-Z_]*");
+		return siteNameField.matches("[0-9a-zA-Z_-]*");
 	}
 }
