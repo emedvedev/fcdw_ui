@@ -38,6 +38,8 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 <meta name="author" content="David A Johnson, G4DPZ, AMSAT-UK" />
 <meta name="verify-v1" content="" />
 
+<tiles:insertAttribute name="head-scripts" />
+
 <!-- jQuery -->
 <script src="<c:url value='/js/jquery-1.10.2.min.js'/>"
 	type="text/javascript"></script>

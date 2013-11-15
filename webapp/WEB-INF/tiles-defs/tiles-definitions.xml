@@ -8,6 +8,7 @@
   <definition name="home" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="Home"/> 
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" />
     <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/home/main.jsp" />
@@ -18,7 +19,8 @@
   <definition name="login" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="Login"/> 
-    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" />
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/logIn/main.jsp" />
     <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
@@ -28,6 +30,7 @@
   <definition name="register" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="Register"/> 
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" />
     <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/register/main.jsp" />
@@ -38,6 +41,7 @@
   <definition name="registration_confirmation" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="Registration Confirmation"/> 
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" />
     <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/registration_confirmation/main.jsp" />
@@ -48,6 +52,7 @@
   <definition name="authemail" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="Registration Confirmation"/> 
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" />
     <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/authemail/main.jsp" />
@@ -58,6 +63,7 @@
   <definition name="profile" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="Register"/> 
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" />
     <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/profile/main.jsp" />
@@ -68,6 +74,7 @@
   <definition name="realtime" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="Real Time Data"/> 
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" />
     <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/realtime/main.jsp" />
@@ -78,6 +85,7 @@
   <definition name="highres" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="High Resolution Data"/> 
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" />
     <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/highres/main.jsp" />
@@ -88,6 +96,7 @@
   <definition name="wod" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="Whole Orbit Data"/> 
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" />
     <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/wod/main.jsp" />
@@ -98,6 +107,7 @@
   <definition name="fitter" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="Fitter Messages"/> 
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" />
     <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/fitter/main.jsp" />
@@ -108,6 +118,7 @@
   <definition name="radio" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="Amateur Radio Info"/> 
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" />
     <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/radio/main.jsp" />
@@ -117,7 +128,8 @@
   
   <definition name="observer" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
-    <put-attribute name="page-title" value="Observers"/> 
+    <put-attribute name="page-title" value="Observers"/>
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" /> 
     <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/observer/main.jsp" />
@@ -128,6 +140,7 @@
   <definition name="ranking" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="Upload Ranking"/> 
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/ranking/head-scripts.jsp" />
     <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/ranking/main.jsp" />
@@ -138,6 +151,7 @@
   <definition name="admin/cctDebug" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="CCT Debug"/> 
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" />
     <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/admin/cctDebug/main.jsp" />
@@ -148,6 +162,7 @@
   <definition name="403" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="Access Denied"/> 
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" />
     <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/403/main.jsp" />
