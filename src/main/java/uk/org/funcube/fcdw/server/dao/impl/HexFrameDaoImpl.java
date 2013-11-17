@@ -155,4 +155,12 @@ public class HexFrameDaoImpl extends AbstractDataAccessObject<HexFrame, HexFrame
 		query.setMaxResults(1);
 		return query.getResultList();
 	}
+	
+	@Override
+	public Long getMaxSequenceNumber(long satelliteId) {
+		final Query query = getEntityManager().createQuery(
+				"select max(hf.sequenceNumber) from HexFrameEntity  hf where hf.satelliteId = :satelliteId");
+		query.setParameter("satelliteId", satelliteId);
+		return (Long) query.getSingleResult();
+	}
 }

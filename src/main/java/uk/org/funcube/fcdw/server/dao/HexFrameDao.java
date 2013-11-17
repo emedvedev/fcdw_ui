@@ -42,4 +42,6 @@ public interface HexFrameDao extends DataAccessObject<HexFrame, Long> {
 	List<HexFrame> getOrbitFrames(long satelliteId, Date date);
 
 	List<HexFrame> findUnprocessedRealtime(long satelliteId);
+
+	Long getMaxSequenceNumber(long satelliteId);
 }

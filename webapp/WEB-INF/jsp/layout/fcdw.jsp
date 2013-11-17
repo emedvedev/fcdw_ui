@@ -38,8 +38,6 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 <meta name="author" content="David A Johnson, G4DPZ, AMSAT-UK" />
 <meta name="verify-v1" content="" />
 
-<tiles:insertAttribute name="head-scripts" />
-
 <!-- jQuery -->
 <script src="<c:url value='/js/jquery-1.10.2.min.js'/>"
 	type="text/javascript"></script>
@@ -57,6 +55,15 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 		$('#tabs').tabs();
 	});
 </script>
+
+<script>
+	$(document).ready(function(){
+		refreshDiv();
+	    setInterval(refreshDiv, 5000); 
+	});
+</script>
+
+<tiles:insertAttribute name="head-scripts" />
 
 </head>
 <body>
@@ -91,7 +98,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 								<li><a href="<c:url value='/fitter.html?satelliteId=2'/>">Fitter Messages</a></li>
 								<li>Amateur Radio Info</li>
 								<li>Observer Map</li>
-								<li><a href="<c:url value='/satmap.html?satelliteId=2'/>">Satellite Position</a></li>
+								<li><a href="<c:url value='/satmap.html?satelliteId=2'/>">Satellite Pos. <strong>DEMO</strong></a></li>
 								<li><a href="<c:url value='/ranking.html?satelliteId=2'/>">Upload Ranking</a></li>
 								<li><a href="<c:url value='/home.html?satelliteId=2'/>">About</a></li>
 							</c:when>
@@ -102,7 +109,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 								<li><a href="<c:url value='/fitter.html?satelliteId=${satelliteId}'/>">Fitter Messages</a></li>
 								<li>Amateur Radio Info</li>
 								<li>Observer Map</li>
-								<li><a href="<c:url value='/satmap.html?satelliteId=${satelliteId}'/>">Satellite Position</a></li>
+								<li><a href="<c:url value='/satmap.html?satelliteId=${satelliteId}'/>">Satellite Pos. <strong>DEMO</strong></a></li>
 								<li><a href="<c:url value='/ranking.html?satelliteId=${satelliteId}'/>">Upload Ranking</a></li>
 								<li><a href="<c:url value='/home.html?satelliteId=${satelliteId}'/>">About</a></li>
 							</c:otherwise>
@@ -128,6 +135,12 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 						</ul>
 					</li>
 				</c:if>
+				<li>
+					<h2>Warehouse Info</h2>
+					<ul>
+						<li id="info_seqno"></li>
+					</ul>
+				</li>
 			</ul>
 			<!-- end sidebar -->
 			<br style="clear: both;" />
@@ -139,6 +152,5 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 	<div id="footer">
 		<tiles:insertAttribute name="footer" />
 	</div>
-	<!-- End footer -->
 </body>
 </html>

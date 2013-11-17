@@ -20,7 +20,7 @@
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="Login"/> 
     <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" />
-    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head.jsp" />
+    <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/logIn/main.jsp" />
     <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
@@ -74,7 +74,7 @@
   <definition name="realtime" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="Real Time Data"/> 
-    <put-attribute name="head-scripts" value="/WEB-INF/jsp/common/head-scripts.jsp" />
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/realtime/head-scripts.jsp" />
     <put-attribute name="header" value="/WEB-INF/jsp/common/head.jsp" />
     <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
     <put-attribute name="main" value="/WEB-INF/jsp/realtime/main.jsp" />
