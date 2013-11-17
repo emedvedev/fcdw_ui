@@ -59,7 +59,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 <script>
 	$(document).ready(function(){
 		refreshDiv();
-	    setInterval(refreshDiv, 5000); 
+	    setInterval(refreshDiv, 10000); 
 	});
 </script>
 
@@ -96,7 +96,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 								<li>High Resolution Data</li>
 								<li>Whole Orbit Data</li>
 								<li><a href="<c:url value='/fitter.html?satelliteId=2'/>">Fitter Messages</a></li>
-								<li>Amateur Radio Info</li>
+								<li><a href="<c:url value='/radio.html?satelliteId=2'/>">Amateur Radio Info</a></li>
 								<li>Observer Map</li>
 								<li><a href="<c:url value='/satmap.html?satelliteId=2'/>">Satellite Pos. <strong>DEMO</strong></a></li>
 								<li><a href="<c:url value='/ranking.html?satelliteId=2'/>">Upload Ranking</a></li>
@@ -107,7 +107,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 								<li>High Resolution Data</li>
 								<li>Whole Orbit Data</li>
 								<li><a href="<c:url value='/fitter.html?satelliteId=${satelliteId}'/>">Fitter Messages</a></li>
-								<li>Amateur Radio Info</li>
+								<li><a href="<c:url value='/radio.html?satelliteId=${satelliteId}'/>">Amateur Radio Info</a></li>
 								<li>Observer Map</li>
 								<li><a href="<c:url value='/satmap.html?satelliteId=${satelliteId}'/>">Satellite Pos. <strong>DEMO</strong></a></li>
 								<li><a href="<c:url value='/ranking.html?satelliteId=${satelliteId}'/>">Upload Ranking</a></li>
