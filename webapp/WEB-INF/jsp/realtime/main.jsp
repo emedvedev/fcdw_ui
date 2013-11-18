@@ -29,19 +29,121 @@
 			<h3 style="text-align: left;">Latest update at: ${createdDate}</h3>
 			<table style="width: 100%;">
 				<tr>
-					<td style="text-align: left;">Name</td>
+					<td style="text-align: center;">Name</td>
 					<td style="text-align: center; white-space: nowrap;">Value</td>
 					<td style="text-align: center; white-space: nowrap;">Min.</td>
 					<td style="text-align: center; white-space: nowrap;">Max.</td>
 				</tr>
-				<c:forEach var="o" items="${epsValues}">
-					<tr>
-						<td>${o.name}</td>
-						<td style="text-align: center; white-space: nowrap;">${o.value}</td>
-						<td style="text-align: center; white-space: nowrap;">${o.min}</td>
-						<td style="text-align: center; white-space: nowrap;">${o.max}</td>
-					</tr>
-				</c:forEach>
+				<tr>
+					<td id = "eps_sol_volts_x_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_sol_volts_x_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_sol_volts_x_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_sol_volts_x_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				<tr>
+					<td id = "eps_sol_volts_y_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_sol_volts_y_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_sol_volts_y_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_sol_volts_y_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "eps_sol_volts_z_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_sol_volts_z_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_sol_volts_z_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_sol_volts_z_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "eps_total_photo_current_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_total_photo_current_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_total_photo_current_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_total_photo_current_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "eps_battery_volts_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_battery_volts_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_battery_volts_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_battery_volts_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "eps_total_system_current_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_total_system_current_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_total_system_current_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_total_system_current_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "eps_reboot_count_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_reboot_count_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_reboot_count_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_reboot_count_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "eps_software_errors_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_software_errors_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_software_errors_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_software_errors_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "eps_boost_temp_x_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_boost_temp_x_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_boost_temp_x_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_boost_temp_x_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "eps_boost_temp_y_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_boost_temp_y_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_boost_temp_y_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_boost_temp_y_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "eps_boost_temp_z_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_boost_temp_z_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_boost_temp_z_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_boost_temp_z_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "eps_battery_temp_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_battery_temp_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_battery_temp_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_battery_temp_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "eps_latch_up_5_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_latch_up_5_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_latch_up_5_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_latch_up_5_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "eps_latch_up_3_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_latch_up_3_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_latch_up_3_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_latch_up_3_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "eps_reset_cause_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_reset_cause_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_reset_cause_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_reset_cause_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "eps_ppt_mode_name" style="text-align: center;">$nbsp;</td>
+					<td id = "eps_ppt_mode_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_ppt_mode_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "eps_ppt_mode_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
 			</table>
 		</div>
 		<br />
