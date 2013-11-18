@@ -109,6 +109,33 @@
 		$("#asib_bus_volts_five_min").text(data.asibValues[9].min);
 		$("#asib_bus_volts_five_max").text(data.asibValues[9].max);
 		
+		$("#rf_created_date").text("Latest update at: " + data.lastUpdated);
+		$("#rf_receive_doppler_name").text(data.rfValues[0].name);
+		$("#rf_receive_doppler_value").text(data.rfValues[0].value);
+		$("#rf_receive_doppler_min").text(data.rfValues[0].min);
+		$("#rf_receive_doppler_max").text(data.rfValues[0].max);
+		$("#rf_receive_rssi_name").text(data.rfValues[1].name);
+		$("#rf_receive_rssi_value").text(data.rfValues[1].value);
+		$("#rf_receive_rssi_min").text(data.rfValues[1].min);
+		$("#rf_receive_rssi_max").text(data.rfValues[1].max);
+		$("#rf_temperature_name").text(data.rfValues[2].name);
+		$("#rf_temperature_value").text(data.rfValues[2].value);
+		$("#rf_temperature_min").text(data.rfValues[2].min);
+		$("#rf_temperature_max").text(data.rfValues[2].max);
+		$("#rf_receive_current_name").text(data.rfValues[3].name);
+		$("#rf_receive_current_value").text(data.rfValues[3].value);
+		$("#rf_receive_current_min").text(data.rfValues[3].min);
+		$("#rf_receive_current_max").text(data.rfValues[3].max);
+		$("#rf_transmit_current_three_name").text(data.rfValues[4].name);
+		$("#rf_transmit_current_three_value").text(data.rfValues[4].value);
+		$("#rf_transmit_current_three_min").text(data.rfValues[4].min);
+		$("#rf_transmit_current_three_max").text(data.rfValues[4].max);
+		$("#rf_transmit_current_five_name").text(data.rfValues[5].name);
+		$("#rf_transmit_current_five_value").text(data.rfValues[5].value);
+		$("#rf_transmit_current_five_min").text(data.rfValues[5].min);
+		$("#rf_transmit_current_five_max").text(data.rfValues[5].max);
+		
+		
 	}
 	
 	function refreshDiv(){

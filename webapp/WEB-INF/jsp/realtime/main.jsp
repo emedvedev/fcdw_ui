@@ -177,7 +177,7 @@
 					<td id = "asib_sun_sensor_z_name" style="text-align: center;">$nbsp;</td>
 					<td id = "asib_sun_sensor_z_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
 					<td id = "asib_sun_sensor_z_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
-					<td id = "asib_sol_volts_z_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_sol_sensor_z_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
 				</tr>
 				
 				<tr>
@@ -239,22 +239,55 @@
 		<br />
 		<div style="text-align: center">
 			<b>Communication Subsystem</b>
-			<h3 style="text-align: left;">Latest update at: ${createdDate}</h3>
+			
+			<h3 id = "rf_created_date" style="text-align: left;">Latest update at:</h3>
 			<table style="width: 100%;">
 				<tr>
-					<td style="text-align: left;">Name</td>
+					<td style="text-align: center;">Name</td>
 					<td style="text-align: center; white-space: nowrap;">Value</td>
 					<td style="text-align: center; white-space: nowrap;">Min.</td>
 					<td style="text-align: center; white-space: nowrap;">Max.</td>
 				</tr>
-				<c:forEach var="o" items="${rfValues}">
-					<tr>
-						<td>${o.name}</td>
-						<td style="text-align: center; white-space: nowrap;">${o.value}</td>
-						<td style="text-align: center; white-space: nowrap;">${o.min}</td>
-						<td style="text-align: center; white-space: nowrap;">${o.max}</td>
-					</tr>
-				</c:forEach>
+				<tr>
+					<td id = "rf_receive_doppler_name" style="text-align: center;">$nbsp;</td>
+					<td id = "rf_receive_doppler_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "rf_receive_doppler_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "rf_receive_doppler_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				<tr>
+					<td id = "rf_receive_rssi_name" style="text-align: center;">$nbsp;</td>
+					<td id = "rf_receive_rssi_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "rf_receive_rssi_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "rf_receive_rssi_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "rf_temperature_name" style="text-align: center;">$nbsp;</td>
+					<td id = "rf_temperature_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "rf_temperature_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "rf_temperature_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "rf_receive_current_name" style="text-align: center;">$nbsp;</td>
+					<td id = "rf_receive_current_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "rf_receive_current_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "rf_receive_current_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "rf_transmit_current_three_name" style="text-align: center;">$nbsp;</td>
+					<td id = "rf_transmit_current_three_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "rf_transmit_current_three_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "rf_transmit_current_three_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "rf_transmit_current_five_name" style="text-align: center;">$nbsp;</td>
+					<td id = "rf_transmit_current_five_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "rf_transmit_current_five_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "rf_transmit_current_five_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
 			</table>
 		</div>
 		<br />
