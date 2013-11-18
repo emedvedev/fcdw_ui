@@ -67,6 +67,48 @@
 		$("#eps_ppt_mode_min").text(data.epsValues[15].min);
 		$("#eps_ppt_mode_max").text(data.epsValues[15].max);
 		
+		$("#asib_created_date").text("Latest update at: " + data.lastUpdated);
+		$("#asib_sun_sensor_x_name").text(data.asibValues[0].name);
+		$("#asib_sun_sensor_x_value").text(data.asibValues[0].value);
+		$("#asib_sun_sensor_x_min").text(data.asibValues[0].min);
+		$("#asib_sun_sensor_x_max").text(data.asibValues[0].max);
+		$("#asib_sun_sensor_y_name").text(data.asibValues[1].name);
+		$("#asib_sun_sensor_y_value").text(data.asibValues[1].value);
+		$("#asib_sun_sensor_y_min").text(data.asibValues[1].min);
+		$("#asib_sun_sensor_y_max").text(data.asibValues[1].max);
+		$("#asib_sun_sensor_z_name").text(data.asibValues[2].name);
+		$("#asib_sun_sensor_z_value").text(data.asibValues[2].value);
+		$("#asib_sun_sensor_z_min").text(data.asibValues[2].min);
+		$("#asib_sun_sensor_z_max").text(data.asibValues[2].max);
+		$("#asib_sol_temp_x_plus_name").text(data.asibValues[3].name);
+		$("#asib_sol_temp_x_plus_value").text(data.asibValues[3].value);
+		$("#asib_sol_temp_x_plus_min").text(data.asibValues[3].min);
+		$("#asib_sol_temp_x_plus_max").text(data.asibValues[3].max);
+		$("#asib_sol_temp_x_minus_name").text(data.asibValues[4].name);
+		$("#asib_sol_temp_x_minus_value").text(data.asibValues[4].value);
+		$("#asib_sol_temp_x_minus_min").text(data.asibValues[4].min);
+		$("#asib_sol_temp_x_minus_max").text(data.asibValues[4].max);
+		$("#asib_sol_temp_y_plus_name").text(data.asibValues[5].name);
+		$("#asib_sol_temp_y_plus_value").text(data.asibValues[5].value);
+		$("#asib_sol_temp_y_plus_min").text(data.asibValues[5].min);
+		$("#asib_sol_temp_y_plus_max").text(data.asibValues[5].max);
+		$("#asib_sol_temp_y_minus_name").text(data.asibValues[6].name);
+		$("#asib_sol_temp_y_minus_value").text(data.asibValues[6].value);
+		$("#asib_sol_temp_y_minus_min").text(data.asibValues[6].min);
+		$("#asib_sol_temp_y_minus_max").text(data.asibValues[6].max);
+		$("#asib_bus_volts_three_name").text(data.asibValues[7].name);
+		$("#asib_bus_volts_three_value").text(data.asibValues[7].value);
+		$("#asib_bus_volts_three_min").text(data.asibValues[7].min);
+		$("#asib_bus_volts_three_max").text(data.asibValues[7].max);
+		$("#asib_bus_current_three_name").text(data.asibValues[8].name);
+		$("#asib_bus_current_three_value").text(data.asibValues[8].value);
+		$("#asib_bus_current_three_min").text(data.asibValues[8].min);
+		$("#asib_bus_current_three_max").text(data.asibValues[8].max);
+		$("#asib_bus_volts_five_name").text(data.asibValues[9].name);
+		$("#asib_bus_volts_five_value").text(data.asibValues[9].value);
+		$("#asib_bus_volts_five_min").text(data.asibValues[9].min);
+		$("#asib_bus_volts_five_max").text(data.asibValues[9].max);
+		
 	}
 	
 	function refreshDiv(){

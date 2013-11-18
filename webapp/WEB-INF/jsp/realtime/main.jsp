@@ -151,22 +151,84 @@
 		<br />
 		<div style="text-align: center">
 			<b>Sensor Subsystem</b>
-			<h3 style="text-align: left;">Latest update at: ${createdDate}</h3>
+			
+			<h3 id = "asib_created_date" style="text-align: left;">Latest update at:</h3>
 			<table style="width: 100%;">
 				<tr>
-					<td style="text-align: left;">Name</td>
+					<td style="text-align: center;">Name</td>
 					<td style="text-align: center; white-space: nowrap;">Value</td>
 					<td style="text-align: center; white-space: nowrap;">Min.</td>
 					<td style="text-align: center; white-space: nowrap;">Max.</td>
 				</tr>
-				<c:forEach var="o" items="${asibValues}">
-					<tr>
-						<td>${o.name}</td>
-						<td style="text-align: center; white-space: nowrap;">${o.value}</td>
-						<td style="text-align: center; white-space: nowrap;">${o.min}</td>
-						<td style="text-align: center; white-space: nowrap;">${o.max}</td>
-					</tr>
-				</c:forEach>
+				<tr>
+					<td id = "asib_sun_sensor_x_name" style="text-align: center;">$nbsp;</td>
+					<td id = "asib_sun_sensor_x_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_sun_sensor_x_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_sun_sensor_x_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				<tr>
+					<td id = "asib_sun_sensor_y_name" style="text-align: center;">$nbsp;</td>
+					<td id = "asib_sun_sensor_y_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_sun_sensor_y_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_sun_sensor_y_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "asib_sun_sensor_z_name" style="text-align: center;">$nbsp;</td>
+					<td id = "asib_sun_sensor_z_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_sun_sensor_z_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_sol_volts_z_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "asib_sol_temp_x_plus_name" style="text-align: center;">$nbsp;</td>
+					<td id = "asib_sol_temp_x_plus_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_sol_temp_x_plus_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_sol_temp_x_plus_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "asib_sol_temp_x_minus_name" style="text-align: center;">$nbsp;</td>
+					<td id = "asib_sol_temp_x_minus_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_sol_temp_x_minus_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_sol_temp_x_minus_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "asib_sol_temp_y_plus_name" style="text-align: center;">$nbsp;</td>
+					<td id = "asib_sol_temp_y_plus_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_sol_temp_y_plus_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_sol_temp_y_plus_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "asib_sol_temp_y_minus_name" style="text-align: center;">$nbsp;</td>
+					<td id = "asib_sol_temp_y_minus_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_sol_temp_y_minus_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_sol_temp_y_minus_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "asib_bus_volts_three_name" style="text-align: center;">$nbsp;</td>
+					<td id = "asib_bus_volts_three_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_bus_volts_three_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_bus_volts_three_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "asib_bus_current_three_name" style="text-align: center;">$nbsp;</td>
+					<td id = "asib_bus_current_three_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_bus_current_three_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_bus_current_three_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "asib_bus_volts_five_name" style="text-align: center;">$nbsp;</td>
+					<td id = "asib_bus_volts_five_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_bus_volts_five_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "asib_bus_volts_five_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
 			</table>
 		</div>
 		<br />
