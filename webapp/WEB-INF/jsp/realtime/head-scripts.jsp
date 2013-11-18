@@ -1,6 +1,7 @@
 <script>
 	var handleRealtime = function (data) {
 		$("#info_seqno").text("Seq. No.: " + data.sequenceNumber);
+		$("#eps_created_date").text("Latest update at: " + data.lastUpdated);
 		$("#eps_sol_volts_x_name").text(data.epsValues[0].name);
 		$("#eps_sol_volts_x_value").text(data.epsValues[0].value);
 		$("#eps_sol_volts_x_min").text(data.epsValues[0].min);

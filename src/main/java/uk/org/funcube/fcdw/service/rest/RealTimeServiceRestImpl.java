@@ -268,7 +268,9 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		swValues.add(new StringPair("Deployment Wait At Next Boot", (softwareState.getC13()) ? "Yes" : "No"));
 		
 		RealTimeInfo realtimeInfo 
-			= new RealTimeInfo(realTime.getSequenceNumber(), epsValues, asibValues, rfValues, paValues, antsValues, swValues);
+			= new RealTimeInfo(realTime.getSequenceNumber(), 
+					SDF.format(createdDate),
+					epsValues, asibValues, rfValues, paValues, antsValues, swValues);
 		
 		return realtimeInfo;
 		

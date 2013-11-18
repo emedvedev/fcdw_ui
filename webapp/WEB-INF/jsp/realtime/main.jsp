@@ -1,8 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%
-   // Set refresh, autoload time as 5 seconds
-   response.setIntHeader("Refresh", 5);
-%>
+
 <h2>Real Time Data</h2>
 <p>
 	This page shows the latest value of all the housekeeping parameters in
@@ -26,7 +23,7 @@
 		<br />
 		<div style="text-align: center">
 			<b>Electrical Power Subsystem</b>
-			<h3 style="text-align: left;">Latest update at: ${createdDate}</h3>
+			<h3 id = "eps_created_date" style="text-align: left;">Latest update at:</h3>
 			<table style="width: 100%;">
 				<tr>
 					<td style="text-align: center;">Name</td>
