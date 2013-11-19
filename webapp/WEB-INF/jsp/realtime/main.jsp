@@ -298,22 +298,41 @@
 		<br />
 		<div style="text-align: center">
 			<b>RF Power Amplifier</b>
-			<h3 style="text-align: left;">Latest update at: ${createdDate}</h3>
+			
+			<h3 id = "pa_created_date" style="text-align: left;">Latest update at:</h3>
 			<table style="width: 100%;">
 				<tr>
-					<td style="text-align: left;">Name</td>
+					<td style="text-align: center;">Name</td>
 					<td style="text-align: center; white-space: nowrap;">Value</td>
 					<td style="text-align: center; white-space: nowrap;">Min.</td>
 					<td style="text-align: center; white-space: nowrap;">Max.</td>
 				</tr>
-				<c:forEach var="o" items="${paValues}">
-					<tr>
-						<td>${o.name}</td>
-						<td style="text-align: center; white-space: nowrap;">${o.value}</td>
-						<td style="text-align: center; white-space: nowrap;">${o.min}</td>
-						<td style="text-align: center; white-space: nowrap;">${o.max}</td>
-					</tr>
-				</c:forEach>
+				<tr>
+					<td id = "pa_forward_power_name" style="text-align: center;">$nbsp;</td>
+					<td id = "pa_forward_power_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "pa_forward_power_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "pa_forward_power_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				<tr>
+					<td id = "pa_reverse_power_name" style="text-align: center;">$nbsp;</td>
+					<td id = "pa_reverse_power_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "pa_reverse_power_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "pa_reverse_power_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "pa_device_temperature_name" style="text-align: center;">$nbsp;</td>
+					<td id = "pa_device_temperature_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "pa_device_temperature_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "pa_device_temperature_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "pa_bus_current_name" style="text-align: center;">$nbsp;</td>
+					<td id = "pa_bus_current_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "pa_bus_current_min" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id = "pa_bus_current_max" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
 			</table>
 		</div>
 		<br />

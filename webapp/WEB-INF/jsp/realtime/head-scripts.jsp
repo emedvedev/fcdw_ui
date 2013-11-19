@@ -135,6 +135,73 @@
 		$("#rf_transmit_current_five_min").text(data.rfValues[5].min);
 		$("#rf_transmit_current_five_max").text(data.rfValues[5].max);
 		
+		$("#pa_created_date").text("Latest update at: " + data.lastUpdated);
+		$("#pa_forward_power_name").text(data.paValues[0].name);
+		$("#pa_forward_power_value").text(data.paValues[0].value);
+		$("#pa_forward_power_min").text(data.paValues[0].min);
+		$("#pa_forward_power_max").text(data.paValues[0].max);
+		$("#pa_reverse_power_name").text(data.paValues[1].name);
+		$("#pa_reverse_power_value").text(data.paValues[1].value);
+		$("#pa_reverse_power_min").text(data.paValues[1].min);
+		$("#pa_reverse_power_max").text(data.paValues[1].max);
+		$("#pa_device_temperature_name").text(data.paValues[2].name);
+		$("#pa_device_temperature_value").text(data.paValues[2].value);
+		$("#pa_device_temperature_min").text(data.paValues[2].min);
+		$("#pa_device_temperature_max").text(data.paValues[2].max);
+		$("#pa_bus_current_name").text(data.paValues[3].name);
+		$("#pa_bus_current_value").text(data.paValues[3].value);
+		$("#pa_bus_current_min").text(data.paValues[3].min);
+		$("#pa_bus_current_max").text(data.paValues[3].max);
+
+		
+		$("#ants_created_date").text("Latest update at: " + data.lastUpdated);
+		$("#ants_temp_zero_name").text(data.antsValues[0].name);
+		$("#ants_temp_zero_value").text(data.antsValues[0].value);
+		$("#ants_temp_one_name").text(data.antsValues[1].name);
+		$("#ants_temp_one_value").text(data.antsValues[1].value);
+		$("#ants_deployment_vhf_a_name").text(data.antsValues[2].name);
+		$("#ants_deployment_vhf_a_value").text(data.antsValues[2].value);
+		$("#ants_deployment_uhf_a_name").text(data.antsValues[3].name);
+		$("#ants_deployment_uhf_a_value").text(data.antsValues[3].value);
+		$("#ants_deployment_vhf_b_name").text(data.antsValues[4].name);
+		$("#ants_deployment_vhf_b_value").text(data.antsValues[4].value);
+		$("#ants_deployment_uhf_b_name").text(data.antsValues[5].name);
+		$("#ants_deployment_uhf_b_value").text(data.antsValues[5].value);
+
+		$("#sw_created_date").text("Latest update at: " + data.lastUpdated);
+		$("#sw_sequence_number_name").text(data.swValues[0].name);
+		$("#sw_sequence_number_value").text(data.swValues[0].value);
+		$("#sw_command_count_name").text(data.swValues[1].name);
+		$("#sw_command_count_value").text(data.swValues[1].value);
+		$("#sw_last_command_name").text(data.swValues[2].name);
+		$("#sw_last_command_value").text(data.swValues[2].value);
+		$("#sw_command_success_name").text(data.swValues[3].name);
+		$("#sw_command_success_value").text(data.swValues[3].value);
+		$("#sw_valid_asib_name").text(data.swValues[4].name);
+		$("#sw_valid_asib_value").text(data.swValues[4].value);
+		$("#sw_valid_eps_name").text(data.swValues[5].name);
+		$("#sw_valid_eps_value").text(data.swValues[5].value);
+		$("#sw_valid_pa_name").text(data.swValues[6].name);
+		$("#sw_valid_pa_value").text(data.swValues[6].value);
+		$("#sw_valid_rf_name").text(data.swValues[7].name);
+		$("#sw_valid_rf_value").text(data.swValues[7].value);
+		$("#sw_valid_mse_name").text(data.swValues[8].name);
+		$("#sw_valid_mse_value").text(data.swValues[8].value);
+		$("#sw_valid_ants_bus_b_name").text(data.swValues[9].name);
+		$("#sw_valid_ants_bus_b_value").text(data.swValues[9].value);
+		$("#sw_valid_ants_bus_a_name").text(data.swValues[10].name);
+		$("#sw_valid_ants_bus_a_value").text(data.swValues[10].value);
+		$("#sw_eclipse_mode_name").text(data.swValues[11].name);
+		$("#sw_eclipse_mode_value").text(data.swValues[11].value);
+		$("#sw_safe_mode_name").text(data.swValues[12].name);
+		$("#sw_safe_mode_value").text(data.swValues[12].value);
+		$("#sw_hardware_abf_name").text(data.swValues[13].name);
+		$("#sw_hardware_abf_value").text(data.swValues[13].value);
+		$("#sw_software_abf_name").text(data.swValues[14].name);
+		$("#sw_software_abf_value").text(data.swValues[14].value);
+		$("#sw_deployment_wait_name").text(data.swValues[15].name);
+		$("#sw_deployment_wait_value").text(data.swValues[15].value);
+		
 		
 	}
 	
