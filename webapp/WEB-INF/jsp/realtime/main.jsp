@@ -22,7 +22,7 @@
 	<div id="tabs-eps">
 		<br />
 		<div style="text-align: center">
-			<b>Electrical Power Subsystem</b>
+			<h3>Electrical Power Subsystem</h3>
 			<h3 id = "eps_created_date" style="text-align: left;">Latest update at:</h3>
 			<table style="width: 100%;">
 				<tr>
@@ -150,7 +150,7 @@
 	<div id="tabs-asib">
 		<br />
 		<div style="text-align: center">
-			<b>Sensor Subsystem</b>
+			<h3>Sensor Subsystem</h3>
 			
 			<h3 id = "asib_created_date" style="text-align: left;">Latest update at:</h3>
 			<table style="width: 100%;">
@@ -238,7 +238,7 @@
 	<div id="tabs-rf">
 		<br />
 		<div style="text-align: center">
-			<b>Communication Subsystem</b>
+			<h3>Communication Subsystem</h3>
 			
 			<h3 id = "rf_created_date" style="text-align: left;">Latest update at:</h3>
 			<table style="width: 100%;">
@@ -297,7 +297,7 @@
 	<div id="tabs-pa">
 		<br />
 		<div style="text-align: center">
-			<b>RF Power Amplifier</b>
+			<h3>RF Power Amplifier</h3>
 			
 			<h3 id = "pa_created_date" style="text-align: left;">Latest update at:</h3>
 			<table style="width: 100%;">
@@ -342,19 +342,42 @@
 	<div id="tabs-ants">
 		<br />
 		<div style="text-align: center">
-			<b>Antenna Subsystem</b>
-			<h3 style="text-align: left;">Latest update at: ${createdDate}</h3>
+			<h3>Antenna Subsystem</h3>
+			
+			<h3 id = "ants_created_date" style="text-align: left;">Latest update at:</h3>
 			<table style="width: 100%;">
 				<tr>
-					<td style="text-align: left;">Name</td>
+					<td style="text-align: center;">Name</td>
 					<td style="text-align: center; white-space: nowrap;">Value</td>
 				</tr>
-				<c:forEach var="o" items="${antsValues}">
-					<tr>
-						<td>${o.name}</td>
-						<td style="text-align: center; white-space: nowrap;">${o.value}</td>
-					</tr>
-				</c:forEach>
+				<tr>
+					<td id = "ants_temp_zero_name" style="text-align: center;">$nbsp;</td>
+					<td id = "ants_temp_zero_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				<tr>
+					<td id = "ants_temp_one_name" style="text-align: center;">$nbsp;</td>
+					<td id = "ants_temp_one_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "ants_deployment_vhf_a_name" style="text-align: center;">$nbsp;</td>
+					<td id = "ants_deployment_vhf_a_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "ants_deployment_vhf_b_name" style="text-align: center;">$nbsp;</td>
+					<td id = "ants_deployment_vhf_b_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "ants_deployment_uhf_a_name" style="text-align: center;">$nbsp;</td>
+					<td id = "ants_deployment_uhf_a_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "ants_deployment_uhf_b_name" style="text-align: center;">$nbsp;</td>
+					<td id = "ants_deployment_uhf_b_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
 			</table>
 		</div>
 		<br />
@@ -364,19 +387,87 @@
 	<div id="tabs-sw">
 		<br />
 		<div style="text-align: center">
-			<b>Software State</b>
-			<h3 style="text-align: left;">Latest update at: ${createdDate}</h3>
+			<h3>Software State</h3>
+			<h3 id = "sw_created_date" style="text-align: left;">Latest update at:</h3>
 			<table style="width: 100%;">
 				<tr>
-					<td style="text-align: left;">Name</td>
+					<td style="text-align: center;">Name</td>
 					<td style="text-align: center; white-space: nowrap;">Value</td>
 				</tr>
-				<c:forEach var="o" items="${swValues}">
-					<tr>
-						<td>${o.name}</td>
-						<td style="text-align: center; white-space: nowrap;">${o.value}</td>
-					</tr>
-				</c:forEach>
+				<tr>
+					<td id = "sw_sequence_number_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_sequence_number_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				<tr>
+					<td id = "sw_command_count_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_command_count_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "sw_last_command_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_last_command_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "sw_command_success_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_command_success_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "sw_valid_asib_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_valid_asib_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "sw_valid_eps_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_valid_eps_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				<tr>
+					<td id = "sw_valid_pa_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_valid_pa_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				<tr>
+					<td id = "sw_valid_rf_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_valid_rf_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "sw_valid_mse_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_valid_mse_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "sw_valid_ants_bus_a_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_valid_ants_bus_a_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "sw_valid_ants_bus_b_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_valid_ants_bus_b_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "sw_eclipse_mode_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_eclipse_mode_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				<tr>
+					<td id = "sw_safe_mode_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_safe_mode_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				<tr>
+					<td id = "sw_hardware_abf_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_hardware_abf_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "sw_software_abf_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_software_abf_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td id = "sw_deployment_wait_name" style="text-align: center;">$nbsp;</td>
+					<td id = "sw_deployment_wait_value" style="text-align: center; white-space: nowrap;">$nbsp;</td>
+				</tr>
 			</table>
 		</div>
 		<br />
