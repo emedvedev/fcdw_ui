@@ -125,16 +125,11 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 						</ul>
 					</li>
 				</sec:authorize>
-				<c:if test="${fn:length(siteList) > 0}">
-					<li>
-						<h2>Data Providers</h2>
-						<ul>
-							<c:forEach var="site" items="${siteList}">
-								<li>${site}</li>
-							</c:forEach>
-						</ul>
-					</li>
-				</c:if>
+				<li>
+					<h2>Data Providers</h2>
+					<ul id="site_list">
+					</ul>
+				</li>
 				<li>
 					<h2>Warehouse Info</h2>
 					<ul>

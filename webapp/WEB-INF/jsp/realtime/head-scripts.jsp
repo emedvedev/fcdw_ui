@@ -202,6 +202,13 @@
 		$("#sw_deployment_wait_name").text(data.swValues[15].name);
 		$("#sw_deployment_wait_value").text(data.swValues[15].value);
 		
+		$("#site_list").html('');
+	    var items = [];
+	    $.each(data.siteList, function (id, site) {
+	        items.push('<li>' + site + '</li>');
+	    });  
+	    $("#site_list").append(items.join(''));
+		
 		
 	}
 	

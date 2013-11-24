@@ -1,5 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <h2>Current Satellite Position <strong>DEMO</strong></h2>
+<h3><strong>We have had to temporarily remove this feature because of mixed 
+content (https/http) problems</strong></h3>
+<!--
 <p>The orbit shown here is based on the pre-launch keplerian elements. It will
 be updated as soon as we get a definitive set from NORAD</p>
 <p>If you are using Chrome and no map appears, please click on the shield in the browser bar for options.</p> 
@@ -8,3 +11,4 @@ be updated as soon as we get a definitive set from NORAD</p>
 <p><strong>We are indebted to Chip, N2YO for the supply of this functionality. 
 For more information on this widget and his other web based tracking activites,
 please click on the link on the map.</strong></p>
+-->

@@ -147,19 +147,19 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		
 		minValue = format("%4d", minMaxValues.get(6).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(6).getMaximum());
-		epsValues.add(new ValMinMax("Boost Converter Temp X", String.format(TEMPERATURE_FORMAT, eps.getC9()), minValue, maxValue));
+		epsValues.add(new ValMinMax("Boost Converter Temp X", String.format(TEMPERATURE_FORMAT, unWrap(eps.getC9(), 20)), minValue, maxValue));
 		
 		minValue = format("%4d", minMaxValues.get(7).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(7).getMaximum());
-		epsValues.add(new ValMinMax("Boost Converter Temp Y", String.format(TEMPERATURE_FORMAT, eps.getC10()), minValue, maxValue));
+		epsValues.add(new ValMinMax("Boost Converter Temp Y", String.format(TEMPERATURE_FORMAT, unWrap(eps.getC10(), 20)), minValue, maxValue));
 		
 		minValue = format("%4d", minMaxValues.get(8).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(8).getMaximum());
-		epsValues.add(new ValMinMax("Boost Converter Temp Z", String.format(TEMPERATURE_FORMAT, eps.getC11()), minValue, maxValue));
+		epsValues.add(new ValMinMax("Boost Converter Temp Z", String.format(TEMPERATURE_FORMAT, unWrap(eps.getC11(), 20)), minValue, maxValue));
 		
 		minValue = format("%4d", minMaxValues.get(9).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(9).getMaximum());
-		epsValues.add(new ValMinMax("Battery Temp", String.format(TEMPERATURE_FORMAT, eps.getC12()), minValue, maxValue));
+		epsValues.add(new ValMinMax("Battery Temp", String.format(TEMPERATURE_FORMAT, unWrap(eps.getC12(),10)), minValue, maxValue));
 		
 		epsValues.add(new ValMinMax("Latch Up Count 5v1", String.format("%4d", eps.getC13()), N_A, N_A));
 		epsValues.add(new ValMinMax("Latch Up Count 3.3v1", String.format("%4d", eps.getC14()), N_A, N_A));
@@ -270,10 +270,20 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		RealTimeInfo realtimeInfo 
 			= new RealTimeInfo(realTime.getSequenceNumber(), 
 					SDF.format(createdDate),
-					epsValues, asibValues, rfValues, paValues, antsValues, swValues);
+					epsValues, asibValues, rfValues, paValues, antsValues, swValues,
+					siteList);
 		
 		return realtimeInfo;
 		
+	}
+
+	private Long unWrap(Long value, int i) {
+		
+		if (value > 255 - i) {
+			return value - 255;
+		}
+		
+		return value;
 	}
 
 	private String scaleOffsetAndFormat(String format, Long value, double multiplier,

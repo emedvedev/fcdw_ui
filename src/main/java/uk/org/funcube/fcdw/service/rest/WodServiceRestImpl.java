@@ -6,8 +6,6 @@
 
 package uk.org.funcube.fcdw.service.rest;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import uk.org.funcube.fcdw.server.dao.WholeOrbitDataDao;
 import uk.org.funcube.fcdw.server.model.WODEntity;
-import uk.org.funcube.fcdw.server.shared.WodData;
-import uk.org.funcube.fcdw.server.shared.WodElement;
+import uk.org.funcube.fcdw.server.shared.DataElement;
 import uk.org.funcube.fcdw.server.shared.WodJson;
 
 
@@ -43,41 +40,41 @@ public class WodServiceRestImpl {
 
 		WodJson wodJson = new WodJson();
 		
-		WodElement channel1 = new WodElement("Channel1");
+		DataElement channel1 = new DataElement("Channel1");
 		wodJson.addElement(channel1);
-		WodElement channel2 = new WodElement("Channel2");
+		DataElement channel2 = new DataElement("Channel2");
 		wodJson.addElement(channel2);
-		WodElement channel3 = new WodElement("Channel3");
+		DataElement channel3 = new DataElement("Channel3");
 		wodJson.addElement(channel3);
-		WodElement channel4 = new WodElement("Channel4");
+		DataElement channel4 = new DataElement("Channel4");
 		wodJson.addElement(channel4);
-		WodElement channel5 = new WodElement("Channel5");
+		DataElement channel5 = new DataElement("Channel5");
 		wodJson.addElement(channel5);
-		WodElement channel6 = new WodElement("Channel6");
+		DataElement channel6 = new DataElement("Channel6");
 		wodJson.addElement(channel6);
-		WodElement channel7 = new WodElement("Channel7");
+		DataElement channel7 = new DataElement("Channel7");
 		wodJson.addElement(channel7);
-		WodElement channel8 = new WodElement("Channel8");
+		DataElement channel8 = new DataElement("Channel8");
 		wodJson.addElement(channel8);
-		WodElement channel9 = new WodElement("Channel9");
+		DataElement channel9 = new DataElement("Channel9");
 		wodJson.addElement(channel9);
-		WodElement channel10 = new WodElement("Channel10");
+		DataElement channel10 = new DataElement("Channel10");
 		wodJson.addElement(channel10);
-		WodElement channel11 = new WodElement("Channel11");
+		DataElement channel11 = new DataElement("Channel11");
 		wodJson.addElement(channel11);
-		WodElement channel12 = new WodElement("Channel12");
+		DataElement channel12 = new DataElement("Channel12");
 		wodJson.addElement(channel12);
-		WodElement channel13 = new WodElement("Channel13");
+		DataElement channel13 = new DataElement("Channel13");
 		wodJson.addElement(channel13);
-		WodElement channel14 = new WodElement("Channel14");
+		DataElement channel14 = new DataElement("Channel14");
 		wodJson.addElement(channel8);
 		
-		List<WodData> wodData = new ArrayList<WodData>();
+
 		
 		List<WODEntity> latestOrbit = wholeOrbitDataDao.getLatestOrbit(satelliteId);
 		
 		for (WODEntity wodEntity : latestOrbit) {
-			Long timeStamp = wodEntity.getCreatedDate().getTime();
+			
 			for (int i = 0; i < 14; i++) {
 				switch (i) {
 				case 0: 

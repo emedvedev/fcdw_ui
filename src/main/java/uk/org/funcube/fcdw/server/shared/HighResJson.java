@@ -2,11 +2,11 @@ package uk.org.funcube.fcdw.server.shared;
 
 import java.util.LinkedList;
 
-public class WodJson {
+public class HighResJson {
 	
 	private LinkedList series = new LinkedList();
 	
-	public WodJson() {
+	public HighResJson() {
 		
 	}
 	

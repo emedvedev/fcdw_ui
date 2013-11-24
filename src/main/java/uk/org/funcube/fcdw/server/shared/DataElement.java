@@ -2,14 +2,14 @@ package uk.org.funcube.fcdw.server.shared;
 
 import java.util.LinkedList;
 
-public class WodElement {
+public class DataElement {
 	
 	private String name;
 	
 	@SuppressWarnings("rawtypes")
 	private LinkedList data = new LinkedList();
 
-	public WodElement(String name) {
+	public DataElement(String name) {
 		this.name = name;
 	}
 	

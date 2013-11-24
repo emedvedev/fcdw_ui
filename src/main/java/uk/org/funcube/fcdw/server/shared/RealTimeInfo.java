@@ -13,10 +13,12 @@ public class RealTimeInfo {
 	List<StringPair> swValues = new ArrayList<StringPair>();
 	private Long sequenceNumber;
 	private String lastUpdated;
+	private List<String> siteList;
 	
 	public RealTimeInfo(Long sequenceNumber, String lastUpdated, List<ValMinMax> epsValues, List<ValMinMax> asibValues,
 			List<ValMinMax> rfValues, List<ValMinMax> paValues,
-			List<StringPair> antsValues, List<StringPair> swValues) {
+			List<StringPair> antsValues, List<StringPair> swValues,
+			List<String>siteList) {
 		super();
 		this.sequenceNumber = sequenceNumber;
 		this.lastUpdated = lastUpdated;
@@ -26,6 +28,7 @@ public class RealTimeInfo {
 		this.paValues = paValues;
 		this.antsValues = antsValues;
 		this.swValues = swValues;
+		this.siteList = siteList;
 	}
 
 	public RealTimeInfo() {
@@ -61,6 +64,10 @@ public class RealTimeInfo {
 
 	public final String getLastUpdated() {
 		return lastUpdated;
+	}
+
+	public final List<String> getSiteList() {
+		return siteList;
 	}
 
 }
