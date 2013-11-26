@@ -230,9 +230,6 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		minValue = format("%4d", (long)getPaTemp(minMaxValues.get(23).getMinimum()));
 		maxValue = format("%4d", (long)getPaTemp(minMaxValues.get(23).getMaximum()));
 		
-		LOGGER.debug("PA Temp Raw min / max: " + minMaxValues.get(23).getMinimum() + ", " + minMaxValues.get(23).getMaximum());
-		LOGGER.debug("PA Temp Calculated min / max: " + minValue + ", " + maxValue);
-		
 		paValues.add(new ValMinMax("Device Temperature", String.format(PA_TEMPERATURE_FORMAT, getPaTemp(rf.getC9().intValue())), maxValue, minValue));
 		
 		minValue = format("%4d", (long)getPaCurrent(minMaxValues.get(24).getMinimum()));

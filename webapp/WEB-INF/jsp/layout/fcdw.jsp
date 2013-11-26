@@ -46,22 +46,16 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 	type="text/javascript"></script>
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/css/jquery-ui-1.8.16.css'/>" />
+	
+<script
+	src="<c:url value='/js/highcharts.js'/>"
+	type="text/javascript"></script>
+<script
+	src="<c:url value='/js/exporting.js'/>"
+	type="text/javascript"></script>
 
 <link rel="stylesheet" type="text/css" media="screen"
 	href="<c:url value='/css/fcdw.css'/>">
-
-<script type="text/javascript">
-	$(function() {
-		$('#tabs').tabs();
-	});
-</script>
-
-<script>
-	$(document).ready(function(){
-		refreshDiv();
-	    setInterval(refreshDiv, 10000); 
-	});
-</script>
 
 <tiles:insertAttribute name="head-scripts" />
 
@@ -94,7 +88,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 							<c:when test="${satelliteId == null}">
 								<li><a href="<c:url value='/realtime.html?satelliteId=2'/>">Real Time Data</a></li>
 								<li>High Resolution Data</li>
-								<li>Whole Orbit Data</li>
+								<li><a href="<c:url value='/wod.html?satelliteId=2'/>">Whole Orbit Data</a></li></li>
 								<li><a href="<c:url value='/fitter.html?satelliteId=2'/>">Fitter Messages</a></li>
 								<li><a href="<c:url value='/radio.html?satelliteId=2'/>">Amateur Radio Info</a></li>
 								<li>Observer Map</li>
@@ -105,7 +99,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 							<c:otherwise>
 								<li><a href="<c:url value='/realtime.html?satelliteId=${satelliteId}'/>">Real Time Data</a></li>
 								<li>High Resolution Data</li>
-								<li>Whole Orbit Data</li>
+								<li><a href="<c:url value='/wod.html?satelliteId=${satelliteId}'/>">Whole Orbit Data</a></li>
 								<li><a href="<c:url value='/fitter.html?satelliteId=${satelliteId}'/>">Fitter Messages</a></li>
 								<li><a href="<c:url value='/radio.html?satelliteId=${satelliteId}'/>">Amateur Radio Info</a></li>
 								<li>Observer Map</li>

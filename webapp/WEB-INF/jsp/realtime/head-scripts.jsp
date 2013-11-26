@@ -1,3 +1,16 @@
+<script type="text/javascript">
+	$(function() {
+		$('#tabs').tabs();
+	});
+</script>
+
+<script>
+	$(document).ready(function(){
+		refreshDiv();
+	    setInterval(refreshDiv, 10000); 
+	});
+</script>
+
 <script>
 	var handleRealtime = function (data) {
 		$("#info_seqno").text("Seq. No.: " + data.sequenceNumber);
