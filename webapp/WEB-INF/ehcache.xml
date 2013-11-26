@@ -35,7 +35,7 @@
 		diskPersistent="false" diskExpiryThreadIntervalSeconds="120" />
 	
 	<cache name="userRanking" 
-	    maxElementsInMemory="100"  eternal="false"
+	    maxElementsInMemory="300"  eternal="false"
 		overflowToDisk="false" timeToIdleSeconds="10" timeToLiveSeconds="10"
 		diskPersistent="false" diskExpiryThreadIntervalSeconds="10"  />
 	

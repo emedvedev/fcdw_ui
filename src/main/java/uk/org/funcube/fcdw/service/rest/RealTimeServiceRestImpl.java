@@ -227,12 +227,16 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		paValues.add(new ValMinMax("Forward Power", String.format(PA_MILLI_WATT_FORMAT, getPaPower(rf.getC8())), N_A, N_A));
 		paValues.add(new ValMinMax("Reverse Power", String.format(PA_MILLI_WATT_FORMAT, getPaPower(rf.getC7())), N_A, N_A));
 
-		minValue = format("%4d", (long)getPaTemp(minMaxValues.get(21).getMinimum()));
-		maxValue = format("%4d", (long)getPaTemp(minMaxValues.get(21).getMaximum()));
+		minValue = format("%4d", (long)getPaTemp(minMaxValues.get(23).getMinimum()));
+		maxValue = format("%4d", (long)getPaTemp(minMaxValues.get(23).getMaximum()));
+		
+		LOGGER.debug("PA Temp Raw min / max: " + minMaxValues.get(23).getMinimum() + ", " + minMaxValues.get(23).getMaximum());
+		LOGGER.debug("PA Temp Calculated min / max: " + minValue + ", " + maxValue);
+		
 		paValues.add(new ValMinMax("Device Temperature", String.format(PA_TEMPERATURE_FORMAT, getPaTemp(rf.getC9().intValue())), maxValue, minValue));
 		
-		minValue = format("%4d", (long)getPaCurrent(minMaxValues.get(22).getMinimum()));
-		maxValue = format("%4d", (long)getPaCurrent(minMaxValues.get(22).getMaximum()));
+		minValue = format("%4d", (long)getPaCurrent(minMaxValues.get(24).getMinimum()));
+		maxValue = format("%4d", (long)getPaCurrent(minMaxValues.get(24).getMaximum()));
 		paValues.add(new ValMinMax("Bus Current", String.format(PA_MILLI_AMPS_FORMAT, getPaCurrent(rf.getC10())), minValue, maxValue));
 
 		Antenna antenna = realTime.getAntenna();
