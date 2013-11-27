@@ -40,34 +40,34 @@ public class WodServiceRestImpl {
 
 		WodJson wodJson = new WodJson();
 		
-		DataElement channel1 = new DataElement("Channel1");
+		DataElement channel1 = new DataElement("Black Chassis");
 		wodJson.addElement(channel1);
-		DataElement channel2 = new DataElement("Channel2");
+		DataElement channel2 = new DataElement("Silver Chassis");
 		wodJson.addElement(channel2);
-		DataElement channel3 = new DataElement("Channel3");
+		DataElement channel3 = new DataElement("Black Panel");
 		wodJson.addElement(channel3);
-		DataElement channel4 = new DataElement("Channel4");
+		DataElement channel4 = new DataElement("Silver Panel");
 		wodJson.addElement(channel4);
-		DataElement channel5 = new DataElement("Channel5");
+		DataElement channel5 = new DataElement("Solar Panel +X");
 		wodJson.addElement(channel5);
-		DataElement channel6 = new DataElement("Channel6");
+		DataElement channel6 = new DataElement("Solar Panel -X");
 		wodJson.addElement(channel6);
-		DataElement channel7 = new DataElement("Channel7");
+		DataElement channel7 = new DataElement("Solar Panel +Y");
 		wodJson.addElement(channel7);
-		DataElement channel8 = new DataElement("Channel8");
+		DataElement channel8 = new DataElement("Solar Panel -Y");
 		wodJson.addElement(channel8);
-		DataElement channel9 = new DataElement("Channel9");
+		DataElement channel9 = new DataElement("PV 1");
 		wodJson.addElement(channel9);
-		DataElement channel10 = new DataElement("Channel10");
+		DataElement channel10 = new DataElement("PV 2");
 		wodJson.addElement(channel10);
-		DataElement channel11 = new DataElement("Channel11");
+		DataElement channel11 = new DataElement("PV 3");
 		wodJson.addElement(channel11);
-		DataElement channel12 = new DataElement("Channel12");
+		DataElement channel12 = new DataElement("Tot. Photo Curr.");
 		wodJson.addElement(channel12);
-		DataElement channel13 = new DataElement("Channel13");
+		DataElement channel13 = new DataElement("Battery Volts");
 		wodJson.addElement(channel13);
-		DataElement channel14 = new DataElement("Channel14");
-		wodJson.addElement(channel8);
+		DataElement channel14 = new DataElement("Total Sys. Curr");
+		wodJson.addElement(channel14);
 		
 
 		
@@ -76,48 +76,49 @@ public class WodServiceRestImpl {
 		for (WODEntity wodEntity : latestOrbit) {
 			
 			for (int i = 0; i < 14; i++) {
+				
 				switch (i) {
 				case 0: 
-					channel1.addDatum(new Double(wodEntity.getC1()));
+					channel1.addDatum(scale(wodEntity.getC1(), -0.024, 75.244));
 					break;
 				case 1: 
-					channel2.addDatum(new Double(wodEntity.getC2()));
+					channel2.addDatum(scale(wodEntity.getC2(), -0.024, 74.750));
 					break;
 				case 2: 
-					channel3.addDatum(new Double(wodEntity.getC3()));
+					channel3.addDatum(scale(wodEntity.getC3(), -0.024, 75.039));
 					break;
 				case 3: 
-					channel4.addDatum(new Double(wodEntity.getC4()));
+					channel4.addDatum(scale(wodEntity.getC4(), -0.024, 75.987));
 					break;
 				case 4: 
-					channel5.addDatum(new Double(wodEntity.getC5()));
+					channel5.addDatum(scale(wodEntity.getC5(), -0.2073, 158.239));
 					break;
 				case 5: 
-					channel6.addDatum(new Double(wodEntity.getC6()));
+					channel6.addDatum(scale(wodEntity.getC6(), -0.2083, 159.227));
 					break;
 				case 6: 
-					channel7.addDatum(new Double(wodEntity.getC7()));
+					channel7.addDatum(scale(wodEntity.getC7(), -0.2076, 158.656));
 					break;
 				case 7: 
-					channel8.addDatum(new Double(wodEntity.getC8()));
+					channel8.addDatum(scale(wodEntity.getC8(), -0.2087, 159.045));
 					break;
 				case 8: 
-					channel9.addDatum(new Double(wodEntity.getC9()));
+					channel9.addDatum(scale(wodEntity.getC9(), 0.001, 0.0));
 					break;
 				case 9: 
-					channel10.addDatum(new Double(wodEntity.getC10()));
+					channel10.addDatum(scale(wodEntity.getC10(), 0.001, 0.0));
 					break;
 				case 10: 
-					channel11.addDatum(new Double(wodEntity.getC11()));
+					channel11.addDatum(scale(wodEntity.getC11(), 0.001, 0.0));
 					break;
 				case 11: 
-					channel12.addDatum(new Double(wodEntity.getC12()));
+					channel12.addDatum(scale(wodEntity.getC12(), 0.01, 0.0));
 					break;
 				case 12: 
-					channel13.addDatum(new Double(wodEntity.getC13()));
+					channel13.addDatum(scale(wodEntity.getC13(), 0.001, 0.0));
 					break;
 				case 13: 
-					channel14.addDatum(new Double(wodEntity.getC14()));
+					channel14.addDatum(scale(wodEntity.getC14(), 0.01, 0.0));
 					break;
 				}
 				
@@ -129,6 +130,13 @@ public class WodServiceRestImpl {
 		
 	}
 	
+
+	private Double scale(Long adc, Double multiplier, Double offset) {
+		double value = (adc * multiplier) + offset;
+		String twoDP = String.format("%6.2f", value);
+		return new Double(twoDP);
+	}
+
 
 	private HttpHeaders addAccessControllAllowOrigin() {
 		HttpHeaders headers = new HttpHeaders();

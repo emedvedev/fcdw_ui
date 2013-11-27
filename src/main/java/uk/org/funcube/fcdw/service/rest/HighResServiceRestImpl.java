@@ -39,26 +39,20 @@ public class HighResServiceRestImpl {
 
 		HighResJson highResJson = new HighResJson();
 		
-		DataElement channel1 = new DataElement("Channel1");
+		DataElement channel1 = new DataElement("Sun Sensor +X");
 		highResJson.addElement(channel1);
-		DataElement channel2 = new DataElement("Channel2");
+		DataElement channel2 = new DataElement("Sun Sensor +Y");
 		highResJson.addElement(channel2);
-		DataElement channel3 = new DataElement("Channel3");
+		DataElement channel3 = new DataElement("Sun Sensor -Y");
 		highResJson.addElement(channel3);
-		DataElement channel4 = new DataElement("Channel4");
+		DataElement channel4 = new DataElement("Sun Sensor +Z");
 		highResJson.addElement(channel4);
-		DataElement channel5 = new DataElement("Channel5");
+		DataElement channel5 = new DataElement("Sun Sensor -Z");
 		highResJson.addElement(channel5);
-		DataElement channel6 = new DataElement("Channel6");
+		DataElement channel6 = new DataElement("Total Photo Current");
 		highResJson.addElement(channel6);
-		DataElement channel7 = new DataElement("Channel7");
+		DataElement channel7 = new DataElement("Batteryy Volts");
 		highResJson.addElement(channel7);
-		DataElement channel8 = new DataElement("Channel8");
-		highResJson.addElement(channel8);
-		DataElement channel9 = new DataElement("Channel9");
-		highResJson.addElement(channel9);
-		DataElement channel10 = new DataElement("Channel10");
-		highResJson.addElement(channel10);
 		
 		List<HPEntity> latestOrbit = highResolutionDao.getLatestSixtySeconds(satelliteId);
 		
@@ -86,14 +80,6 @@ public class HighResServiceRestImpl {
 				case 6: 
 					channel7.addDatum(new Double(highResEntity.getC7()));
 					break;
-				case 7: 
-					channel8.addDatum(new Double(highResEntity.getC8()));
-					break;
-				case 8: 
-					channel9.addDatum(new Double(highResEntity.getC9()));
-					break;
-				case 9: 
-					channel10.addDatum(new Double(highResEntity.getC10()));
 				}
 			}
 		}
