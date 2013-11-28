@@ -28,6 +28,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="PRAGMA" content="NO-CACHE">
 
 <meta name="keywords"
 	content="funcube, live tracking, current position, ham radio, amateur radio, passes prediction, mission data, telemetry, beacon, space center, amsat-uk, amsat-nl" />
@@ -142,4 +143,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 		<tiles:insertAttribute name="footer" />
 	</div>
 </body>
+<head>
+	<meta http-equiv="PRAGMA" content="NO-CACHE">
+</head>
 </html>
