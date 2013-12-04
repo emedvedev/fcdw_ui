@@ -33,6 +33,7 @@ public class WODEntity extends AbstractEntity implements WOD {
 	private long sequenceNumber;
 	private long frameNumber;
 	private Date createdDate;
+	private Date satelliteTime;
 
 	private long c1;
 	private long c2;
@@ -310,5 +311,13 @@ public class WODEntity extends AbstractEntity implements WOD {
 
 	public void setSequenceNumber(long sequenceNumber) {
 		this.sequenceNumber = sequenceNumber;
+	}
+
+	public final Date getSatelliteTime() {
+		return satelliteTime;
+	}
+
+	public final void setSatelliteTime(Date satelliteTime) {
+		this.satelliteTime = satelliteTime;
 	}
 }

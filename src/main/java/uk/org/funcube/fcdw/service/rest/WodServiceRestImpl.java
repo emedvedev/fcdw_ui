@@ -6,6 +6,7 @@
 
 package uk.org.funcube.fcdw.service.rest;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import uk.org.funcube.fcdw.server.clock.UTCClock;
 import uk.org.funcube.fcdw.server.dao.WholeOrbitDataDao;
 import uk.org.funcube.fcdw.server.model.WODEntity;
 import uk.org.funcube.fcdw.server.shared.DataElement;
@@ -29,6 +31,9 @@ public class WodServiceRestImpl {
 	
 	@Autowired
 	WholeOrbitDataDao wholeOrbitDataDao;
+	
+	@Autowired
+	UTCClock utcClock;
 	
 	// get all data for one orbit for a given satellite
 	@Transactional(readOnly = true)
@@ -69,7 +74,14 @@ public class WodServiceRestImpl {
 		DataElement channel14 = new DataElement("Total Sys. Curr");
 		wodJson.addElement(channel14);
 		
-
+		long currentTime = utcClock.currentTime();
+		long oneHourAgo = currentTime - (60 * 60 * 1000);
+		
+//		List<WODEntity> latestItem = wholeOrbitDataDao.getLastItem(satelliteId);
+//		
+//		Date satelliteTime = latestItem.get(0).getSatelliteTime();
+//		
+//		List<WODEntity> latestOrbit = wholeOrbitDataDao.getSince(satelliteId, new Date(satelliteTime.getTime() - (104 * 60 * 1000)));
 		
 		List<WODEntity> latestOrbit = wholeOrbitDataDao.getLatestOrbit(satelliteId);
 		
@@ -130,6 +142,12 @@ public class WodServiceRestImpl {
 		
 	}
 	
+
+	private void getLastItem(Long satelliteId) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 	private Double scale(Long adc, Double multiplier, Double offset) {
 		double value = (adc * multiplier) + offset;

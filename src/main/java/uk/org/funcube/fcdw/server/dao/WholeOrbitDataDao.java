@@ -6,6 +6,7 @@
 
 package uk.org.funcube.fcdw.server.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import uk.org.funcube.fcdw.server.model.WOD;
@@ -20,6 +21,10 @@ public interface WholeOrbitDataDao extends DataAccessObject<WOD, Long> {
 
 	void saveOrUpdate(WOD wholeOrbitData);
 
-	List<WODEntity> getLatestOrbit(long satelliteId);
+	List<WODEntity> getSince(long satelliteId, Date satelliteTime);
+
+	List<WODEntity>  getLastItem(long satelliteId);
+
+	List<WODEntity> getLatestOrbit(Long satelliteId);
 
 }

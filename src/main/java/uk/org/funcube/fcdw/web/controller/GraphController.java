@@ -46,7 +46,7 @@ public class GraphController {
 	@RequestMapping(value = "/wod", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public List<WODEntity> listWOD() {
-		return (List<WODEntity>) wholeOrbitDataDao.getLatestOrbit(0);
+		return (List<WODEntity>) wholeOrbitDataDao.getLatestOrbit(2L);
 	}
 
 }

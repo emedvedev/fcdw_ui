@@ -252,9 +252,9 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		SoftwareState softwareState = realTime.getSoftwareState();
 
 		swValues.add(new StringPair("Sequence Number", String.format("%10d", realTime.getSequenceNumber())));
-		swValues.add(new StringPair("DTMF Command Count", String.format("%10d", dtmf.getCommandCount())));
-		swValues.add(new StringPair("DTMF Last Command", getLastDTMFCommand((int) dtmf.getLastCommand())));
-		swValues.add(new StringPair("DTMF Command Success", (softwareState.getC1()) ? "Yes" : "No"));
+		swValues.add(new StringPair("Command Count", String.format("%10d", dtmf.getCommandCount())));
+		swValues.add(new StringPair("Last Command", getLastDTMFCommand((int) dtmf.getLastCommand())));
+		swValues.add(new StringPair("Command Success", (softwareState.getC1()) ? "Yes" : "No"));
 		swValues.add(new StringPair("Data Valid ASIB", (softwareState.getC2()) ? "Yes" : "No"));
 		swValues.add(new StringPair("Data Valid EPS", (softwareState.getC3()) ? "Yes" : "No"));
 		swValues.add(new StringPair("Data Valid PA", (softwareState.getC4()) ? "Yes" : "No"));

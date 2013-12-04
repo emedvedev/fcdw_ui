@@ -6,6 +6,8 @@
 
 package uk.org.funcube.fcdw.server.dao.impl;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,18 +45,48 @@ public class WholeOrbitDataDaoImpl extends AbstractDataAccessObject<WOD, WODEnti
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<WODEntity> getLatestOrbit(long satelliteId) {
+	public List<WODEntity> getSince(long satelliteId, Date satelliteTime) {
 		final Query query = getEntityManager().createQuery(
 				"SELECT wod FROM WODEntity wod where wod.satelliteId = :satelliteId "
-						+ "order by wod.sequenceNumber desc, wod.frameNumber asc");
+						+ " and satelliteTime > :satelliteTime");
 		query.setParameter("satelliteId", satelliteId);
-		query.setMaxResults(104);
+		query.setParameter("satelliteTime", satelliteTime);
+		return query.getResultList();
+	}
+	
+	@Override
+	public List<WODEntity> getLastItem(long satelliteId) {
+		
+		// get the last item
+		Query query = getEntityManager().createQuery(
+				"select max(wod.id) from WODEntity wod where wod.satelliteId = :satelliteId");
+		query.setParameter("satelliteId", satelliteId);
+		Long id = (Long) query.getSingleResult();
+		
+		query = getEntityManager().createQuery(
+				"SELECT wod FROM WODEntity wod where wod.id = :id ");
+		query.setParameter("id", id);		
 		return query.getResultList();
 	}
 
 	@Override
 	public void saveOrUpdate(final WOD wholeOrbitData) {
 		super.save(wholeOrbitData);
+	}
+	
+	@Override
+	public List<WODEntity> getLatestOrbit(Long satelliteId) {
+		
+		// get the last item
+		Query query = getEntityManager().createQuery(
+				"select max(wod.id) from WODEntity wod where wod.satelliteId = :satelliteId");
+		query.setParameter("satelliteId", satelliteId);
+		Long id = (Long) query.getSingleResult();
+		
+		query = getEntityManager().createQuery(
+				"SELECT wod FROM WODEntity wod where wod.id > :id ");
+		query.setParameter("id", id - 104);		
+		return query.getResultList();
 	}
 
 }
