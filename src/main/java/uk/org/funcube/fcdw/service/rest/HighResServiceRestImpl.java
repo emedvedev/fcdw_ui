@@ -51,7 +51,7 @@ public class HighResServiceRestImpl {
 		highResJson.addElement(channel5);
 		DataElement channel6 = new DataElement("Total Photo Current");
 		highResJson.addElement(channel6);
-		DataElement channel7 = new DataElement("Batteryy Volts");
+		DataElement channel7 = new DataElement("Battery Volts");
 		highResJson.addElement(channel7);
 		
 		List<HPEntity> latestOrbit = highResolutionDao.getLatestSixtySeconds(satelliteId);

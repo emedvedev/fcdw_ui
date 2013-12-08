@@ -204,7 +204,7 @@ public class RealTimeServiceRestImpl extends AbstractService {
 
 		RF rf = realTime.getRF();
 
-		rfValues.add(new ValMinMax("Receiver Doppler", String.format("%4d kHz", rf.getC1()), N_A, N_A));
+		rfValues.add(new ValMinMax("Receiver Doppler", String.format("%4d", rf.getC1()), N_A, N_A));
 		rfValues.add(new ValMinMax("Receiver RSSI", String.format("%4d", rf.getC2()), N_A, N_A));
 		
 		minValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(19).getMinimum(), -0.857, 193.672);		
