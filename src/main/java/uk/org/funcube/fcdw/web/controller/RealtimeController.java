@@ -207,32 +207,32 @@ public class RealtimeController extends AbstractService {
 		rfValues.add(new ValMinMax("Receiver Doppler", String.format("%4d kHz", rf.getC1()), N_A, N_A));
 		rfValues.add(new ValMinMax("Receiver RSSI", String.format("%4d", rf.getC2()), N_A, N_A));
 		
-		minValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(19).getMinimum(), -0.857, 193.672);		
-		maxValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(19).getMaximum(), -0.857, 193.672);
+		minValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(17).getMinimum(), -0.857, 193.672);		
+		maxValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(17).getMaximum(), -0.857, 193.672);
 		rfValues.add(new ValMinMax("Temperature", String.format(SOL_TEMPERATURE_FORMAT, scaleAndOffset(rf.getC3(), -0.857, 193.672)), maxValue, minValue));
 
 
-		minValue = format("%4d", minMaxValues.get(20).getMinimum());
-		maxValue = format("%4d", minMaxValues.get(20).getMaximum());
+		minValue = format("%4d", minMaxValues.get(18).getMinimum());
+		maxValue = format("%4d", minMaxValues.get(18).getMaximum());
 		rfValues.add(new ValMinMax("Receive Current", String.format(MILLI_AMPS_FORMAT, rf.getC4()), minValue, maxValue));
 
-		minValue = format("%4d", minMaxValues.get(21).getMinimum());
-		maxValue = format("%4d", minMaxValues.get(21).getMaximum());
+		minValue = format("%4d", minMaxValues.get(19).getMinimum());
+		maxValue = format("%4d", minMaxValues.get(19).getMaximum());
 		rfValues.add(new ValMinMax("Transmit Current 3.3V bus", String.format(MILLI_AMPS_FORMAT, rf.getC5()), minValue, maxValue));
 
-		minValue = format("%4d", minMaxValues.get(22).getMinimum());
-		maxValue = format("%4d", minMaxValues.get(22).getMaximum());
+		minValue = format("%4d", minMaxValues.get(20).getMinimum());
+		maxValue = format("%4d", minMaxValues.get(20).getMaximum());
 		rfValues.add(new ValMinMax("Transmit Current 5.0V bus", String.format(MILLI_AMPS_FORMAT, rf.getC6()), minValue, maxValue));
 
 		paValues.add(new ValMinMax("Forward Power", String.format(PA_MILLI_WATT_FORMAT, getPaPower(rf.getC8())), N_A, N_A));
 		paValues.add(new ValMinMax("Reverse Power", String.format(PA_MILLI_WATT_FORMAT, getPaPower(rf.getC7())), N_A, N_A));
 
-		minValue = format("%4d", (long)getPaTemp(minMaxValues.get(21).getMinimum()));
-		maxValue = format("%4d", (long)getPaTemp(minMaxValues.get(21).getMaximum()));
+		minValue = format("%4d", (long)getPaTemp(minMaxValues.get(23).getMinimum()));
+		maxValue = format("%4d", (long)getPaTemp(minMaxValues.get(23).getMaximum()));
 		paValues.add(new ValMinMax("Device Temperature", String.format(PA_TEMPERATURE_FORMAT, getPaTemp(rf.getC9().intValue())), maxValue, minValue));
 		
-		minValue = format("%4d", (long)getPaCurrent(minMaxValues.get(22).getMinimum()));
-		maxValue = format("%4d", (long)getPaCurrent(minMaxValues.get(22).getMaximum()));
+		minValue = format("%4d", (long)getPaCurrent(minMaxValues.get(24).getMinimum()));
+		maxValue = format("%4d", (long)getPaCurrent(minMaxValues.get(24).getMaximum()));
 		paValues.add(new ValMinMax("Bus Current", String.format(PA_MILLI_AMPS_FORMAT, getPaCurrent(rf.getC10())), minValue, maxValue));
 
 		Antenna antenna = realTime.getAntenna();

@@ -26,6 +26,7 @@ public class AbstractService {
 		SDF.setTimeZone(UTC);
 		setupPaTemps();
 		setupAntsTemps();
+		setupSunSensors();
 	}
 
 	protected static String convertHexBytePairToBinary(final String hexString) {

@@ -241,7 +241,7 @@
 						style="text-align: center; white-space: nowrap;">$nbsp;</td>
 					<td id="asib_sun_sensor_z_min"
 						style="text-align: center; white-space: nowrap;">$nbsp;</td>
-					<td id="asib_sol_sensor_z_max"
+					<td id="asib_sun_sensor_z_max"
 						style="text-align: center; white-space: nowrap;">$nbsp;</td>
 				</tr>
 
