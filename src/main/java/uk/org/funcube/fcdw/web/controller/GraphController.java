@@ -40,7 +40,7 @@ public class GraphController {
 	@RequestMapping(value = "/highres", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public List<HPEntity> listHighResolution() {
-		return (List<HPEntity>) highPrecisionDao.getLatestSixtySeconds(0);
+		return (List<HPEntity>) highPrecisionDao.getLatestFourMinutes(0);
 	}
 	
 	@RequestMapping(value = "/wod", method = RequestMethod.GET, produces = "application/json")

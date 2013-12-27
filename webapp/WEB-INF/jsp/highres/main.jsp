@@ -1,9 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <h2>High Resolution Data</h2>
 <p>This page shows the values of all the high resolution parameters
-	captured during the latest 60 seconds of data upload.</p>
+	captured during the latest 240 seconds of successful upload.</p>
 	
-<h3><strong>Please bear with us while we test the graphing functionality. It will be very worthwhile!</strong></h3>
+<br>
 	
 <div id="highres-container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 	

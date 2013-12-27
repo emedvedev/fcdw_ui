@@ -18,13 +18,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import uk.org.funcube.fcdw.server.dao.HighPrecisionDao;
 import uk.org.funcube.fcdw.server.model.HPEntity;
+import uk.org.funcube.fcdw.server.service.impl.AbstractService;
 import uk.org.funcube.fcdw.server.shared.DataElement;
 import uk.org.funcube.fcdw.server.shared.HighResJson;
 
 
 @Controller
 @RequestMapping(value = "/ui/highres")
-public class HighResServiceRestImpl {
+public class HighResServiceRestImpl extends AbstractService {
 	
 	@Autowired
 	HighPrecisionDao highResolutionDao;
@@ -54,31 +55,31 @@ public class HighResServiceRestImpl {
 		DataElement channel7 = new DataElement("Battery Volts");
 		highResJson.addElement(channel7);
 		
-		List<HPEntity> latestOrbit = highResolutionDao.getLatestSixtySeconds(satelliteId);
+		List<HPEntity> latestOrbit = highResolutionDao.getLatestFourMinutes(satelliteId);
 		
 		for (HPEntity highResEntity : latestOrbit) {
 			for (int i = 0; i < 10; i++) {
 				switch (i) {
 				case 0: 
-					channel1.addDatum(new Double(highResEntity.getC1()));
+					channel1.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC1().intValue()]));
 					break;
 				case 1: 
-					channel2.addDatum(new Double(highResEntity.getC2()));
+					channel2.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC2().intValue()]));
 					break;
 				case 2: 
-					channel3.addDatum(new Double(highResEntity.getC3()));
+					channel3.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC3().intValue()]));
 					break;
 				case 3: 
-					channel4.addDatum(new Double(highResEntity.getC4()));
+					channel4.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC4().intValue()]));
 					break;
 				case 4: 
-					channel5.addDatum(new Double(highResEntity.getC5()));
+					channel5.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC5().intValue()]));
 					break;
 				case 5: 
-					channel6.addDatum(new Double(highResEntity.getC6()));
+					channel6.addDatum(new Double(highResEntity.getC6()*2.0));
 					break;
 				case 6: 
-					channel7.addDatum(new Double(highResEntity.getC7()));
+					channel7.addDatum(new Double(highResEntity.getC7()*2.0));
 					break;
 				}
 			}

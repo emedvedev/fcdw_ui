@@ -21,6 +21,6 @@ public interface HighPrecisionDao extends DataAccessObject<HighPrecision, Long> 
 	List<HighPrecision>  findByTimeRange(Date start, Date end);
 	HighPrecision saveOrUpdate(HighPrecision highPrecisionData);
 	Date getLastFrameTime();
-	List<HPEntity> getLatestSixtySeconds(long satelliteId);
+	List<HPEntity> getLatestFourMinutes(long satelliteId);
 
 }
