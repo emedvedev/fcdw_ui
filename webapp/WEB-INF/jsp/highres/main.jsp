@@ -3,7 +3,14 @@
 <p>This page shows the values of all the high resolution parameters
 	captured during the latest 240 seconds of successful upload.</p>
 	
-<br>
+
+
+<h3>To download a .csv file which contains the latest available High Resolution data please click <strong><a href="/downloads/hires.csv">here</a></strong>.
+This data is generated every hour, on the hour and contains the preceding 60 minutes of information</h3>
+<p>The date/time in the csv file is 'SatelliteTime' It is based on the number for sequences / frames
+it has transmitted since spacecraft initialisation after separation (2013-11-21 07:38:16).
+<br>This time will drift as it is based on the MCU clock which is not temperature conrolled. In the future we may be able to give realtime if we can model the drift...
+</p>	
 	
 <div id="highres-container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 	
