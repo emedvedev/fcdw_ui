@@ -69,28 +69,6 @@
 		    			<font color="red"><form:errors path="longitude"></form:errors></font>
 					</td>
 				</tr>
-				<tr>
-					<td width="217px">
-		    			<label>Password:</label>
-					</td>
-					<td>
-		    			<form:password path="password1" id="password1Input"></form:password>
-					</td>
-					<td>
-		    			<font color="red"><form:errors path="password1"></form:errors></font>
-					</td>
-				</tr>
-				<tr>
-					<td width="217px">
-		    			<label>Password (again):</label>
-					</td>
-					<td>
-		    			<form:password path="password2" id="password2Input"></form:password>
-					</td>
-					<td>
-		    			<font color="red"><form:errors path="password2"></form:errors></font>
-					</td>
-				</tr>
 				<tr></tr>
 				<tr>
 					<td></td>

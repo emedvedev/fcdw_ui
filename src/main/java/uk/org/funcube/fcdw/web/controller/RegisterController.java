@@ -67,13 +67,7 @@ public class RegisterController extends AbstractService {
 		String password = registerUserRequest.getPassword1();
 		String authKey = RandomStringUtils.random(20, true, true);
 		String registrationCode = RandomStringUtils.random(30, true, true);
-		String passwordHash;
-		try {
-			passwordHash = passwordGenerator.hashPassword(password);
-		} catch (NoSuchAlgorithmException e) {
-			LOGGER.error(e.getMessage());
-			passwordHash = "xxxxxxxxxx";
-		}
+		String passwordHash = RandomStringUtils.random(20, true, true);
 
 		UserEntity newUser = new UserEntity(registerUserRequest.getEmail1(), passwordHash, registerUserRequest.getLatitude(),
 				registerUserRequest.getLongitude(), registerUserRequest.getSiteName(),

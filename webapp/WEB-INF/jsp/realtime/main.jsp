@@ -8,6 +8,13 @@
 	world.
 </p>
 
+<h3>To download a .csv file which contains Realtime data, please click <strong><a href="/downloads/realtime.csv">here</a></strong>.
+This data is generated every hour, on the hour and contains the preceding 250 minutes of information</h3>
+<p>The date/time in the csv file is 'SatelliteTime' It is based on the number for sequences / frames
+it has transmitted since spacecraft initialisation after separation (2013-11-21 07:38:16).
+<br>This time will drift as it is based on the MCU clock which is not temperature conrolled. In the future we may be able to give realtime if we can model the drift...
+</p>
+
 <div id="tabs" style="width: 100%;">
 	<ul>
 
