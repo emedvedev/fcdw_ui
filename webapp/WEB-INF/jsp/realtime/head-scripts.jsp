@@ -170,8 +170,12 @@
 		$("#ants_created_date").text("Latest update at: " + data.lastUpdated);
 		$("#ants_temp_zero_name").text(data.antsValues[0].name);
 		$("#ants_temp_zero_value").text(data.antsValues[0].value);
+		$("#ants_temp_zero_min").text(data.antsValues[0].min);
+		$("#ants_temp_zero_max").text(data.antsValues[0].max);
 		$("#ants_temp_one_name").text(data.antsValues[1].name);
 		$("#ants_temp_one_value").text(data.antsValues[1].value);
+		$("#ants_temp_one_min").text(data.antsValues[1].min);
+		$("#ants_temp_one_max").text(data.antsValues[1].max);
 		$("#ants_deployment_vhf_a_name").text(data.antsValues[2].name);
 		$("#ants_deployment_vhf_a_value").text(data.antsValues[2].value);
 		$("#ants_deployment_uhf_a_name").text(data.antsValues[3].name);

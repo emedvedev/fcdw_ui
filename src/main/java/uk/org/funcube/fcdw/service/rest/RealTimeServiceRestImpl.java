@@ -110,7 +110,7 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		List<ValMinMax> asibValues = new ArrayList<ValMinMax>();
 		List<ValMinMax> rfValues = new ArrayList<ValMinMax>();
 		List<ValMinMax> paValues = new ArrayList<ValMinMax>();
-		List<StringPair> antsValues = new ArrayList<StringPair>();
+		List<ValMinMax> antsValues = new ArrayList<ValMinMax>();
 		List<StringPair> swValues = new ArrayList<StringPair>();
 
 		EPS eps = realTime.getEps();
@@ -243,14 +243,19 @@ public class RealTimeServiceRestImpl extends AbstractService {
 
 		Antenna antenna = realTime.getAntenna();
 
-		antsValues.add(new StringPair("Antenna Temp 0", String.format(ANTS_TEMPERATURE_FORMAT, getAntsTemp(antenna.getAntennaTemp0()
-				.intValue()))));
-		antsValues.add(new StringPair("Antenna Temp 1", String.format(ANTS_TEMPERATURE_FORMAT, getAntsTemp(antenna.getAntennaTemp1()
-				.intValue()))));
-		antsValues.add(new StringPair("Antenna Deployment VHF-A", (antenna.isAntennaDeployment0()) ? DEPLOYED : UNDEPLOYED));
-		antsValues.add(new StringPair("Antenna Deployment UHF-A", (antenna.isAntennaDeployment1()) ? DEPLOYED : UNDEPLOYED));
-		antsValues.add(new StringPair("Antenna Deployment VHF-B", (antenna.isAntennaDeployment2()) ? DEPLOYED : UNDEPLOYED));
-		antsValues.add(new StringPair("Antenna Deployment UHF-B", (antenna.isAntennaDeployment3()) ? DEPLOYED : UNDEPLOYED));
+		maxValue = String.format(ANTS_TEMPERATURE_FORMAT, getAntsTemp(minMaxValues.get(41).getMinimum().intValue()));
+		minValue = String.format(ANTS_TEMPERATURE_FORMAT, getAntsTemp(minMaxValues.get(41).getMaximum().intValue()));
+		antsValues.add(new ValMinMax("Antenna Temp 0", String.format(ANTS_TEMPERATURE_FORMAT, getAntsTemp(antenna.getAntennaTemp0()
+				.intValue())), minValue, maxValue));
+		maxValue = String.format(ANTS_TEMPERATURE_FORMAT, getAntsTemp(minMaxValues.get(42).getMinimum().intValue()));
+		minValue = String.format(ANTS_TEMPERATURE_FORMAT, getAntsTemp(minMaxValues.get(42).getMaximum().intValue()));
+		antsValues.add(new ValMinMax("Antenna Temp 1", String.format(ANTS_TEMPERATURE_FORMAT, getAntsTemp(antenna.getAntennaTemp1()
+				.intValue())), minValue, maxValue));
+		
+		antsValues.add(new ValMinMax("Antenna Deployment VHF-A", (antenna.isAntennaDeployment0()) ? DEPLOYED : UNDEPLOYED, "", ""));
+		antsValues.add(new ValMinMax("Antenna Deployment UHF-A", (antenna.isAntennaDeployment1()) ? DEPLOYED : UNDEPLOYED, "", ""));
+		antsValues.add(new ValMinMax("Antenna Deployment VHF-B", (antenna.isAntennaDeployment2()) ? DEPLOYED : UNDEPLOYED, "", ""));
+		antsValues.add(new ValMinMax("Antenna Deployment UHF-B", (antenna.isAntennaDeployment3()) ? DEPLOYED : UNDEPLOYED, "", ""));
 
 		DTMF dtmf = realTime.getDTMF();
 

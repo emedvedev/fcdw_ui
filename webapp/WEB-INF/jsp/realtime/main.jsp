@@ -477,15 +477,25 @@ it has transmitted since spacecraft initialisation after separation (2013-11-21 
 				<tr>
 					<td style="text-align: center;">Name</td>
 					<td style="text-align: center; white-space: nowrap;">Value</td>
+					<td style="text-align: center; white-space: nowrap;">Min</td>
+					<td style="text-align: center; white-space: nowrap;">Max</td>
 				</tr>
 				<tr>
 					<td id="ants_temp_zero_name" style="text-align: center;">$nbsp;</td>
 					<td id="ants_temp_zero_value"
 						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id="ants_temp_zero_min"
+						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id="ants_temp_zero_max"
+						style="text-align: center; white-space: nowrap;">$nbsp;</td>
 				</tr>
 				<tr>
 					<td id="ants_temp_one_name" style="text-align: center;">$nbsp;</td>
 					<td id="ants_temp_one_value"
+						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id="ants_temp_one_min"
+						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td id="ants_temp_one_max"
 						style="text-align: center; white-space: nowrap;">$nbsp;</td>
 				</tr>
 
@@ -493,24 +503,32 @@ it has transmitted since spacecraft initialisation after separation (2013-11-21 
 					<td id="ants_deployment_vhf_a_name" style="text-align: center;">$nbsp;</td>
 					<td id="ants_deployment_vhf_a_value"
 						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td style="text-align: center; white-space: nowrap;"></td>
+					<td style="text-align: center; white-space: nowrap;"></td>
 				</tr>
 
 				<tr>
 					<td id="ants_deployment_vhf_b_name" style="text-align: center;">$nbsp;</td>
 					<td id="ants_deployment_vhf_b_value"
 						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td style="text-align: center; white-space: nowrap;"></td>
+					<td style="text-align: center; white-space: nowrap;"></td>
 				</tr>
 
 				<tr>
 					<td id="ants_deployment_uhf_a_name" style="text-align: center;">$nbsp;</td>
 					<td id="ants_deployment_uhf_a_value"
 						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td style="text-align: center; white-space: nowrap;"></td>
+					<td style="text-align: center; white-space: nowrap;"></td>
 				</tr>
 
 				<tr>
 					<td id="ants_deployment_uhf_b_name" style="text-align: center;">$nbsp;</td>
 					<td id="ants_deployment_uhf_b_value"
 						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+					<td style="text-align: center; white-space: nowrap;"></td>
+					<td style="text-align: center; white-space: nowrap;"></td>
 				</tr>
 			</table>
 		</div>

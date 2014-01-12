@@ -9,7 +9,7 @@ public class RealTimeInfo {
 	List<ValMinMax> asibValues = new ArrayList<ValMinMax>();
 	List<ValMinMax> rfValues = new ArrayList<ValMinMax>();
 	List<ValMinMax> paValues = new ArrayList<ValMinMax>();
-	List<StringPair> antsValues = new ArrayList<StringPair>();
+	List<ValMinMax> antsValues = new ArrayList<ValMinMax>();
 	List<StringPair> swValues = new ArrayList<StringPair>();
 	private Long sequenceNumber;
 	private String lastUpdated;
@@ -17,7 +17,7 @@ public class RealTimeInfo {
 	
 	public RealTimeInfo(Long sequenceNumber, String lastUpdated, List<ValMinMax> epsValues, List<ValMinMax> asibValues,
 			List<ValMinMax> rfValues, List<ValMinMax> paValues,
-			List<StringPair> antsValues, List<StringPair> swValues,
+			List<ValMinMax> antsValues, List<StringPair> swValues,
 			List<String>siteList) {
 		super();
 		this.sequenceNumber = sequenceNumber;
@@ -50,7 +50,7 @@ public class RealTimeInfo {
 		return paValues;
 	}
 
-	public final List<StringPair> getAntsValues() {
+	public final List<ValMinMax> getAntsValues() {
 		return antsValues;
 	}
 
