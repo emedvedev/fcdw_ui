@@ -6,6 +6,7 @@
 
 package uk.org.funcube.fcdw.server.model;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -42,6 +43,7 @@ public class HexFrameEntity implements HexFrame {
 	private boolean fitterProcessed;
 	private boolean highPrecisionProcessed;
 	private boolean realtimeProcessed;
+	private Timestamp satelliteTime;
 
 	public HexFrameEntity() {
 		users = new HashSet<UserEntity>();
@@ -160,6 +162,14 @@ public class HexFrameEntity implements HexFrame {
 
 	public void setRealtimeProcessed(boolean realtimeProcessed) {
 		this.realtimeProcessed = realtimeProcessed;
+	}
+
+	public final Timestamp getSatelliteTime() {
+		return satelliteTime;
+	}
+
+	public final void setSatelliteTime(Timestamp satelliteTime) {
+		this.satelliteTime = satelliteTime;
 	}
 
 }

@@ -6,6 +6,7 @@
 
 package uk.org.funcube.fcdw.server.model;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -36,6 +37,7 @@ public class RealTimeEntity {
 	private long sensorId;
 	private long commandCount;
 	private long lastCommand;
+	private Timestamp satelliteTime;
 
 	private Long c1;
 	private Long c2;
@@ -775,6 +777,14 @@ public class RealTimeEntity {
 
 	public final void setC65(Boolean c65) {
 		this.c65 = c65;
+	}
+
+	public final Timestamp getSatelliteTime() {
+		return satelliteTime;
+	}
+
+	public final void setSatelliteTime(Timestamp satelliteTime) {
+		this.satelliteTime = satelliteTime;
 	}
 
 }
