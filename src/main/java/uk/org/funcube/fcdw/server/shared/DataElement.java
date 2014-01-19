@@ -31,5 +31,13 @@ public class DataElement {
 	public void addDatum(Long value) {
 		data.add(value);
 	}
+	
+	@SuppressWarnings("unchecked")
+	public void addDatum(Long value1, Double value2 ) {
+		LinkedList dataPair = new LinkedList();
+		dataPair.add(value1);
+		dataPair.add(value2);
+		data.add(dataPair);
+	}
 
 }

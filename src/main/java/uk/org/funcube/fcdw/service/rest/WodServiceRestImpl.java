@@ -85,56 +85,60 @@ public class WodServiceRestImpl {
 		
 		List<WODEntity> latestOrbit = wholeOrbitDataDao.getLatestOrbit(satelliteId);
 		
+		long hour = -104;
+		
 		for (WODEntity wodEntity : latestOrbit) {
 			
 			for (int i = 0; i < 14; i++) {
 				
 				switch (i) {
 				case 0: 
-					channel1.addDatum(scale(wodEntity.getC1(), -0.024, 75.244));
+					channel1.addDatum(hour, scale(wodEntity.getC1(), -0.024, 75.244));
 					break;
 				case 1: 
-					channel2.addDatum(scale(wodEntity.getC2(), -0.024, 74.750));
+					channel2.addDatum(hour,scale(wodEntity.getC2(), -0.024, 74.750));
 					break;
 				case 2: 
-					channel3.addDatum(scale(wodEntity.getC3(), -0.024, 75.039));
+					channel3.addDatum(hour,scale(wodEntity.getC3(), -0.024, 75.039));
 					break;
 				case 3: 
-					channel4.addDatum(scale(wodEntity.getC4(), -0.024, 75.987));
+					channel4.addDatum(hour,scale(wodEntity.getC4(), -0.024, 75.987));
 					break;
 				case 4: 
-					channel5.addDatum(scale(wodEntity.getC5(), -0.2073, 158.239));
+					channel5.addDatum(hour,scale(wodEntity.getC5(), -0.2073, 158.239));
 					break;
 				case 5: 
-					channel6.addDatum(scale(wodEntity.getC6(), -0.2083, 159.227));
+					channel6.addDatum(hour,scale(wodEntity.getC6(), -0.2083, 159.227));
 					break;
 				case 6: 
-					channel7.addDatum(scale(wodEntity.getC7(), -0.2076, 158.656));
+					channel7.addDatum(hour,scale(wodEntity.getC7(), -0.2076, 158.656));
 					break;
 				case 7: 
-					channel8.addDatum(scale(wodEntity.getC8(), -0.2087, 159.045));
+					channel8.addDatum(hour,scale(wodEntity.getC8(), -0.2087, 159.045));
 					break;
 				case 8: 
-					channel9.addDatum(scale(wodEntity.getC9(), 0.001, 0.0));
+					channel9.addDatum(hour,scale(wodEntity.getC9(), 0.001, 0.0));
 					break;
 				case 9: 
-					channel10.addDatum(scale(wodEntity.getC10(), 0.001, 0.0));
+					channel10.addDatum(hour,scale(wodEntity.getC10(), 0.001, 0.0));
 					break;
 				case 10: 
-					channel11.addDatum(scale(wodEntity.getC11(), 0.001, 0.0));
+					channel11.addDatum(hour,scale(wodEntity.getC11(), 0.001, 0.0));
 					break;
 				case 11: 
-					channel12.addDatum(scale(wodEntity.getC12(), 0.01, 0.0));
+					channel12.addDatum(hour,scale(wodEntity.getC12(), 0.01, 0.0));
 					break;
 				case 12: 
-					channel13.addDatum(scale(wodEntity.getC13(), 0.001, 0.0));
+					channel13.addDatum(hour,scale(wodEntity.getC13(), 0.001, 0.0));
 					break;
 				case 13: 
-					channel14.addDatum(scale(wodEntity.getC14(), 0.01, 0.0));
+					channel14.addDatum(hour,scale(wodEntity.getC14(), 0.01, 0.0));
 					break;
 				}
 				
 			}
+			
+			hour++;
 		}
 		
 		

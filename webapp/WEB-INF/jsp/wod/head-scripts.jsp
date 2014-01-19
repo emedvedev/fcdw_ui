@@ -10,6 +10,10 @@
             renderTo: 'wod-container',
             type: 'line'
         },
+        xAxis: {
+            min: -104,
+            max: 0	
+        },
 		title: {
 			text: 'Whole Orbit Data',
 			style: {
