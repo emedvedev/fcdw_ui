@@ -61,11 +61,11 @@ public class WodServiceRestImpl {
 		wodJson.addElement(channel7);
 		DataElement channel8 = new DataElement("Solar Panel -Y");
 		wodJson.addElement(channel8);
-		DataElement channel9 = new DataElement("PV X");
+		DataElement channel9 = new DataElement("Solar Panel Volt. X");
 		wodJson.addElement(channel9);
-		DataElement channel10 = new DataElement("PV Y");
+		DataElement channel10 = new DataElement("Solar Panel Volt. Y");
 		wodJson.addElement(channel10);
-		DataElement channel11 = new DataElement("PV Z");
+		DataElement channel11 = new DataElement("Solar Panel Volt. Z");
 		wodJson.addElement(channel11);
 		DataElement channel12 = new DataElement("Tot. Photo Curr.");
 		wodJson.addElement(channel12);
