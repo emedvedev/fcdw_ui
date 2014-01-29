@@ -18,4 +18,6 @@ public interface FitterMessage {
 
 	void setDisplay(Boolean display);
 
+	String getSlot();
+
 }

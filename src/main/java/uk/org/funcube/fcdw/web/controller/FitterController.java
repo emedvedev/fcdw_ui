@@ -42,8 +42,9 @@ public class FitterController extends AbstractService {
 
 		for (FitterMessage fitterMessage : fitterMessages) {
 			final String messageText = fitterMessage.getMessageText();
-			final String shortText = messageText.length() > 60 ? messageText.substring(0, 60) : null;
-			fitter.add(new ValMinMax(messageText, SDF.format(fitterMessage.getLastReceived()), shortText, null));
+			final String shortText = messageText.length() > 70 ? messageText.substring(0, 70) : null;
+			fitter.add(new ValMinMax(messageText, SDF.format(fitterMessage.getLastReceived()), 
+					shortText, fitterMessage.getSlot()));
 		}
 
 		ModelAndView mv = new ModelAndView("fitter");

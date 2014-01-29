@@ -15,7 +15,9 @@ public class AbstractService {
 
 	private static final int HEX_0X0F = 0x0F;
 	private static final int I_256 = 256;
-	private static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss zzz";
+	private static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss zzz";
+	private static final String DATE_FORMAT = "yyyy-MM-dd";
+	protected static final SimpleDateFormat SDTF = new SimpleDateFormat(DATE_TIME_FORMAT);
 	protected static final SimpleDateFormat SDF = new SimpleDateFormat(DATE_FORMAT);
 	private static final TimeZone UTC = TimeZone.getTimeZone("UTC");
 	private static final double[] PA_TEMPS = new double[I_256];
@@ -23,7 +25,7 @@ public class AbstractService {
 	protected static double[] SOL_ILLUMINATION = new double[1024];
 
 	static {
-		SDF.setTimeZone(UTC);
+		SDTF.setTimeZone(UTC);
 		setupPaTemps();
 		setupAntsTemps();
 		setupSunSensors();

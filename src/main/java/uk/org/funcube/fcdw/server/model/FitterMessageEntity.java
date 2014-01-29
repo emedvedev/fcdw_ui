@@ -31,16 +31,20 @@ public class FitterMessageEntity implements FitterMessage {
 	private Boolean debug;
 
 	private Boolean display;
+	
+	private String slot;
 
 	public FitterMessageEntity() {
 	}
 
-	public FitterMessageEntity(String theMessageText, Date lastReceived, Long satelliteId, Boolean debug) {
+	public FitterMessageEntity(String theMessageText, Date lastReceived, Long satelliteId, Boolean debug,
+			String slot) {
 		super();
 		this.messageText = theMessageText;
 		this.lastReceived = lastReceived;
 		this.satelliteId = satelliteId;
 		this.debug = debug;
+		this.slot = slot;
 	}
 
 	public final Long getId() {
@@ -92,6 +96,14 @@ public class FitterMessageEntity implements FitterMessage {
 
 	public void setDisplay(Boolean display) {
 		this.display = display;
+	}
+
+	public final String getSlot() {
+		return slot;
+	}
+
+	public void setSlot(String slot) {
+		this.slot = slot;
 	}
 
 }

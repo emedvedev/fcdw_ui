@@ -8,7 +8,8 @@
 <table style="width: 100%;">
 	<tr>
 		<td style="text-align: left; white-space: nowrap;">Message</td>
-		<td style="text-align: center; white-space: nowrap;">Date last received</td>
+		<td style="text-align: center; white-space: nowrap;">Last received</td>
+		<td style="text-align: center; white-space: nowrap;">Slot</td>
 	</tr>
 	<c:forEach var="o" items="${fitter}">
 		<tr>
@@ -21,6 +22,7 @@
 				</c:otherwise>
 			</c:choose>
 			<td style="text-align: center; white-space: nowrap; font-size: small;">${o.value}</td>
+			<td style="text-align: center; white-space: nowrap; font-size: small;">${o.max}</td>
 		</tr>
 	</c:forEach>
 

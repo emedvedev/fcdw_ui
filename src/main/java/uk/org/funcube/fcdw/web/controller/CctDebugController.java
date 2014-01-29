@@ -129,7 +129,7 @@ public class CctDebugController extends AbstractService {
 			autoValues.add(new StringPair("Delay Boot", fitterDebug.getDelayBoot()));
 			autoValues.add(new StringPair("UkubeEnabled", fitterDebug.getUkubeEnabled()));
 
-			mv.addObject("createdDate", SDF.format(createdDate));
+			mv.addObject("createdDate", SDTF.format(createdDate));
 			mv.addObject("miscValues", miscValues);
 			mv.addObject("antsValues", antsValues);
 			mv.addObject("stateValues", stateValues);

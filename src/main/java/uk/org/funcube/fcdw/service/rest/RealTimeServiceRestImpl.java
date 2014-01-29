@@ -280,7 +280,7 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		
 		RealTimeInfo realtimeInfo 
 			= new RealTimeInfo(realTime.getSequenceNumber(), 
-					SDF.format(createdDate),
+					SDTF.format(createdDate),
 					epsValues, asibValues, rfValues, paValues, antsValues, swValues,
 					siteList);
 		

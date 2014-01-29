@@ -267,7 +267,7 @@ public class RealtimeController extends AbstractService {
 		swValues.add(new StringPair("Software ABF", (softwareState.getC12()) ? "On" : "Off"));
 		swValues.add(new StringPair("Deployment Wait At Next Boot", (softwareState.getC13()) ? "Yes" : "No"));
 
-		mv.addObject("createdDate", SDF.format(createdDate));
+		mv.addObject("createdDate", SDTF.format(createdDate));
 		mv.addObject("epsValues", epsValues);
 		mv.addObject("asibValues", asibValues);
 		mv.addObject("rfValues", rfValues);
