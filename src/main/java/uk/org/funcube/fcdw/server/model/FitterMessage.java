@@ -6,15 +6,15 @@
 
 package uk.org.funcube.fcdw.server.model;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public interface FitterMessage {
 
-	void setLastReceived(Date lastReceived);
+	void setLastReceived(Timestamp lastReceived);
 
 	String getMessageText();
 
-	Date getLastReceived();
+	Timestamp getLastReceived();
 
 	void setDisplay(Boolean display);
 

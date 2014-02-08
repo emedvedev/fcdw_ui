@@ -6,7 +6,7 @@
 
 package uk.org.funcube.fcdw.server.model;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +24,9 @@ public class FitterMessageEntity implements FitterMessage {
 
 	private String messageText;
 
-	private Date lastReceived;
+	private Timestamp lastReceived;
+
+	private Timestamp createdDate;
 
 	private Long satelliteId;
 
@@ -37,14 +39,15 @@ public class FitterMessageEntity implements FitterMessage {
 	public FitterMessageEntity() {
 	}
 
-	public FitterMessageEntity(String theMessageText, Date lastReceived, Long satelliteId, Boolean debug,
-			String slot) {
+	public FitterMessageEntity(String theMessageText, Timestamp lastReceived, Long satelliteId, Boolean debug,
+			String slot, Timestamp createdDate) {
 		super();
 		this.messageText = theMessageText;
 		this.lastReceived = lastReceived;
 		this.satelliteId = satelliteId;
 		this.debug = debug;
 		this.slot = slot;
+		this.createdDate = createdDate;
 	}
 
 	public final Long getId() {
@@ -65,12 +68,12 @@ public class FitterMessageEntity implements FitterMessage {
 	}
 
 	@Override
-	public final Date getLastReceived() {
+	public final Timestamp getLastReceived() {
 		return lastReceived;
 	}
 
 	@Override
-	public final void setLastReceived(Date lastReceived) {
+	public final void setLastReceived(Timestamp lastReceived) {
 		this.lastReceived = lastReceived;
 	}
 
@@ -104,6 +107,14 @@ public class FitterMessageEntity implements FitterMessage {
 
 	public void setSlot(String slot) {
 		this.slot = slot;
+	}
+
+	public final Timestamp getCreatedDate() {
+		return createdDate;
+	}
+
+	public final void setCreatedDate(Timestamp createdDate) {
+		this.createdDate = createdDate;
 	}
 
 }
