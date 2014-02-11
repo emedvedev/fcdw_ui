@@ -27,7 +27,7 @@ public class MinMaxDaoImpl extends AbstractDataAccessObject<MinMax, MinMaxEntity
 
 		final Map<String, Object> parameters = new HashMap<String, Object>();
 		final String queryString = "SELECT mm FROM MinMaxEntity mm " + "WHERE mm.satelliteId = :satelliteId "
-		+ " and mm.channel = :channel";
+		+ " and mm.channel = :channel order by refDate desc limit 1";
 
 		parameters.put("satelliteId", satelliteId);
 		parameters.put("channel", channel);

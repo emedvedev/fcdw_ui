@@ -6,6 +6,8 @@
 
 package uk.org.funcube.fcdw.server.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,6 +26,7 @@ public class MinMaxEntity implements MinMax {
 	private Long channel;
 	private Long minimum;
 	private Long maximum;
+	private Date refDate;
 	
 	public MinMaxEntity() {
 	}
@@ -35,12 +38,13 @@ public class MinMaxEntity implements MinMax {
 	 * @param maximum
 	 */
 	public MinMaxEntity(Long satelliteId, Long channel, Long minimum,
-			Long maximum) {
+			Long maximum, Date refDate) {
 		super();
 		this.satelliteId = satelliteId;
 		this.channel = channel;
 		this.minimum = minimum;
 		this.maximum = maximum;
+		this.refDate = refDate;
 	}
 
 	public final Long getId() {
@@ -83,6 +87,14 @@ public class MinMaxEntity implements MinMax {
 		this.maximum = maximum;
 	}
 
+	public final Date getRefDate() {
+		return refDate;
+	}
+
+	public final void setRefDate(Date refDate) {
+		this.refDate = refDate;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -91,6 +103,7 @@ public class MinMaxEntity implements MinMax {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((maximum == null) ? 0 : maximum.hashCode());
 		result = prime * result + ((minimum == null) ? 0 : minimum.hashCode());
+		result = prime * result + ((refDate == null) ? 0 : refDate.hashCode());
 		result = prime * result
 				+ ((satelliteId == null) ? 0 : satelliteId.hashCode());
 		return result;
@@ -98,38 +111,58 @@ public class MinMaxEntity implements MinMax {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (!(obj instanceof MinMaxEntity)) {
 			return false;
+		}
 		MinMaxEntity other = (MinMaxEntity) obj;
 		if (channel == null) {
-			if (other.channel != null)
+			if (other.channel != null) {
 				return false;
-		} else if (!channel.equals(other.channel))
+			}
+		} else if (!channel.equals(other.channel)) {
 			return false;
+		}
 		if (id == null) {
-			if (other.id != null)
+			if (other.id != null) {
 				return false;
-		} else if (!id.equals(other.id))
+			}
+		} else if (!id.equals(other.id)) {
 			return false;
+		}
 		if (maximum == null) {
-			if (other.maximum != null)
+			if (other.maximum != null) {
 				return false;
-		} else if (!maximum.equals(other.maximum))
+			}
+		} else if (!maximum.equals(other.maximum)) {
 			return false;
+		}
 		if (minimum == null) {
-			if (other.minimum != null)
+			if (other.minimum != null) {
 				return false;
-		} else if (!minimum.equals(other.minimum))
+			}
+		} else if (!minimum.equals(other.minimum)) {
 			return false;
+		}
+		if (refDate == null) {
+			if (other.refDate != null) {
+				return false;
+			}
+		} else if (!refDate.equals(other.refDate)) {
+			return false;
+		}
 		if (satelliteId == null) {
-			if (other.satelliteId != null)
+			if (other.satelliteId != null) {
 				return false;
-		} else if (!satelliteId.equals(other.satelliteId))
+			}
+		} else if (!satelliteId.equals(other.satelliteId)) {
 			return false;
+		}
 		return true;
 	}
 	
