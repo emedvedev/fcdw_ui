@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <h2>CCT Debug</h2>
-<h3 style="text-align: left;">Latest update at: ${createdDate}</h3>
+<h3 style="text-align: left;">Uploaded at: ${createdDate}</h3>
 <div id="tabs" style="width: 100%;">
 	<ul>
 

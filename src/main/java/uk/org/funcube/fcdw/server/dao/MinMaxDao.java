@@ -6,6 +6,7 @@
 
 package uk.org.funcube.fcdw.server.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import uk.org.funcube.fcdw.server.model.MinMax;
@@ -16,4 +17,6 @@ public interface MinMaxDao extends DataAccessObject<MinMax, Long> {
 	List<MinMax> findBySatelliteId(long satelliteId);
 	
 	List<MinMax> findBySatelliteIdAndChannel(long satelliteId, long channel);
+
+	Date findMaxRefDate(Long satelliteId);
 }

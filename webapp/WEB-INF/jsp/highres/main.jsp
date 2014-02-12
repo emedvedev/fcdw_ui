@@ -25,7 +25,7 @@ it has transmitted since spacecraft initialisation after separation (2013-11-21 
 		<br />
 		<div style="text-align: center">
 			<b>Electrical Power Subsystem</b>
-			<h3 style="text-align: left;">Latest update at: ${createdDate}</h3>
+			<h3 style="text-align: left;">Uploaded at: ${createdDate}</h3>
 		</div>
 	</div>
 	
@@ -33,7 +33,7 @@ it has transmitted since spacecraft initialisation after separation (2013-11-21 
 		<br />
 		<div style="text-align: center">
 			<b>Sensor Subsystem</b>
-			<h3 style="text-align: left;">Latest update at: ${createdDate}</h3>
+			<h3 style="text-align: left;">Uploaded at: ${createdDate}</h3>
 		</div>
 	</div>
 	

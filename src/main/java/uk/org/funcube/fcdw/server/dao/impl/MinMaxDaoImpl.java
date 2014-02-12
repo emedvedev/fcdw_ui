@@ -1,5 +1,6 @@
 package uk.org.funcube.fcdw.server.dao.impl;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,11 +41,19 @@ public class MinMaxDaoImpl extends AbstractDataAccessObject<MinMax, MinMaxEntity
 		
 		List<MinMax> channels = findMany(queryString, parameters);
 
-		LOG.debug("Minmax channel count: " + channels.size() 
-				+ ", channel: " + channel 
-				+ ", refDate: " + channels.get(0).getRefDate().toString());
-		
 		return channels;
+	}
+	
+	@Override
+	public Date findMaxRefDate(Long satelliteId)
+	{
+		final Map<String, Object> parameters = new HashMap<String, Object>();
+		final String queryString = "select max(mm.refDate) FROM MinMaxEntity mm " 
+				+ "WHERE mm.satelliteId = :satelliteId AND enabled = 1";
+
+		parameters.put("satelliteId", satelliteId);
+		
+		return (Date) findOneOnly(queryString, parameters);
 	}
 
 }

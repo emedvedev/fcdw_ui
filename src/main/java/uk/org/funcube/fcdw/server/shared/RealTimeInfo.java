@@ -14,11 +14,12 @@ public class RealTimeInfo {
 	private Long sequenceNumber;
 	private String lastUpdated;
 	private List<String> siteList;
+	private String minmaxReset;
 	
 	public RealTimeInfo(Long sequenceNumber, String lastUpdated, List<ValMinMax> epsValues, List<ValMinMax> asibValues,
 			List<ValMinMax> rfValues, List<ValMinMax> paValues,
 			List<ValMinMax> antsValues, List<StringPair> swValues,
-			List<String>siteList) {
+			List<String>siteList, String minmaxReset) {
 		super();
 		this.sequenceNumber = sequenceNumber;
 		this.lastUpdated = lastUpdated;
@@ -29,6 +30,7 @@ public class RealTimeInfo {
 		this.antsValues = antsValues;
 		this.swValues = swValues;
 		this.siteList = siteList;
+		this.minmaxReset = minmaxReset;
 	}
 
 	public RealTimeInfo() {
@@ -68,6 +70,10 @@ public class RealTimeInfo {
 
 	public final List<String> getSiteList() {
 		return siteList;
+	}
+
+	public final String getMinmaxReset() {
+		return minmaxReset;
 	}
 
 }

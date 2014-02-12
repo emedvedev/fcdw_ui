@@ -88,6 +88,7 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		
 		final Date createdDate = latestFrame.getCreatedDate();
 		final String hexString = latestFrame.getHexString();
+		final Date minmaxResetDate = minMaxDao.findMaxRefDate(satelliteId);
 
 		final int frameId = Integer.parseInt(hexString.substring(0, 2), 16);
 		final int sensorId = frameId % 2;
@@ -282,7 +283,7 @@ public class RealTimeServiceRestImpl extends AbstractService {
 			= new RealTimeInfo(realTime.getSequenceNumber(), 
 					SDTF.format(createdDate),
 					epsValues, asibValues, rfValues, paValues, antsValues, swValues,
-					siteList);
+					siteList, SDTF.format(minmaxResetDate));
 		
 		return realtimeInfo;
 		
