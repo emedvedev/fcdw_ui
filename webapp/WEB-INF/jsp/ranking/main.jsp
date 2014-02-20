@@ -10,11 +10,13 @@
 	<tr>
 		<td style="text-align: center; white-space: nowrap;">Site Id</td>
 		<td style="text-align: center; white-space: nowrap;">Count</td>
+		<td style="text-align: center; white-space: nowrap;">Position</td>
 	</tr>
 	<c:forEach var="o" items="${ranking}">
 		<tr>
 			<td style="text-align: center; white-space: nowrap;">${o.name}</td>
 			<td style="text-align: center; white-space: nowrap;">${o.value}</td>
+			<td style="text-align: center; white-space: nowrap;">${o.min}</td>
 		</tr>
 	</c:forEach>
 

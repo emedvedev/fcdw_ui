@@ -21,7 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 import uk.org.funcube.fcdw.server.dao.UserRankingDao;
 import uk.org.funcube.fcdw.server.model.UserRanking;
 import uk.org.funcube.fcdw.server.service.impl.AbstractService;
-import uk.org.funcube.fcdw.server.shared.StringPair;
+import uk.org.funcube.fcdw.server.shared.ValMinMax;
 
 @Controller
 @RequestMapping("ranking")
@@ -36,12 +36,31 @@ public class RankingController extends AbstractService {
 
 		satelliteId = (satelliteId != null) ? satelliteId : new Long(2L);
 
-		List<StringPair> ranking = new ArrayList<StringPair>();
+		List<ValMinMax> ranking = new ArrayList<ValMinMax>();
 
 		List<UserRanking> userRankings = userRankingDao.findBySatelliteId(satelliteId);
-
+		
+		int position = 1;
+		int postedPosition = 0;
+		Long oldNumber = 0L;
+		Long newNumber = 0L;
 		for (UserRanking userRanking : userRankings) {
-			ranking.add(new StringPair(userRanking.getSite(), userRanking.getNumber().toString()));
+			
+			newNumber = userRanking.getNumber();
+			
+			if (oldNumber.longValue() != newNumber.longValue()) {
+				postedPosition = position;
+				ranking.add(new ValMinMax(userRanking.getSite(), newNumber.toString(),
+						Integer.toString(postedPosition), null));
+				position++;
+			}
+			else {
+				ranking.add(new ValMinMax(userRanking.getSite(), newNumber.toString(),
+						Integer.toString(postedPosition), null));
+				position++;
+			}
+
+			oldNumber = newNumber;
 		}
 
 		ModelAndView mv = new ModelAndView("ranking");
