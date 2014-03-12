@@ -8,7 +8,7 @@
 it has transmitted since spacecraft initialisation after separation (2013-11-21 07:38:16).
 <br>This time will drift as it is based on the MCU clock which is not temperature controlled. In the future we may be able to give realtime if we can model the drift...
 </p>	
-<div id="wod-container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="wod-container" style="min-width: 310px; height: 500px; margin: 0 auto"></div>
 	
 <!--
 <div id="tabs" style="width: 100%;">
