@@ -44,6 +44,7 @@ public class HPEntity extends AbstractEntity implements HighPrecision {
 	private Date createdDate;
 	private Long sequenceNumber;
 	private Long satelliteId;
+	private Date satelliteTime;
 
 	public HPEntity() {
 	}
@@ -158,6 +159,14 @@ public class HPEntity extends AbstractEntity implements HighPrecision {
 
 	public final void setSatelliteId(Long satelliteId) {
 		this.satelliteId = satelliteId;
+	}
+
+	public final Date getSatelliteTime() {
+		return satelliteTime;
+	}
+
+	public final void setSatelliteTime(Date satelliteTime) {
+		this.satelliteTime = satelliteTime;
 	}
 
 	public String toString() {

@@ -71,11 +71,18 @@ public class HighPrecisionDaoImpl
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<HPEntity> getLatestFourMinutes(long satelliteId) {
-		final Query query = getEntityManager().createQuery(
+		
+		Query query = getEntityManager().createQuery(
+				"select max(hp.satelliteTime) FROM HPEntity hp where hp.satelliteId = :satelliteId");
+        query.setParameter("satelliteId", satelliteId);
+        Date lastEntryDate = (Date) query.getSingleResult();
+        Date satelliteTime = new Date(lastEntryDate.getTime() - (8 * 60 * 1000));
+				
+		query = getEntityManager().createQuery(
 				"SELECT hp FROM HPEntity hp where hp.satelliteId = :satelliteId "
-						+ "order by hp.sequenceNumber desc, hp.id asc");
+						+ "and satelliteTime >= :satelliteTime");
 		        query.setParameter("satelliteId", satelliteId);
-		        query.setMaxResults(240);
+		        query.setParameter("satelliteTime", satelliteTime);
 		return (List<HPEntity>)query.getResultList();
 	}
 	

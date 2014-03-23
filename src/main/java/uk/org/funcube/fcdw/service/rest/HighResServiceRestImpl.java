@@ -37,6 +37,7 @@ public class HighResServiceRestImpl extends AbstractService {
 	public HighResJson getAllHighResForSatellite(
 			@PathVariable(value = "satelliteId") Long satelliteId) {
 		
+		long previousTime = 0;
 
 		HighResJson highResJson = new HighResJson();
 		
@@ -61,32 +62,53 @@ public class HighResServiceRestImpl extends AbstractService {
 			for (int i = 0; i < 10; i++) {
 				switch (i) {
 				case 0: 
+					pad(channel1, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
 					channel1.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC1().intValue()]));
 					break;
-				case 1: 
+				case 1:  
+					pad(channel2, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
 					channel2.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC2().intValue()]));
 					break;
-				case 2: 
+				case 2:  
+					pad(channel3, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
 					channel3.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC3().intValue()]));
 					break;
-				case 3: 
+				case 3:  
+					pad(channel4, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
 					channel4.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC4().intValue()]));
 					break;
-				case 4: 
+				case 4:  
+					pad(channel5, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
 					channel5.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC5().intValue()]));
 					break;
-				case 5: 
+				case 5:  
+					pad(channel6, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
 					channel6.addDatum(new Double(highResEntity.getC6()*2.0));
 					break;
-				case 6: 
+				case 6:  
+					pad(channel7, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
 					channel7.addDatum(new Double(highResEntity.getC7()*2.0));
 					break;
 				}
 			}
+				
+			previousTime = highResEntity.getSatelliteTime().getTime();
 		}
 		
-		
 		return highResJson;
+		
+	}
+
+	private void pad(DataElement channel, long lastTime, long previousTime) {
+
+		if (previousTime != 0) {
+			final long timeDifference = lastTime - previousTime;
+			if (timeDifference > 0) {
+				for (int i = 0; i < timeDifference; i += 1000) {
+					channel.addDatum((Double)null);
+				}
+			}
+		}
 		
 	}
 	
