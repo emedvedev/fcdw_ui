@@ -7,6 +7,7 @@
 	
 	var options = {
         chart: {
+        	zoomType: 'x',
             renderTo: 'highres-container',
             type: 'line'
         },
