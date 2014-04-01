@@ -58,57 +58,71 @@ public class HighResServiceRestImpl extends AbstractService {
 		
 		List<HPEntity> latestOrbit = highResolutionDao.getLatestFourMinutes(satelliteId);
 		
+		long seconds = -480;
+		
 		for (HPEntity highResEntity : latestOrbit) {
+			
+			long padSeconds = 0;
+			
 			for (int i = 0; i < 10; i++) {
 				switch (i) {
 				case 0: 
-					pad(channel1, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
-					channel1.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC1().intValue()]));
+					padSeconds = pad(channel1, highResEntity.getSatelliteTime().getTime() - 1000, previousTime, seconds);
+					channel1.addDatum(padSeconds, new Double(SOL_ILLUMINATION[highResEntity.getC1().intValue()]));
 					break;
 				case 1:  
-					pad(channel2, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
-					channel2.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC2().intValue()]));
+					pad(channel2, highResEntity.getSatelliteTime().getTime() - 1000, previousTime, seconds);
+					channel2.addDatum(padSeconds, new Double(SOL_ILLUMINATION[highResEntity.getC2().intValue()]));
 					break;
 				case 2:  
-					pad(channel3, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
-					channel3.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC3().intValue()]));
+					pad(channel3, highResEntity.getSatelliteTime().getTime() - 1000, previousTime, seconds);
+					channel3.addDatum(padSeconds, new Double(SOL_ILLUMINATION[highResEntity.getC3().intValue()]));
 					break;
 				case 3:  
-					pad(channel4, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
-					channel4.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC4().intValue()]));
+					pad(channel4, highResEntity.getSatelliteTime().getTime() - 1000, previousTime, seconds);
+					channel4.addDatum(padSeconds, new Double(SOL_ILLUMINATION[highResEntity.getC4().intValue()]));
 					break;
 				case 4:  
-					pad(channel5, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
-					channel5.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC5().intValue()]));
+					pad(channel5, highResEntity.getSatelliteTime().getTime() - 1000, previousTime, seconds);
+					channel5.addDatum(padSeconds, new Double(SOL_ILLUMINATION[highResEntity.getC5().intValue()]));
 					break;
 				case 5:  
-					pad(channel6, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
-					channel6.addDatum(new Double(highResEntity.getC6()*2.0));
+					pad(channel6, highResEntity.getSatelliteTime().getTime() - 1000, previousTime, seconds);
+					channel6.addDatum(padSeconds, new Double(highResEntity.getC6()*2.0));
 					break;
 				case 6:  
-					pad(channel7, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
-					channel7.addDatum(new Double(highResEntity.getC7()*2.0));
+					pad(channel7, highResEntity.getSatelliteTime().getTime() - 1000, previousTime, seconds);
+					channel7.addDatum(padSeconds, new Double(highResEntity.getC7()*2.0));
 					break;
 				}
+				
+				seconds = padSeconds;
 			}
 				
 			previousTime = highResEntity.getSatelliteTime().getTime();
 		}
 		
+		highResJson.setMinX(channel1.getData().size() * -1);
+		
 		return highResJson;
 		
 	}
 
-	private void pad(DataElement channel, long lastTime, long previousTime) {
+	private long pad(DataElement channel, long lastTime, long previousTime, long second) {
+		
+		long padSeconds = second;
 
 		if (previousTime != 0) {
 			final long timeDifference = lastTime - previousTime;
 			if (timeDifference > 0) {
 				for (int i = 0; i < timeDifference; i += 1000) {
-					channel.addDatum((Double)null);
+					channel.addDatum(padSeconds, (Double)null);
+					padSeconds++;
 				}
 			}
 		}
+		
+		return padSeconds;
 		
 	}
 	
