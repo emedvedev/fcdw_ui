@@ -80,7 +80,7 @@ public class HighPrecisionDaoImpl
 				
 		query = getEntityManager().createQuery(
 				"SELECT hp FROM HPEntity hp where hp.satelliteId = :satelliteId "
-						+ "and satelliteTime >= :satelliteTime");
+						+ "and satelliteTime > :satelliteTime");
 		        query.setParameter("satelliteId", satelliteId);
 		        query.setParameter("satelliteTime", satelliteTime);
 		return (List<HPEntity>)query.getResultList();

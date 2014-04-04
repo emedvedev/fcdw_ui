@@ -22,25 +22,24 @@ import uk.org.funcube.fcdw.server.service.impl.AbstractService;
 import uk.org.funcube.fcdw.server.shared.DataElement;
 import uk.org.funcube.fcdw.server.shared.HighResJson;
 
-
 @Controller
 @RequestMapping(value = "/ui/highres")
 public class HighResServiceRestImpl extends AbstractService {
-	
+
 	@Autowired
 	HighPrecisionDao highResolutionDao;
-	
+
 	// get all data for one orbit for a given satellite
 	@Transactional(readOnly = true)
 	@RequestMapping(value = "/{satelliteId}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public HighResJson getAllHighResForSatellite(
 			@PathVariable(value = "satelliteId") Long satelliteId) {
-		
+
 		long previousTime = 0;
 
 		HighResJson highResJson = new HighResJson();
-		
+
 		DataElement channel1 = new DataElement("Sun Sensor +X");
 		highResJson.addElement(channel1);
 		DataElement channel2 = new DataElement("Sun Sensor +Y");
@@ -55,61 +54,92 @@ public class HighResServiceRestImpl extends AbstractService {
 		highResJson.addElement(channel6);
 		DataElement channel7 = new DataElement("Battery Volts");
 		highResJson.addElement(channel7);
+
+		List<HPEntity> latestOrbit = highResolutionDao
+				.getLatestFourMinutes(satelliteId);
 		
-		List<HPEntity> latestOrbit = highResolutionDao.getLatestFourMinutes(satelliteId);
+		long startX = latestOrbit.size() * -2;
+		long xValue = 0;
 		
+		highResJson.setMinX((int) startX);
+
 		for (HPEntity highResEntity : latestOrbit) {
 			for (int i = 0; i < 10; i++) {
 				switch (i) {
-				case 0: 
-					pad(channel1, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
-					channel1.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC1().intValue()]));
+				case 0:
+					xValue = pad(channel1,
+							highResEntity.getSatelliteTime().getTime() - 1000,
+							previousTime, startX);
+					channel1.addDatum(xValue, new Double(SOL_ILLUMINATION[highResEntity
+							.getC1().intValue()]));
 					break;
-				case 1:  
-					pad(channel2, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
-					channel2.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC2().intValue()]));
+				case 1:
+					xValue = pad(channel2,
+							highResEntity.getSatelliteTime().getTime() - 1000,
+							previousTime, startX);
+					channel2.addDatum(xValue, new Double(SOL_ILLUMINATION[highResEntity
+							.getC2().intValue()]));
 					break;
-				case 2:  
-					pad(channel3, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
-					channel3.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC3().intValue()]));
+				case 2:
+					xValue = pad(channel3,
+							highResEntity.getSatelliteTime().getTime() - 1000,
+							previousTime, startX);
+					channel3.addDatum(xValue, new Double(SOL_ILLUMINATION[highResEntity
+							.getC3().intValue()]));
 					break;
-				case 3:  
-					pad(channel4, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
-					channel4.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC4().intValue()]));
+				case 3:
+					xValue = pad(channel4,
+							highResEntity.getSatelliteTime().getTime() - 1000,
+							previousTime, startX);
+					channel4.addDatum(xValue, new Double(SOL_ILLUMINATION[highResEntity
+							.getC4().intValue()]));
 					break;
-				case 4:  
-					pad(channel5, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
-					channel5.addDatum(new Double(SOL_ILLUMINATION[highResEntity.getC5().intValue()]));
+				case 4:
+					xValue = pad(channel5,
+							highResEntity.getSatelliteTime().getTime() - 1000,
+							previousTime, startX);
+					channel5.addDatum(xValue, new Double(SOL_ILLUMINATION[highResEntity
+							.getC5().intValue()]));
 					break;
-				case 5:  
-					pad(channel6, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
-					channel6.addDatum(new Double(highResEntity.getC6()*2.0));
+				case 5:
+					xValue = pad(channel6,
+							highResEntity.getSatelliteTime().getTime() - 1000,
+							previousTime, startX);
+					channel6.addDatum(xValue, new Double(highResEntity.getC6() * 2.0));
 					break;
-				case 6:  
-					pad(channel7, highResEntity.getSatelliteTime().getTime() - 1000, previousTime);
-					channel7.addDatum(new Double(highResEntity.getC7()*2.0));
+				case 6:
+					xValue = pad(channel7,
+							highResEntity.getSatelliteTime().getTime() - 1000,
+							previousTime, startX);
+					channel7.addDatum(xValue, new Double(highResEntity.getC7() * 2.0));
 					break;
 				}
 			}
-				
+
 			previousTime = highResEntity.getSatelliteTime().getTime();
+			startX = xValue + 1;
 		}
-		
+
 		return highResJson;
-		
+
 	}
 
-	private void pad(DataElement channel, long lastTime, long previousTime) {
+	private long pad(DataElement channel, long lastTime, long previousTime,
+			long startX) {
+
+		long xValue = startX;
 
 		if (previousTime != 0) {
 			final long timeDifference = lastTime - previousTime;
 			if (timeDifference > 0) {
 				for (int i = 0; i < timeDifference; i += 1000) {
-					channel.addDatum((Double)null);
+					channel.addDatum(startX, (Double) null);
+					startX++;
 				}
 			}
 		}
-		
+
+		return startX;
 	}
-	
+
 }

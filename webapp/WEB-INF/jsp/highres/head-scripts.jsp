@@ -22,6 +22,7 @@
 
     $.getJSON('/fcdw_ui/ui/highres/${satelliteId}.json', function(data) {
         options.series = data.series;
+        options.xAxis = data.xAxis;
         var chart = new Highcharts.Chart(options);
     });
 	
