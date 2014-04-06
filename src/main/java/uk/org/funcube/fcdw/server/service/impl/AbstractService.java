@@ -195,6 +195,9 @@ public class AbstractService {
 	}
 
 	public static final double getAntsTemp(final int value) {
+		if (value == 99999 || value == -99999) {
+			return 0.0;
+		}
 		return ANTS_TEMPS[value];
 	}
 
