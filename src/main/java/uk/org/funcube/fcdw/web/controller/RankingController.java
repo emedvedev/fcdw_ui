@@ -7,6 +7,7 @@
 package uk.org.funcube.fcdw.web.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.ws.rs.QueryParam;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import uk.org.funcube.fcdw.server.clock.UTCClock;
 import uk.org.funcube.fcdw.server.dao.UserRankingDao;
 import uk.org.funcube.fcdw.server.model.UserRanking;
 import uk.org.funcube.fcdw.server.service.impl.AbstractService;
@@ -27,8 +29,13 @@ import uk.org.funcube.fcdw.server.shared.ValMinMax;
 @RequestMapping("ranking")
 public class RankingController extends AbstractService {
 
+	private static final int DAY_MILLIS = 24 * 60 * 60 * 1000;
+
 	@Autowired
 	private UserRankingDao userRankingDao;
+	
+	@Autowired
+	private UTCClock clock;
 
 	@Transactional(readOnly = true)
 	@RequestMapping(method = RequestMethod.GET)
@@ -46,17 +53,27 @@ public class RankingController extends AbstractService {
 		Long newNumber = 0L;
 		for (UserRanking userRanking : userRankings) {
 			
+			Date latestUploadDate = userRanking.getLatestUploadDate();
+			
+			String colour = "light-grey";
+			
+			if (clock.currentTime() - latestUploadDate.getTime() < 7 * DAY_MILLIS) {
+				colour = "LawnGreen";
+			} else if (clock.currentTime() - latestUploadDate.getTime() < 14 * DAY_MILLIS) {
+				colour = "DarkOrange";
+			}
+			
 			newNumber = userRanking.getNumber();
 			
 			if (oldNumber.longValue() != newNumber.longValue()) {
 				postedPosition = position;
 				ranking.add(new ValMinMax(userRanking.getSite(), newNumber.toString(),
-						Integer.toString(postedPosition), null));
+						Integer.toString(postedPosition), colour));
 				position++;
 			}
 			else {
 				ranking.add(new ValMinMax(userRanking.getSite(), newNumber.toString(),
-						Integer.toString(postedPosition), null));
+						Integer.toString(postedPosition), colour));
 				position++;
 			}
 

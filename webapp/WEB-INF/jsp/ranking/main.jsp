@@ -15,7 +15,7 @@
 	<c:forEach var="o" items="${ranking}">
 		<tr>
 			<td style="text-align: center; white-space: nowrap;">${o.name}</td>
-			<td style="text-align: center; white-space: nowrap;">${o.value}</td>
+			<td style="text-align: center; white-space: nowrap; color: ${o.max}">${o.value}</td>
 			<td style="text-align: center; white-space: nowrap;">${o.min}</td>
 		</tr>
 	</c:forEach>

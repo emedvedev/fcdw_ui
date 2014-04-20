@@ -6,6 +6,8 @@
 
 package uk.org.funcube.fcdw.server.model;
 
+import java.util.Date;
+
 public interface UserRanking {
 
 	String getSite();
@@ -13,5 +15,7 @@ public interface UserRanking {
 	Long getNumber();
 
 	long getSatelliteId();
+	
+	Date getLatestUploadDate();
 
 }

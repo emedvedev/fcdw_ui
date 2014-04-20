@@ -6,6 +6,8 @@
 
 package uk.org.funcube.fcdw.server.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -18,6 +20,7 @@ public class UserRankingEntity implements UserRanking {
 	private String site;
 	private long number;
 	private long satelliteId;
+	private Date latestUploadDate;
 
 	public UserRankingEntity() {
 
@@ -48,6 +51,14 @@ public class UserRankingEntity implements UserRanking {
 
 	public final void setSatelliteId(long satelliteId) {
 		this.satelliteId = satelliteId;
+	}
+
+	public final Date getLatestUploadDate() {
+		return latestUploadDate;
+	}
+
+	public final void setLatestUploadDate(Date latestUploadDate) {
+		this.latestUploadDate = latestUploadDate;
 	}
 
 }
