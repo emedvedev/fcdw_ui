@@ -6,24 +6,55 @@
 
 package uk.org.funcube.fcdw.server.model;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "UserRanking")
+@Table(name = "UserRanking2")
 public class UserRankingEntity implements UserRanking {
 
 	@Id
-	private String site;
-	private long number;
-	private long satelliteId;
-	private Date latestUploadDate;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	private Long satelliteId;
+	private String siteId;
+	private Long number;
+	private Timestamp latestUploadDate;
 
 	public UserRankingEntity() {
 
+	}
+
+	public UserRankingEntity(Long satelliteId, String siteId, Long number,
+			Timestamp latestUploadDate) {
+		super();
+		this.satelliteId = satelliteId;
+		this.siteId = siteId;
+		this.number = number;
+		this.latestUploadDate = latestUploadDate;
+	}
+
+	public final Long getId() {
+		return id;
+	}
+
+	public final void setId(Long id) {
+		this.id = id;
+	}
+
+	public final void setSatelliteId(Long satelliteId) {
+		this.satelliteId = satelliteId;
+	}
+
+	public final void setNumber(Long number) {
+		this.number = number;
 	}
 
 	@Override
@@ -36,12 +67,12 @@ public class UserRankingEntity implements UserRanking {
 	}
 
 	@Override
-	public String getSite() {
-		return site;
+	public String getSiteId() {
+		return siteId;
 	}
 
-	public void setSite(String site) {
-		this.site = site;
+	public void setSiteId(String siteId) {
+		this.siteId = siteId;
 	}
 
 	@Override
@@ -57,7 +88,7 @@ public class UserRankingEntity implements UserRanking {
 		return latestUploadDate;
 	}
 
-	public final void setLatestUploadDate(Date latestUploadDate) {
+	public final void setLatestUploadDate(Timestamp latestUploadDate) {
 		this.latestUploadDate = latestUploadDate;
 	}
 

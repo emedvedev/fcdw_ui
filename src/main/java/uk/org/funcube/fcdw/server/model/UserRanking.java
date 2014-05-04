@@ -10,7 +10,7 @@ import java.util.Date;
 
 public interface UserRanking {
 
-	String getSite();
+	String getSiteId();
 
 	Long getNumber();
 
