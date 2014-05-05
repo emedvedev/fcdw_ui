@@ -46,8 +46,8 @@
 	
 	<cache name="latestHexFrame" 
 	    maxElementsInMemory="1"  eternal="false"
-		overflowToDisk="false" timeToIdleSeconds="5" timeToLiveSeconds="5"
-		diskPersistent="false" diskExpiryThreadIntervalSeconds="5"  />
+		overflowToDisk="false" timeToIdleSeconds="10" timeToLiveSeconds="10"
+		diskPersistent="false" diskExpiryThreadIntervalSeconds="10"  />
 	
 
 	<!-- See http://ehcache.sourceforge.net/documentation/#mozTocId258426 for 
