@@ -8,7 +8,9 @@ package uk.org.funcube.fcdw.server.model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -60,10 +62,10 @@ public class UserEntity implements UserDetails, User {
 	private String registrationCode;
 
 	@ManyToMany(mappedBy = "users", fetch = FetchType.LAZY)
-	private List<HexFrameEntity> hexFrames;
+	private Set<HexFrameEntity> hexFrames;
 
 	public UserEntity() {
-		hexFrames = new ArrayList<HexFrameEntity>();
+		hexFrames = new HashSet<HexFrameEntity>();
 	}
 
 	public UserEntity(final String username, final String password, final String latitude, final String longitude, final String siteId,
@@ -84,11 +86,7 @@ public class UserEntity implements UserDetails, User {
 		this.registrationCode = registrationCode;
 		this.setEmailSent(emailSent);
 
-		hexFrames = new ArrayList<HexFrameEntity>();
-	}
-
-	public UserEntity(String username2, String password2, List<GrantedAuthority> perms) {
-		// TODO Auto-generated constructor stub
+		hexFrames = new HashSet<HexFrameEntity>();
 	}
 
 	@Override
@@ -227,12 +225,12 @@ public class UserEntity implements UserDetails, User {
 	}
 
 	@Override
-	public List<HexFrameEntity> getFrames() {
+	public Set<HexFrameEntity> getFrames() {
 		return hexFrames;
 	}
 
 	@Override
-	public void setFrames(final List<HexFrameEntity> frames) {
+	public void setFrames(final Set<HexFrameEntity> frames) {
 		this.hexFrames = frames;
 	}
 

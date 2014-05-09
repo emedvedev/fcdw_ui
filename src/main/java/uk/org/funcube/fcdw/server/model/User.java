@@ -7,6 +7,7 @@
 package uk.org.funcube.fcdw.server.model;
 
 import java.util.List;
+import java.util.Set;
 
 public interface User {
 	
@@ -24,8 +25,8 @@ public interface User {
 	void setEnabled(boolean state);
 	void setPassword(String hashPassword);
 	void addFrame(HexFrameEntity hexFrame);
-	List<HexFrameEntity> getFrames();
-	void setFrames(List<HexFrameEntity> hexFrames);
+	Set<HexFrameEntity> getFrames();
+	void setFrames(Set<HexFrameEntity> hexFrames);
 	void setId(Long i);
 	Long getId();
 }
