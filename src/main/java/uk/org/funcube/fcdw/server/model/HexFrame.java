@@ -27,4 +27,8 @@ public interface HexFrame {
 
 	void setRealtimeProcessed(boolean b);
 
+	String getLongitude();
+	
+	String getLatitude();
+
 }

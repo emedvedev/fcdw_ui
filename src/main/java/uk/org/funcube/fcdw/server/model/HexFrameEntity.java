@@ -44,6 +44,8 @@ public class HexFrameEntity implements HexFrame {
 	private boolean highPrecisionProcessed;
 	private boolean realtimeProcessed;
 	private Timestamp satelliteTime;
+	private String latitude;
+	private String longitude;
 
 	public HexFrameEntity() {
 		users = new HashSet<UserEntity>();
@@ -170,6 +172,22 @@ public class HexFrameEntity implements HexFrame {
 
 	public final void setSatelliteTime(Timestamp satelliteTime) {
 		this.satelliteTime = satelliteTime;
+	}
+
+	public final String getLatitude() {
+		return latitude;
+	}
+
+	public final void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	public final String getLongitude() {
+		return longitude;
+	}
+
+	public final void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 
 }

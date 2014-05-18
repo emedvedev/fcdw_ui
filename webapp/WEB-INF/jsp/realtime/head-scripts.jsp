@@ -15,6 +15,7 @@
 	var handleRealtime = function (data) {
 		$("#info_seqno").text("Seq. No.: " + data.sequenceNumber);
 		$("#eps_created_date").text("Uploaded at: " + data.lastUpdated + ", MinMax from: " + data.minmaxReset);
+		$("#eps_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
 		$("#eps_sol_volts_x_name").text(data.epsValues[0].name);
 		$("#eps_sol_volts_x_value").text(data.epsValues[0].value);
 		$("#eps_sol_volts_x_min").text(data.epsValues[0].min);
@@ -81,6 +82,7 @@
 		$("#eps_ppt_mode_max").text(data.epsValues[15].max);
 		
 		$("#asib_created_date").text("Uploaded at: " + data.lastUpdated + ", MinMax from: " + data.minmaxReset);
+		$("#asib_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
 		$("#asib_sun_sensor_x_name").text(data.asibValues[0].name);
 		$("#asib_sun_sensor_x_value").text(data.asibValues[0].value);
 		$("#asib_sun_sensor_x_min").text(data.asibValues[0].min);
@@ -123,6 +125,7 @@
 		$("#asib_bus_volts_five_max").text(data.asibValues[9].max);
 		
 		$("#rf_created_date").text("Uploaded at: " + data.lastUpdated + ", MinMax from: " + data.minmaxReset);
+		$("#rf_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
 		$("#rf_receive_doppler_name").text(data.rfValues[0].name);
 		$("#rf_receive_doppler_value").text(data.rfValues[0].value);
 		$("#rf_receive_doppler_min").text(data.rfValues[0].min);
@@ -149,6 +152,7 @@
 		$("#rf_transmit_current_five_max").text(data.rfValues[5].max);
 		
 		$("#pa_created_date").text("Uploaded at: " + data.lastUpdated + ", MinMax from: " + data.minmaxReset);
+		$("#pa_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
 		$("#pa_forward_power_name").text(data.paValues[0].name);
 		$("#pa_forward_power_value").text(data.paValues[0].value);
 		$("#pa_forward_power_min").text(data.paValues[0].min);
@@ -168,6 +172,7 @@
 
 		
 		$("#ants_created_date").text("Uploaded at: " + data.lastUpdated + ", MinMax from: " + data.minmaxReset);
+		$("#ants_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
 		$("#ants_temp_zero_name").text(data.antsValues[0].name);
 		$("#ants_temp_zero_value").text(data.antsValues[0].value);
 		$("#ants_temp_zero_min").text(data.antsValues[0].min);
@@ -186,6 +191,7 @@
 		$("#ants_deployment_uhf_b_value").text(data.antsValues[5].value);
 
 		$("#sw_created_date").text("Uploaded at: " + data.lastUpdated + ", MinMax from: " + data.minmaxReset);
+		$("#sw_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
 		$("#sw_sequence_number_name").text(data.swValues[0].name);
 		$("#sw_sequence_number_value").text(data.swValues[0].value);
 		$("#sw_command_count_name").text(data.swValues[1].name);

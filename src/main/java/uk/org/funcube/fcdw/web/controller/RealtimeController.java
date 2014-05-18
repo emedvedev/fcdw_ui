@@ -83,6 +83,9 @@ public class RealtimeController extends AbstractService {
 			mv.addObject("satelliteId", satelliteId);
 			return mv;
 		}
+		
+		final String latitude = latestFrame.getLatitude();
+		final String longitude = latestFrame.getLongitude();
 
 		final Date createdDate = latestFrame.getCreatedDate();
 		final String hexString = latestFrame.getHexString();
@@ -276,6 +279,8 @@ public class RealtimeController extends AbstractService {
 		mv.addObject("swValues", swValues);
 		mv.addObject("siteList", siteList);
 		mv.addObject("satelliteId", satelliteId);
+		mv.addObject("latitude", latitude);
+		mv.addObject("longitude", longitude);
 		return mv;
 	}
 

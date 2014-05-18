@@ -38,6 +38,7 @@ it has transmitted since spacecraft initialisation after separation (2013-11-21 
 		<br />
 		<div style="text-align: center">
 			<h3>Electrical Power Subsystem</h3>
+			<h3 id="eps_lat_long" style="text-align: left;">Satellite Latitude, Longitude:</h3>
 			<h3 id="eps_created_date" style="text-align: left;">Latest
 				update at:</h3>
 			<table style="width: 100%;">
@@ -216,6 +217,7 @@ it has transmitted since spacecraft initialisation after separation (2013-11-21 
 		<div style="text-align: center">
 			<h3>Sensor Subsystem</h3>
 
+			<h3 id="asib_lat_long" style="text-align: left;">Satellite Latitude, Longitude:</h3>
 			<h3 id="asib_created_date" style="text-align: left;">Latest
 				update at:</h3>
 			<table style="width: 100%;">
@@ -335,6 +337,7 @@ it has transmitted since spacecraft initialisation after separation (2013-11-21 
 		<div style="text-align: center">
 			<h3>Communication Subsystem</h3>
 
+			<h3 id="rf_lat_long" style="text-align: left;">Satellite Latitude, Longitude:</h3>
 			<h3 id="rf_created_date" style="text-align: left;">Latest update
 				at:</h3>
 			<table style="width: 100%;">
@@ -413,6 +416,7 @@ it has transmitted since spacecraft initialisation after separation (2013-11-21 
 		<div style="text-align: center">
 			<h3>RF Power Amplifier</h3>
 
+			<h3 id="pa_lat_long" style="text-align: left;">Satellite Latitude, Longitude:</h3>
 			<h3 id="pa_created_date" style="text-align: left;">Latest update
 				at:</h3>
 			<table style="width: 100%;">
@@ -471,6 +475,7 @@ it has transmitted since spacecraft initialisation after separation (2013-11-21 
 		<div style="text-align: center">
 			<h3>Antenna Subsystem</h3>
 
+			<h3 id="ants_lat_long" style="text-align: left;">Satellite Latitude, Longitude:</h3>
 			<h3 id="ants_created_date" style="text-align: left;">Latest
 				update at:</h3>
 			<table style="width: 100%;">
@@ -540,6 +545,7 @@ it has transmitted since spacecraft initialisation after separation (2013-11-21 
 		<br />
 		<div style="text-align: center">
 			<h3>Software State</h3>
+			<h3 id="sw_lat_long" style="text-align: left;">Satellite Latitude, Longitude:</h3>
 			<h3 id="sw_created_date" style="text-align: left;">Latest update
 				at:</h3>
 			<table style="width: 100%;">
