@@ -1,19 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <h2>Real Time Data</h2>
-<p>
-	This page shows the latest value of all the housekeeping parameters in
-	the spacecraft. <br>The data has been collected by one or more of
-	the ground stations who are submitting this data from all around the
-	world.
-</p>
 
-<h3>To download a .csv file which contains Realtime data, please click <strong><a href="/downloads/realtime.csv">here</a></strong>.
-This data is generated every hour, on the hour and contains the preceding 250 minutes of information</h3>
-<p>The date/time in the csv file is 'SatelliteTime' It is based on the number for sequences / frames
-it has transmitted since spacecraft initialisation after separation (2013-11-21 07:38:16).
-<br>This time will drift as it is based on the MCU clock which is not temperature controlled. In the future we may be able to give realtime if we can model the drift...
-</p>
 
 <br>
 
