@@ -92,8 +92,22 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		final Date createdDate = latestFrame.getCreatedDate();
 		final String hexString = latestFrame.getHexString();
 		final Date minmaxResetDate = minMaxDao.findMaxRefDate(satelliteId);
-		final String latitude = latestFrame.getLatitude();
-		final String longitude = latestFrame.getLongitude() + "E";
+		
+		String latitude = "";
+		final double latitudeValue = Double.parseDouble(latestFrame.getLatitude());
+		if (latitudeValue > 0.0) {
+			latitude = String.format("%5.1f N", latitudeValue);
+		} else {
+			latitude = String.format("%5.1f S", Math.abs(latitudeValue));
+		}
+		
+		String longitude = "";
+		final double longitudeValue = Double.parseDouble(latestFrame.getLongitude());
+		if (longitudeValue > 180.0) {
+			longitude = String.format("%5.1f W", 360.0 - longitudeValue);
+		} else {
+			longitude = String.format("%5.1f E", longitudeValue);
+		}
 		
 
 		final int frameId = Integer.parseInt(hexString.substring(0, 2), 16);

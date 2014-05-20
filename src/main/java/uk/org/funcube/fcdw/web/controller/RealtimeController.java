@@ -87,8 +87,22 @@ public class RealtimeController extends AbstractService {
 		final Long hfCount = hexFrameDao.countAll(satelliteId);
 		final String packetCount = String.format("%d (%5.1fMB)", hfCount, (double)hfCount * 2048 / 8 / 1000000);
 		
-		final String latitude = latestFrame.getLatitude();
-		final String longitude = latestFrame.getLongitude();
+		String latitude = "";
+		
+		final double latitudeValue = Double.parseDouble(latestFrame.getLatitude());
+		if (latitudeValue > 0.0) {
+			latitude = String.format("%5.1f N", latitudeValue);
+		} else {
+			latitude = String.format("%5.1f S", Math.abs(latitudeValue));
+		}
+		
+		String longitude = "";
+		final double longitudeValue = Double.parseDouble(latestFrame.getLongitude());
+		if (longitudeValue > 180.0) {
+			longitude = String.format("%5.1f W", 360.0 - longitudeValue);
+		} else {
+			longitude = String.format("%5.1f E", longitudeValue);
+		}
 
 		final Date createdDate = latestFrame.getCreatedDate();
 		final String hexString = latestFrame.getHexString();
