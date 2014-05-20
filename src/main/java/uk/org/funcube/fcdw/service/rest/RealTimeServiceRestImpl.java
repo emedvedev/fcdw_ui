@@ -86,6 +86,9 @@ public class RealTimeServiceRestImpl extends AbstractService {
 			return new RealTimeInfo();
 		}
 		
+		final Long hfCount = hexFrameDao.countAll(satelliteId);
+		final String packetCount = String.format("%d (%5.1fMB)", hfCount, (double)hfCount * 2048 / 8 / 1000000);
+		
 		final Date createdDate = latestFrame.getCreatedDate();
 		final String hexString = latestFrame.getHexString();
 		final Date minmaxResetDate = minMaxDao.findMaxRefDate(satelliteId);
@@ -287,7 +290,7 @@ public class RealTimeServiceRestImpl extends AbstractService {
 					SDTF.format(createdDate),
 					epsValues, asibValues, rfValues, paValues, antsValues, swValues,
 					siteList, SDTF.format(minmaxResetDate),
-					latitude, longitude);
+					latitude, longitude, packetCount);
 		
 		return realtimeInfo;
 		

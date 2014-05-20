@@ -129,6 +129,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 					<h2>Warehouse Info</h2>
 					<ul>
 						<li id="info_seqno"></li>
+						<li id="info_packet_count"></li>
 					</ul>
 				</li>
 			</ul>

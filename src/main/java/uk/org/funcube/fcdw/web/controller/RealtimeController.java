@@ -84,6 +84,9 @@ public class RealtimeController extends AbstractService {
 			return mv;
 		}
 		
+		final Long hfCount = hexFrameDao.countAll(satelliteId);
+		final String packetCount = String.format("%d (%5.1fMB)", hfCount, (double)hfCount * 2048 / 8 / 1000000);
+		
 		final String latitude = latestFrame.getLatitude();
 		final String longitude = latestFrame.getLongitude();
 
@@ -281,6 +284,7 @@ public class RealtimeController extends AbstractService {
 		mv.addObject("satelliteId", satelliteId);
 		mv.addObject("latitude", latitude);
 		mv.addObject("longitude", longitude);
+		mv.addObject("packetCount", packetCount);
 		return mv;
 	}
 

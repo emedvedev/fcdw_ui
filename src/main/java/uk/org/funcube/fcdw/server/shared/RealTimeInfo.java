@@ -17,12 +17,13 @@ public class RealTimeInfo {
 	private String minmaxReset;
 	private String latitude;
 	private String longitude;
+	private String packetCount;
 	
 	public RealTimeInfo(Long sequenceNumber, String lastUpdated, List<ValMinMax> epsValues, List<ValMinMax> asibValues,
 			List<ValMinMax> rfValues, List<ValMinMax> paValues,
 			List<ValMinMax> antsValues, List<StringPair> swValues,
 			List<String>siteList, String minmaxReset,
-			String latitude, String longitude) {
+			String latitude, String longitude, String packetCount) {
 		super();
 		this.sequenceNumber = sequenceNumber;
 		this.lastUpdated = lastUpdated;
@@ -36,6 +37,7 @@ public class RealTimeInfo {
 		this.minmaxReset = minmaxReset;
 		this.latitude = latitude;
 		this.longitude = longitude;
+		this.packetCount = packetCount;
 	}
 
 	public RealTimeInfo() {
@@ -87,6 +89,10 @@ public class RealTimeInfo {
 
 	public final String getLongitude() {
 		return longitude;
+	}
+
+	public final String getPacketCount() {
+		return packetCount;
 	}
 
 }
