@@ -95,7 +95,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 								<!-- <li>Observer Map</li> -->
 								<li><a href="<c:url value='/satmap.html?satelliteId=2'/>">Satellite Position</a></li>
 								<li><a href="<c:url value='/ranking.html?satelliteId=2'/>">Upload Ranking</a></li>
-								<li><a href="<c:url value='/home.html?satelliteId=2'/>">About</a></li>
+								<li><a href="http://www.funcube.org.uk" target="_blank">About</a></li>
 							</c:when>
 							<c:otherwise>
 								<li><a href="<c:url value='/realtime.html?satelliteId=${satelliteId}'/>">Real Time Data</a></li>
@@ -106,7 +106,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 								<!-- <li>Observer Map</li> -->
 								<li><a href="<c:url value='/satmap.html?satelliteId=${satelliteId}'/>">Satellite Position</a></li>
 								<li><a href="<c:url value='/ranking.html?satelliteId=${satelliteId}'/>">Upload Ranking</a></li>
-								<li><a href="<c:url value='/home.html?satelliteId=${satelliteId}'/>">About</a></li>
+								<li><a href="http://www.funcube.org.uk" target="_blank">About</a></li>
 							</c:otherwise>
 						</c:choose>
 					</ul>
