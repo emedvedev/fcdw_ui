@@ -27,6 +27,12 @@
     $.getJSON('/fcdw_ui/ui/wod/${satelliteId}.json', function(data) {
         options.series = data.series;
         var chart = new Highcharts.Chart(options);
+        $("#site_list").html('');
+        var items = [];
+        $.each(data.siteList, function (id, site) {
+            items.push('<li>' + site + '</li>');
+        });  
+        $("#site_list").append(items.join(''));
     });
 	
 /*

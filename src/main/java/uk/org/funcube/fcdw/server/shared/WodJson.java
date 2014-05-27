@@ -2,7 +2,7 @@ package uk.org.funcube.fcdw.server.shared;
 
 import java.util.LinkedList;
 
-public class WodJson {
+public class WodJson extends SharedInfo {
 	
 	private LinkedList series = new LinkedList();
 	

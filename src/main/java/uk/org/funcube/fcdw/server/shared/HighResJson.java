@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlElement;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
-public class HighResJson {
+public class HighResJson extends SharedInfo {
 	
 	private LinkedList series = new LinkedList();
 	private XAxis xAxis = new XAxis();

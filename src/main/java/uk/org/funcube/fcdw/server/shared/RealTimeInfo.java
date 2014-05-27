@@ -3,7 +3,7 @@ package uk.org.funcube.fcdw.server.shared;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RealTimeInfo {
+public class RealTimeInfo extends SharedInfo {
 	
 	List<ValMinMax> epsValues = new ArrayList<ValMinMax>();
 	List<ValMinMax> asibValues = new ArrayList<ValMinMax>();
@@ -13,17 +13,18 @@ public class RealTimeInfo {
 	List<StringPair> swValues = new ArrayList<StringPair>();
 	private Long sequenceNumber;
 	private String lastUpdated;
-	private List<String> siteList;
 	private String minmaxReset;
 	private String latitude;
 	private String longitude;
 	private String packetCount;
+	private String satelliteMode;
 	
 	public RealTimeInfo(Long sequenceNumber, String lastUpdated, List<ValMinMax> epsValues, List<ValMinMax> asibValues,
 			List<ValMinMax> rfValues, List<ValMinMax> paValues,
 			List<ValMinMax> antsValues, List<StringPair> swValues,
 			List<String>siteList, String minmaxReset,
-			String latitude, String longitude, String packetCount) {
+			String latitude, String longitude, String packetCount,
+			String satelliteMode) {
 		super();
 		this.sequenceNumber = sequenceNumber;
 		this.lastUpdated = lastUpdated;
@@ -38,6 +39,7 @@ public class RealTimeInfo {
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.packetCount = packetCount;
+		this.satelliteMode = satelliteMode;
 	}
 
 	public RealTimeInfo() {
@@ -75,10 +77,6 @@ public class RealTimeInfo {
 		return lastUpdated;
 	}
 
-	public final List<String> getSiteList() {
-		return siteList;
-	}
-
 	public final String getMinmaxReset() {
 		return minmaxReset;
 	}
@@ -93,6 +91,10 @@ public class RealTimeInfo {
 
 	public final String getPacketCount() {
 		return packetCount;
+	}
+
+	public String getSatelliteMode() {
+		return satelliteMode;
 	}
 
 }

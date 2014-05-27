@@ -130,6 +130,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 					<ul>
 						<li id="info_seqno"></li>
 						<li id="info_packet_count"></li>
+						<li id="info_satellite_mode"></li>
 					</ul>
 				</li>
 			</ul>

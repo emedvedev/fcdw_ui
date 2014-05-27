@@ -18,6 +18,7 @@
 		<class>uk.org.funcube.fcdw.server.model.UserRankingEntity</class>
 		<class>uk.org.funcube.fcdw.server.model.RealTimeEntity</class>
 		<class>uk.org.funcube.fcdw.server.model.MinMaxEntity</class>
+		<class>uk.org.funcube.fcdw.server.model.SatelliteStatusEntity</class>
 		<exclude-unlisted-classes/>
 	</persistence-unit>
 </persistence>

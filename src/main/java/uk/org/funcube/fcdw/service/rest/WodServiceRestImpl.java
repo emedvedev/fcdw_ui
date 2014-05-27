@@ -6,8 +6,10 @@
 
 package uk.org.funcube.fcdw.service.rest;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -19,7 +21,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import uk.org.funcube.fcdw.server.clock.UTCClock;
+import uk.org.funcube.fcdw.server.dao.HexFrameDao;
 import uk.org.funcube.fcdw.server.dao.WholeOrbitDataDao;
+import uk.org.funcube.fcdw.server.model.HexFrame;
+import uk.org.funcube.fcdw.server.model.UserEntity;
 import uk.org.funcube.fcdw.server.model.WODEntity;
 import uk.org.funcube.fcdw.server.shared.DataElement;
 import uk.org.funcube.fcdw.server.shared.WodJson;
@@ -31,6 +36,9 @@ public class WodServiceRestImpl {
 	
 	@Autowired
 	WholeOrbitDataDao wholeOrbitDataDao;
+	
+	@Autowired
+	HexFrameDao hexFrameDao;
 	
 	@Autowired
 	UTCClock utcClock;
@@ -140,7 +148,18 @@ public class WodServiceRestImpl {
 			
 			hour++;
 		}
+
+		final HexFrame latestFrame = hexFrameDao.getLatest(satelliteId);
 		
+		Set<UserEntity> users = latestFrame.getUsers();
+
+		List<String> siteList = new ArrayList<String>();
+
+		for (UserEntity user : users) {
+			siteList.add(user.getSiteId());
+		}
+		
+		wodJson.setSiteList(siteList);
 		
 		return wodJson;
 		

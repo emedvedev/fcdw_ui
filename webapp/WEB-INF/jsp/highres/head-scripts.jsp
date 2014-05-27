@@ -24,7 +24,15 @@
         options.series = data.series;
         options.xAxis = data.xAxis;
         var chart = new Highcharts.Chart(options);
+        $("#site_list").html('');
+        var items = [];
+        $.each(data.siteList, function (id, site) {
+            items.push('<li>' + site + '</li>');
+        });  
+        $("#site_list").append(items.join(''));
     });
+	
+	
 	
 /*
 	var chart;

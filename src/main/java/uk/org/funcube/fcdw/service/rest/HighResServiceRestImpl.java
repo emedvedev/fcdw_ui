@@ -6,7 +6,9 @@
 
 package uk.org.funcube.fcdw.service.rest;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,8 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import uk.org.funcube.fcdw.server.dao.HexFrameDao;
 import uk.org.funcube.fcdw.server.dao.HighPrecisionDao;
 import uk.org.funcube.fcdw.server.model.HPEntity;
+import uk.org.funcube.fcdw.server.model.HexFrame;
+import uk.org.funcube.fcdw.server.model.UserEntity;
 import uk.org.funcube.fcdw.server.service.impl.AbstractService;
 import uk.org.funcube.fcdw.server.shared.DataElement;
 import uk.org.funcube.fcdw.server.shared.HighResJson;
@@ -28,6 +33,9 @@ public class HighResServiceRestImpl extends AbstractService {
 
 	@Autowired
 	HighPrecisionDao highResolutionDao;
+	
+	@Autowired
+	HexFrameDao hexFrameDao;
 
 	// get all data for one orbit for a given satellite
 	@Transactional(readOnly = true)
@@ -119,6 +127,18 @@ public class HighResServiceRestImpl extends AbstractService {
 			previousTime = highResEntity.getSatelliteTime().getTime();
 			startX = xValue + 1;
 		}
+
+		final HexFrame latestFrame = hexFrameDao.getLatest(satelliteId);
+		
+		Set<UserEntity> users = latestFrame.getUsers();
+
+		List<String> siteList = new ArrayList<String>();
+
+		for (UserEntity user : users) {
+			siteList.add(user.getSiteId());
+		}
+		
+		highResJson.setSiteList(siteList);
 
 		return highResJson;
 

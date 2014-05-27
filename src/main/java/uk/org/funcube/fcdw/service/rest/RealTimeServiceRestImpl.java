@@ -23,8 +23,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import uk.org.funcube.fcdw.server.dao.HexFrameDao;
 import uk.org.funcube.fcdw.server.dao.MinMaxDao;
+import uk.org.funcube.fcdw.server.dao.SatelliteStatusDao;
 import uk.org.funcube.fcdw.server.model.HexFrame;
 import uk.org.funcube.fcdw.server.model.MinMax;
+import uk.org.funcube.fcdw.server.model.SatelliteStatus;
+import uk.org.funcube.fcdw.server.model.SatelliteStatusEntity;
 import uk.org.funcube.fcdw.server.model.UserEntity;
 import uk.org.funcube.fcdw.server.service.impl.AbstractService;
 import uk.org.funcube.fcdw.server.shared.Antenna;
@@ -33,6 +36,7 @@ import uk.org.funcube.fcdw.server.shared.EPS;
 import uk.org.funcube.fcdw.server.shared.RF;
 import uk.org.funcube.fcdw.server.shared.RealTime;
 import uk.org.funcube.fcdw.server.shared.RealTimeInfo;
+import uk.org.funcube.fcdw.server.shared.SharedInfo;
 import uk.org.funcube.fcdw.server.shared.SoftwareState;
 import uk.org.funcube.fcdw.server.shared.StringPair;
 import uk.org.funcube.fcdw.server.shared.ValMinMax;
@@ -61,6 +65,9 @@ public class RealTimeServiceRestImpl extends AbstractService {
 	private HexFrameDao hexFrameDao;
 	
 	@Autowired
+	private SatelliteStatusDao satelliteStatusDao;
+	
+	@Autowired
 	private MinMaxDao minMaxDao;
 
 	private Long satelliteId;
@@ -69,7 +76,7 @@ public class RealTimeServiceRestImpl extends AbstractService {
 	@Transactional(readOnly = true)
 	@RequestMapping(value = "/{satelliteId}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	public RealTimeInfo getLatest(
+	public SharedInfo getLatest(
 			@PathVariable(value = "satelliteId") Long theSatelliteId) {
 		
 		this.satelliteId = theSatelliteId;
@@ -89,9 +96,12 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		final Long hfCount = hexFrameDao.countAll(satelliteId);
 		final String packetCount = String.format("%d (%5.1fMB)", hfCount, (double)hfCount * 2048 / 8 / 1000000);
 		
+		List<SatelliteStatus> satelliteStatuses = satelliteStatusDao.findBySatelliteId(satelliteId);
+		
 		final Date createdDate = latestFrame.getCreatedDate();
 		final String hexString = latestFrame.getHexString();
 		final Date minmaxResetDate = minMaxDao.findMaxRefDate(satelliteId);
+		final String satelliteMode = satelliteStatuses.get(0).getMode();
 		
 		String latitude = "";
 		final double latitudeValue = Double.parseDouble(latestFrame.getLatitude());
@@ -299,12 +309,12 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		swValues.add(new StringPair("Software ABF", (softwareState.getC12()) ? "On" : "Off"));
 		swValues.add(new StringPair("Deployment Wait At Next Boot", (softwareState.getC13()) ? "Yes" : "No"));
 		
-		RealTimeInfo realtimeInfo 
+		SharedInfo realtimeInfo 
 			= new RealTimeInfo(realTime.getSequenceNumber(), 
 					SDTF.format(createdDate),
 					epsValues, asibValues, rfValues, paValues, antsValues, swValues,
 					siteList, SDTF.format(minmaxResetDate),
-					latitude, longitude, packetCount);
+					latitude, longitude, packetCount, satelliteMode);
 		
 		return realtimeInfo;
 		
