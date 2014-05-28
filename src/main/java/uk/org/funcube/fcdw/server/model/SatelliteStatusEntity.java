@@ -93,7 +93,7 @@ public class SatelliteStatusEntity implements SatelliteStatus {
 	public String getMode() {
 		if (!isEclipseSwitch()) {
 			if (!isEclipseModeForced()) {
-				return "Forced Education";
+				return "Forced Transponder";
 			} else {
 				return "Forced Amateur";
 			}
@@ -101,7 +101,7 @@ public class SatelliteStatusEntity implements SatelliteStatus {
 			if (!isEclipsed()) {
 				return "Education";
 			} else {
-				return "Amateur";
+				return "Transponder";
 			}
 		}
 	}

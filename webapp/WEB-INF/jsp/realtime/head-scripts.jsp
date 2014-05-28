@@ -15,7 +15,7 @@
 	var handleRealtime = function (data) {
 		$("#info_seqno").text("Seq. No.: " + data.sequenceNumber);
 		$("#info_packet_count").text("Packets: " + data.packetCount);
-		$("#info_satellite_mode").text("Sat. Mode: " + data.satelliteMode);
+		$("#info_satellite_mode").text("Mode: " + data.satelliteMode);
 		$("#eps_created_date").text("Uploaded at: " + data.lastUpdated + ", MinMax from: " + data.minmaxReset);
 		$("#eps_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
 		$("#eps_sol_volts_x_name").text(data.epsValues[0].name);
