@@ -27,6 +27,7 @@ public class WodController extends AbstractService {
 		ModelAndView mv = new ModelAndView("wod");
 
 		mv.addObject("satelliteId", satelliteId);
+		mv.addObject("showStatus", new Long(0));
 
 		return mv;
 	}

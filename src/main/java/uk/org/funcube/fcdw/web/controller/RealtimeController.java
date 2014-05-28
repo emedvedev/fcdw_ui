@@ -299,6 +299,7 @@ public class RealtimeController extends AbstractService {
 		mv.addObject("latitude", latitude);
 		mv.addObject("longitude", longitude);
 		mv.addObject("packetCount", packetCount);
+		mv.addObject("showStatus", new Long(1));
 		return mv;
 	}
 

@@ -27,6 +27,7 @@ public class RadioController extends AbstractService {
 		ModelAndView mv = new ModelAndView("radio");
 
 		mv.addObject("satelliteId", satelliteId);
+		mv.addObject("showStatus", new Long(0));
 
 		return mv;
 	}

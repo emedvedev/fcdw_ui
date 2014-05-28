@@ -27,6 +27,7 @@ public class SatMapController extends AbstractService {
 		ModelAndView mv = new ModelAndView("satmap");
 
 		mv.addObject("satelliteId", satelliteId);
+		mv.addObject("showStatus", new Long(0));
 
 		return mv;
 	}

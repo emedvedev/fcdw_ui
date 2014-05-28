@@ -137,6 +137,7 @@ public class CctDebugController extends AbstractService {
 			mv.addObject("safeValues", safeValues);
 			mv.addObject("burnValues", burnValues);
 			mv.addObject("autoValues", autoValues);
+			mv.addObject("showStatus", new Long(0));
 		}
 
 		mv.addObject("satelliteId", satelliteId);

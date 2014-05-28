@@ -27,6 +27,7 @@ public class ObserverController extends AbstractService {
 		ModelAndView mv = new ModelAndView("observer");
 
 		mv.addObject("satelliteId", satelliteId);
+		mv.addObject("showStatus", new Long(0));
 
 		return mv;
 	}

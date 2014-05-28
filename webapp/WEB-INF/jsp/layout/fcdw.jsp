@@ -120,19 +120,28 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 						</ul>
 					</li>
 				</sec:authorize>
-				<li>
-					<h2>Data Providers</h2>
-					<ul id="site_list">
-					</ul>
-				</li>
-				<li>
-					<h2>Warehouse Info</h2>
-					<ul>
-						<li id="info_seqno"></li>
-						<li id="info_packet_count"></li>
-						<li id="info_satellite_mode"></li>
-					</ul>
-				</li>
+				<c:choose>
+					<c:when test="${showStatus == 1}">
+						<li>
+							<h2>Data Providers</h2>
+							<ul id="site_list">
+							</ul>
+						</li>
+						<li>
+							<h2>Warehouse Info</h2>
+							<ul>
+								<li id="info_seqno"></li>
+								<li id="info_packet_count"></li>
+							</ul>
+						</li>
+						<li>
+							<h2>Satellite Status</h2>
+							<ul>
+								<li id="info_satellite_mode"></li>
+							</ul>
+						</li>
+					</c:when>
+				</c:choose>
 			</ul>
 			<!-- end sidebar -->
 			<br style="clear: both;" />

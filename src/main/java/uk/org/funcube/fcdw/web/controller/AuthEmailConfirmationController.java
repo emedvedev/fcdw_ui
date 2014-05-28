@@ -40,6 +40,7 @@ public class AuthEmailConfirmationController extends AbstractService {
 		
 		ModelAndView m = new ModelAndView("authemail");
 		m.addObject("satelliteId", 2);
+		m.addObject("showStatus", new Long(0));
 		
 		List<User> users = userDao.findBySiteId(siteId);
 		

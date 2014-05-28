@@ -83,6 +83,7 @@ public class RankingController extends AbstractService {
 		ModelAndView mv = new ModelAndView("ranking");
 		mv.addObject("ranking", ranking);
 		mv.addObject("satelliteId", satelliteId);
+		mv.addObject("showStatus", new Long(0));
 		return mv;
 	}
 

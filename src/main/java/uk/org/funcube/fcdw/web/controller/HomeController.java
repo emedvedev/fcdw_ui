@@ -30,6 +30,7 @@ public class HomeController {
 
 		ModelAndView modelAndView = new ModelAndView("home");
 		modelAndView.addObject("satelliteId", satelliteId);
+		modelAndView.addObject("showStatus", new Long(0));
 		return modelAndView;
 	}
 

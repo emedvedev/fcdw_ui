@@ -50,6 +50,7 @@ public class FitterController extends AbstractService {
 		ModelAndView mv = new ModelAndView("fitter");
 		mv.addObject("fitter", fitter);
 		mv.addObject("satelliteId", satelliteId);
+		mv.addObject("showStatus", new Long(0));
 		return mv;
 	}
 
