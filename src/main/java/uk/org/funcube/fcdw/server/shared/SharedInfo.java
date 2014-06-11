@@ -8,6 +8,7 @@ public class SharedInfo {
 
 	protected List<String> siteList;
 	protected String satelliteMode;
+	protected String transponderState;
 
 	public SharedInfo() {
 		super();
@@ -28,6 +29,14 @@ public class SharedInfo {
 
 	public void setSatelliteMode(String satelliteMode) {
 		this.satelliteMode = satelliteMode;
+	}
+
+	public final String getTransponderState() {
+		return transponderState;
+	}
+
+	public final void setTransponderState(String transponderState) {
+		this.transponderState = transponderState;
 	}
 
 }

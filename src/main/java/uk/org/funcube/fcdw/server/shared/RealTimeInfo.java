@@ -17,14 +17,13 @@ public class RealTimeInfo extends SharedInfo {
 	private String latitude;
 	private String longitude;
 	private String packetCount;
-	private String satelliteMode;
 	
 	public RealTimeInfo(Long sequenceNumber, String lastUpdated, List<ValMinMax> epsValues, List<ValMinMax> asibValues,
 			List<ValMinMax> rfValues, List<ValMinMax> paValues,
 			List<ValMinMax> antsValues, List<StringPair> swValues,
 			List<String>siteList, String minmaxReset,
 			String latitude, String longitude, String packetCount,
-			String satelliteMode) {
+			String satelliteMode, String transponderState) {
 		super();
 		this.sequenceNumber = sequenceNumber;
 		this.lastUpdated = lastUpdated;
@@ -40,6 +39,8 @@ public class RealTimeInfo extends SharedInfo {
 		this.longitude = longitude;
 		this.packetCount = packetCount;
 		this.satelliteMode = satelliteMode;
+		this.transponderState = transponderState;
+		
 	}
 
 	public RealTimeInfo() {
@@ -91,10 +92,6 @@ public class RealTimeInfo extends SharedInfo {
 
 	public final String getPacketCount() {
 		return packetCount;
-	}
-
-	public String getSatelliteMode() {
-		return satelliteMode;
 	}
 
 }

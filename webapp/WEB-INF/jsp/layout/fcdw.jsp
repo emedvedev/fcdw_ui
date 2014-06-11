@@ -138,6 +138,7 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 							<h2>Satellite Status</h2>
 							<ul>
 								<li id="info_satellite_mode"></li>
+								<li id="info_transponder_state"></li>
 							</ul>
 						</li>
 					</c:when>

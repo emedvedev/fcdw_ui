@@ -14,4 +14,6 @@ public interface SatelliteStatus {
 
 	String getMode();
 
+	String getTransponderState();
+
 }

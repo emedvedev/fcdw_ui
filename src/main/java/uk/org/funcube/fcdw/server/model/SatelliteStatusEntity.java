@@ -92,16 +92,21 @@ public class SatelliteStatusEntity implements SatelliteStatus {
 	@Transient
 	public String getMode() {
 		if (!isEclipseSwitch()) {
-			if (!isEclipseModeForced()) {
-				return "Forced Transponder";
-			} else {
-				return "Forced Amateur";
-			}
+			return "Manual";
+		} else {
+			return "Auto";
+		}
+	}
+	
+	@Transient
+	public String getTransponderState() {
+		if (!isEclipseSwitch()) {
+			return "On";
 		} else {
 			if (!isEclipsed()) {
-				return "Education";
+				return "Off";
 			} else {
-				return "Transponder";
+				return "On";
 			}
 		}
 	}

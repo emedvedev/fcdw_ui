@@ -102,17 +102,20 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		final String hexString = latestFrame.getHexString();
 		final Date minmaxResetDate = minMaxDao.findMaxRefDate(satelliteId);
 		final String satelliteMode = satelliteStatuses.get(0).getMode();
+		final String transponderState = satelliteStatuses.get(0).getTransponderState();
 		
-		String latitude = "";
-		final double latitudeValue = Double.parseDouble(latestFrame.getLatitude());
+		String latitude = latestFrame.getLatitude();
+		
+		final double latitudeValue = Double.parseDouble((latitude != null) ? latitude : "0");
 		if (latitudeValue > 0.0) {
 			latitude = String.format("%5.1f N", latitudeValue);
 		} else {
 			latitude = String.format("%5.1f S", Math.abs(latitudeValue));
 		}
 		
-		String longitude = "";
-		final double longitudeValue = Double.parseDouble(latestFrame.getLongitude());
+		String longitude = latestFrame.getLongitude();
+		
+		final double longitudeValue = Double.parseDouble((longitude != null) ? longitude : "0");
 		if (longitudeValue > 180.0) {
 			longitude = String.format("%5.1f W", 360.0 - longitudeValue);
 		} else {
@@ -314,7 +317,7 @@ public class RealTimeServiceRestImpl extends AbstractService {
 					SDTF.format(createdDate),
 					epsValues, asibValues, rfValues, paValues, antsValues, swValues,
 					siteList, SDTF.format(minmaxResetDate),
-					latitude, longitude, packetCount, satelliteMode);
+					latitude, longitude, packetCount, satelliteMode, transponderState);
 		
 		return realtimeInfo;
 		
