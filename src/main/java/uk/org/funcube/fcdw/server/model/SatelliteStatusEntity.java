@@ -15,12 +15,12 @@ public class SatelliteStatusEntity implements SatelliteStatus {
 	private Long satelliteId;
 	
 	private Long sequenceNumber;
-	private Boolean eclipseModeForced;
-	private Boolean eclipsed;
+	private Boolean eclipseModeForced = false;
+	private Boolean eclipsed = false;
 	private Timestamp lastUpdated;
 	private Double eclipseDepth;
 
-	private Boolean eclipseSwitch;
+	private Boolean eclipseSwitch = false;
 	
 	public SatelliteStatusEntity() {
 	}
@@ -91,7 +91,7 @@ public class SatelliteStatusEntity implements SatelliteStatus {
 	
 	@Transient
 	public String getMode() {
-		if (!isEclipseModeForced()) {
+		if (isEclipseSwitch()) {
 			return "Auto";
 		} else {
 			return "Manual";
@@ -100,13 +100,25 @@ public class SatelliteStatusEntity implements SatelliteStatus {
 	
 	@Transient
 	public String getTransponderState() {
-		if (isEclipseModeForced()) {
-			return "On";
-		} else {
-			if (!isEclipsed()) {
+		if (!isEclipseSwitch()) {
+			if (!isEclipseModeForced()) {
 				return "Off";
 			} else {
 				return "On";
+			}
+		} else {
+			if (!isEclipseModeForced()) {
+				if (!isEclipsed()) {
+					return "Off";
+				} else {
+					return "On";
+				}
+			} else {
+				if (!isEclipsed()) {
+					return "Off";
+				} else {
+					return "On";
+				}
 			}
 		}
 	}

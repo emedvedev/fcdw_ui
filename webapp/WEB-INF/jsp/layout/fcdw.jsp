@@ -86,6 +86,9 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 					<h2>Navigation</h2>
 					<ul>
 						<c:choose>
+							<c:when test="${satelliteId == 1}">
+								<li><a href="<c:url value='/realtimeFC2.html'/>">Real Time Data</a></li>
+							</c:when>
 							<c:when test="${satelliteId == null}">
 								<li><a href="<c:url value='/realtime.html?satelliteId=2'/>">Real Time Data</a></li>
 								<li><a href="<c:url value='/highres.html?satelliteId=2'/>">High Resolution Data</a></li>
