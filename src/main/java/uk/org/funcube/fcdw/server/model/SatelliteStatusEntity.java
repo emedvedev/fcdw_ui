@@ -122,5 +122,14 @@ public class SatelliteStatusEntity implements SatelliteStatus {
 			}
 		}
 	}
+	
+	public final String toString() {
+		return "SatelliteStatus: lastUpdated: " + lastUpdated
+		+ "satelliteId: " + satelliteId
+		+ ", sequenceNumber: " + sequenceNumber
+		+ ", eclipseModeForced :" + eclipseModeForced
+		+ ", eclipsed: " + eclipsed
+		+ ", eclipseSwitch :" + eclipseSwitch;
+	}
 
 }
