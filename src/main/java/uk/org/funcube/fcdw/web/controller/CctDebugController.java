@@ -125,9 +125,9 @@ public class CctDebugController extends AbstractService {
 			autoValues.add(new StringPair("Eclipse Force", fitterDebug.getEclipseForce()));
 			autoValues.add(new StringPair("Safe Mode Detect", fitterDebug.getSafeModeDetect()));
 			autoValues.add(new StringPair("Safe Mode Force", fitterDebug.getSafeModeForce()));
-			autoValues.add(new StringPair("Debug Model", fitterDebug.getDebugMode1()));
+			autoValues.add(new StringPair("Debug Model", fitterDebug.getDebugMode()));
 			autoValues.add(new StringPair("Delay Boot", fitterDebug.getDelayBoot()));
-			autoValues.add(new StringPair("UkubeEnabled", fitterDebug.getUkubeEnabled()));
+			autoValues.add(new StringPair("Cycle Fitter Messages", fitterDebug.getCycleFitterMessages()));
 
 			mv.addObject("createdDate", SDTF.format(createdDate));
 			mv.addObject("miscValues", miscValues);
