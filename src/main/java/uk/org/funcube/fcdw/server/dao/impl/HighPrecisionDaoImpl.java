@@ -37,13 +37,14 @@ public class HighPrecisionDaoImpl
 	}
 
     @Override
-	public List<HighPrecision> findByTimeRange(final Date start, final Date end) {
+	public List<HighPrecision> findByTimeRange(final Date start, final Date end, Long satelliteId) {
 		final Map<String, Object> parameters = new HashMap<String, Object>();
         final String query = "SELECT hp FROM HPEntity hp "
-                + "WHERE hp.receivedDate BETWEEN :start AND :end ORDER BY hp.receivedDate";
+                + "WHERE hp.receivedDate BETWEEN :start AND :end and satelliteId = :satelliteId ORDER BY hp.receivedDate";
 
         parameters.put("start", start);
         parameters.put("end", end);
+        parameters.put("satelliteId", satelliteId);
 
         final List<HighPrecision> data = findMany(query, parameters);
         
@@ -58,10 +59,11 @@ public class HighPrecisionDaoImpl
 	}
 
 	@Override
-	public Date getLastFrameTime() {
+	public Date getLastFrameTime(Long satelliteId) {
 		final Date epoch = Calendar.getInstance().getTime();
 		epoch.setTime(0);
-		final Query query = getEntityManager().createQuery("SELECT max(receivedDate) FROM HPEntity hp");
+		final Query query = getEntityManager().createQuery("SELECT max(receivedDate) FROM HPEntity hp where satelliteId = :satelliteId");
+		query.setParameter("satelliteId", satelliteId);
 		final Date lastFrameTime = (Date)query.getSingleResult();
 		return (lastFrameTime != null) ? lastFrameTime : epoch;
 	}

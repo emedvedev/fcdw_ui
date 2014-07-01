@@ -18,9 +18,9 @@ import uk.org.funcube.fcdw.server.model.HighPrecision;
 public interface HighPrecisionDao extends DataAccessObject<HighPrecision, Long> {
 	
 	Long countAll();
-	List<HighPrecision>  findByTimeRange(Date start, Date end);
+	List<HighPrecision>  findByTimeRange(Date start, Date end, Long satelliteId);
 	HighPrecision saveOrUpdate(HighPrecision highPrecisionData);
-	Date getLastFrameTime();
+	Date getLastFrameTime(Long satelliteId);
 	List<HPEntity> getLatestFourMinutes(long satelliteId);
 
 }

@@ -6,7 +6,6 @@
 
 package uk.org.funcube.fcdw.server.dao.impl;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -84,8 +83,9 @@ public class WholeOrbitDataDaoImpl extends AbstractDataAccessObject<WOD, WODEnti
 		Long id = (Long) query.getSingleResult();
 		
 		query = getEntityManager().createQuery(
-				"SELECT wod FROM WODEntity wod where wod.id > :id ");
+				"SELECT wod FROM WODEntity wod where wod.id > :id and  wod.satelliteId = :satelliteId");
 		query.setParameter("id", id - 104);		
+		query.setParameter("satelliteId", satelliteId);
 		return query.getResultList();
 	}
 
