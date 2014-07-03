@@ -92,10 +92,25 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 								<li><a href="<c:url value='/wod.html?satelliteId=2'/>">Whole Orbit Data</a></li></li>
 								<li><a href="<c:url value='/fitter.html?satelliteId=2'/>">Fitter Messages</a></li>
 								<li><a href="<c:url value='/radio.html?satelliteId=2'/>">Amateur Radio Info</a></li>
-								<!-- <li>Observer Map</li> -->
 								<li><a href="<c:url value='/satmap.html?satelliteId=2'/>">Satellite Position</a></li>
 								<li><a href="<c:url value='/ranking.html?satelliteId=2'/>">Upload Ranking</a></li>
 								<li><a href="http://www.funcube.org.uk" target="_blank">About</a></li>
+							</c:when>
+							<c:when test="${satelliteId == 1}">
+								<!--
+								<li><a href="<c:url value='/realtimefc2.html?satelliteId=1'/>">Real Time Data</a></li>
+								<li><a href="<c:url value='/highres.html?satelliteId=1'/>">High Resolution Data</a></li>
+								<li><a href="<c:url value='/wod.html?satelliteId=1'/>">Whole Orbit Data</a></li></li>
+								-->
+								<li><a href="<c:url value='/fitter.html?satelliteId=1'/>">Fitter Messages</a></li>
+								<!--
+								<li><a href="<c:url value='/radio.html?satelliteId=1'/>">Amateur Radio Info</a></li>
+								<li><a href="<c:url value='/satmap.html?satelliteId=1'/>">Satellite Position</a></li>
+								-->
+								<!--
+								<li><a href="<c:url value='/ranking.html?satelliteId=1'/>">Upload Ranking</a></li>
+								<li><a href="http://www.funcube.org.uk" target="_blank">About</a></li>
+								-->
 							</c:when>
 							<c:otherwise>
 								<li><a href="<c:url value='/realtime.html?satelliteId=${satelliteId}'/>">Real Time Data</a></li>
