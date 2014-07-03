@@ -23,21 +23,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 import uk.org.funcube.fcdw.server.dao.HexFrameDao;
 import uk.org.funcube.fcdw.server.dao.MinMaxDao;
+import uk.org.funcube.fcdw.server.dao.RealTimeDao;
 import uk.org.funcube.fcdw.server.dao.SatelliteStatusDao;
 import uk.org.funcube.fcdw.server.model.HexFrame;
 import uk.org.funcube.fcdw.server.model.MinMax;
+import uk.org.funcube.fcdw.server.model.RealTimeEntity;
 import uk.org.funcube.fcdw.server.model.SatelliteStatus;
-import uk.org.funcube.fcdw.server.model.SatelliteStatusEntity;
 import uk.org.funcube.fcdw.server.model.UserEntity;
 import uk.org.funcube.fcdw.server.service.impl.AbstractService;
-import uk.org.funcube.fcdw.server.shared.Antenna;
-import uk.org.funcube.fcdw.server.shared.DTMF;
-import uk.org.funcube.fcdw.server.shared.EPS;
-import uk.org.funcube.fcdw.server.shared.RF;
 import uk.org.funcube.fcdw.server.shared.RealTime;
+import uk.org.funcube.fcdw.server.shared.RealTimeFC2;
 import uk.org.funcube.fcdw.server.shared.RealTimeInfo;
 import uk.org.funcube.fcdw.server.shared.SharedInfo;
-import uk.org.funcube.fcdw.server.shared.SoftwareState;
 import uk.org.funcube.fcdw.server.shared.StringPair;
 import uk.org.funcube.fcdw.server.shared.ValMinMax;
 import uk.org.funcube.fcdw.web.controller.RealtimeController;
@@ -65,6 +62,9 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 	private HexFrameDao hexFrameDao;
 	
 	@Autowired
+	private RealTimeDao realTimeDao;
+	
+	@Autowired
 	private SatelliteStatusDao satelliteStatusDao;
 	
 	@Autowired
@@ -87,24 +87,27 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 
 		ModelAndView mv = new ModelAndView("realtime");
 
-		final HexFrame latestFrame = hexFrameDao.getLatest(satelliteId);
+		final HexFrame latestHexFrame = hexFrameDao.getLatest(satelliteId);
+		
+		final RealTimeEntity realTimeEntity = realTimeDao.getLastEntry(satelliteId);
 
-		if (latestFrame == null) {
+		if (latestHexFrame == null) {
 			return new RealTimeInfo();
 		}
+		
+		RealTimeFC2 realTimeFC2 = new RealTimeFC2(realTimeEntity);
 		
 		final Long hfCount = hexFrameDao.countAll(satelliteId);
 		final String packetCount = String.format("%d (%5.1fMB)", hfCount, (double)hfCount * 2048 / 8 / 1000000);
 		
 		List<SatelliteStatus> satelliteStatuses = satelliteStatusDao.findBySatelliteId(satelliteId);
 		
-		final Date createdDate = latestFrame.getCreatedDate();
-		final String hexString = latestFrame.getHexString();
+		final Date createdDate = latestHexFrame.getCreatedDate();
 		final Date minmaxResetDate = minMaxDao.findMaxRefDate(satelliteId);
 		final String satelliteMode = satelliteStatuses.get(0).getMode();
 		final String transponderState = satelliteStatuses.get(0).getTransponderState();
 		
-		String latitude = latestFrame.getLatitude();
+		String latitude = latestHexFrame.getLatitude();
 		
 		final double latitudeValue = Double.parseDouble((latitude != null) ? latitude : "0");
 		if (latitudeValue > 0.0) {
@@ -113,7 +116,7 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 			latitude = String.format("%5.1f S", Math.abs(latitudeValue));
 		}
 		
-		String longitude = latestFrame.getLongitude();
+		String longitude = latestHexFrame.getLongitude();
 		
 		final double longitudeValue = Double.parseDouble((longitude != null) ? longitude : "0");
 		if (longitudeValue > 180.0) {
@@ -121,18 +124,8 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 		} else {
 			longitude = String.format("%5.1f E", longitudeValue);
 		}
-		
 
-		final int frameId = Integer.parseInt(hexString.substring(0, 2), 16);
-		final int sensorId = frameId % 2;
-
-		final String binaryString = convertHexBytePairToBinary(hexString.substring(2, hexString.length()));
-
-		int frameType = frameId & 63;
-
-		RealTime realTime = new RealTime(satelliteId.intValue(), frameType, sensorId, createdDate, binaryString);
-
-		Set<UserEntity> users = latestFrame.getUsers();
+		Set<UserEntity> users = latestHexFrame.getUsers();
 
 		List<String> siteList = new ArrayList<String>();
 
@@ -147,8 +140,10 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 		List<ValMinMax> antsValues = new ArrayList<ValMinMax>();
 		List<StringPair> swValues = new ArrayList<StringPair>();
 		
+		epsValues.add(new ValMinMax("Battery Volts 0", realTimeFC2.getBattery0Volts().toString(), N_A, N_A));
+		
 		SharedInfo realtimeInfo 
-			= new RealTimeInfo(realTime.getSequenceNumber(), 
+			= new RealTimeInfo(realTimeEntity.getSequenceNumber(), 
 					SDTF.format(createdDate),
 					epsValues, asibValues, rfValues, paValues, antsValues, swValues,
 					siteList, SDTF.format(minmaxResetDate),

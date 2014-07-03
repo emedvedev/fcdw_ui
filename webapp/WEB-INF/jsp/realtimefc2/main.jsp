@@ -7,3 +7,11 @@
 	the ground stations who will be submitting this data from all around the
 	world.
 </p>
+
+<div id="tabs" style="width: 100%;">
+	<ul>
+
+		<li><a href="<c:url value='#tabs-eps'/>"
+			title="Electrical Power Subsystem">EPS</a></li>
+	</ul>
+</div>

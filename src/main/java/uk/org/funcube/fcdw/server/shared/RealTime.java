@@ -134,6 +134,14 @@ public class RealTime {
 		this.satelliteId = satelliteId;
 	}
 
+	protected void setSensorId(int sensorId) {
+		this.sensorId = sensorId;
+	}
+
+	protected void setFrameType(int frameType) {
+		this.frameType = frameType;
+	}
+
 	private static final long extractSequenceNumber(final int satelliteId, final String binaryString) {
 
 		long seqNo;

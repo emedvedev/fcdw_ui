@@ -18,7 +18,7 @@ public interface RealTimeDao extends DataAccessObject<RealTimeEntity, Long> {
 
 	List<RealTimeEntity> getByDates(final Date startDate, final Date endDate);
 
-	RealTimeEntity getLastEntry();
+	RealTimeEntity getLastEntry(Long satelliteId);
 
 	void delete(final RealTimeEntity realTime);
 

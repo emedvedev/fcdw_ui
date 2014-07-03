@@ -80,8 +80,8 @@ public class RealTimeEntity {
 	private Long c39;
 	private Long c40;
 	private Long c41;
-	private Boolean c42;
-	private Boolean c43;
+	private Long c42;
+	private Long c43;
 	private Boolean c44;
 	private Boolean c45;
 	private Boolean c46;
@@ -104,6 +104,19 @@ public class RealTimeEntity {
 	private Boolean c63;
 	private Boolean c64;
 	private Boolean c65;
+	private Boolean c66;
+	private Boolean c67;
+	private Boolean c68;
+	private Boolean c69;
+	private Boolean c70;
+	private Boolean c71;
+	private Long c72;
+	private Long c73;
+	private Long c74;
+	private Long c75;
+	private Long c76;
+	private Long c77;
+	private Long c78;
 
 	public RealTimeEntity() {
 		// TODO Auto-generated constructor stub
@@ -166,30 +179,30 @@ public class RealTimeEntity {
 		antenna.isAntennaDeployment2();
 		antenna.isAntennaDeployment3();
 		SoftwareState softwareState = realTime.getSoftwareState();
-		c42 = softwareState.getC1();
-		c43 = softwareState.getC2();
-		c44 = softwareState.getC3();
-		c45 = softwareState.getC4();
-		c46 = softwareState.getC5();
-		c47 = softwareState.getC6();
-		c48 = softwareState.getC7();
-		c49 = softwareState.getC8();
-		c50 = softwareState.getC9();
-		c51 = softwareState.getC10();
-		c52 = softwareState.getC11();
-		c53 = softwareState.getC12();
-		c54 = softwareState.getC13();
-		c55 = softwareState.getC14();
-		c56 = softwareState.getC15();
-		c57 = softwareState.getC16();
-		c58 = softwareState.getC17();
-		c59 = softwareState.getC18();
-		c60 = softwareState.getC19();
-		c61 = softwareState.getC20();
-		c62 = softwareState.getC21();
-		c63 = softwareState.getC22();
-		c64 = softwareState.getC23();
-		c65 = softwareState.getC24();
+		c44 = softwareState.getC1();
+		c45 = softwareState.getC2();
+		c46 = softwareState.getC3();
+		c47 = softwareState.getC4();
+		c48 = softwareState.getC5();
+		c49 = softwareState.getC6();
+		c50 = softwareState.getC7();
+		c51 = softwareState.getC8();
+		c52 = softwareState.getC9();
+		c53 = softwareState.getC10();
+		c54 = softwareState.getC11();
+		c55 = softwareState.getC12();
+		c56 = softwareState.getC13();
+		c57 = softwareState.getC14();
+		c58 = softwareState.getC15();
+		c59 = softwareState.getC16();
+		c60 = softwareState.getC17();
+		c61 = softwareState.getC18();
+		c62 = softwareState.getC19();
+		c63 = softwareState.getC20();
+		c64 = softwareState.getC21();
+		c65 = softwareState.getC22();
+		c66 = softwareState.getC23();
+		c67 = softwareState.getC24();
 		DTMF dtmf = realTime.getDTMF();
 		commandCount = dtmf.getCommandCount();
 		lastCommand = dtmf.getLastCommand();
@@ -587,19 +600,19 @@ public class RealTimeEntity {
 		this.c41 = c41;
 	}
 
-	public final Boolean getC42() {
+	public final Long getC42() {
 		return c42;
 	}
 
-	public final void setC42(Boolean c42) {
+	public final void setC42(Long c42) {
 		this.c42 = c42;
 	}
 
-	public final Boolean getC43() {
+	public final Long getC43() {
 		return c43;
 	}
 
-	public final void setC43(Boolean c43) {
+	public final void setC43(Long c43) {
 		this.c43 = c43;
 	}
 
@@ -777,6 +790,110 @@ public class RealTimeEntity {
 
 	public final void setC65(Boolean c65) {
 		this.c65 = c65;
+	}
+
+	public final Boolean getC66() {
+		return c66;
+	}
+
+	public final void setC66(Boolean c66) {
+		this.c66 = c66;
+	}
+
+	public final Boolean getC67() {
+		return c67;
+	}
+
+	public final void setC67(Boolean c67) {
+		this.c67 = c67;
+	}
+
+	public final Boolean getC68() {
+		return c68;
+	}
+
+	public final void setC68(Boolean c68) {
+		this.c68 = c68;
+	}
+
+	public final Boolean getC69() {
+		return c69;
+	}
+
+	public final void setC69(Boolean c69) {
+		this.c69 = c69;
+	}
+
+	public final Boolean getC70() {
+		return c70;
+	}
+
+	public final void setC70(Boolean c70) {
+		this.c70 = c70;
+	}
+
+	public final Boolean getC71() {
+		return c71;
+	}
+
+	public final void setC71(Boolean c71) {
+		this.c71 = c71;
+	}
+
+	public final Long getC72() {
+		return c72;
+	}
+
+	public final void setC72(Long c72) {
+		this.c72 = c72;
+	}
+
+	public final Long getC73() {
+		return c73;
+	}
+
+	public final void setC73(Long c73) {
+		this.c73 = c73;
+	}
+
+	public final Long getC74() {
+		return c74;
+	}
+
+	public final void setC74(Long c74) {
+		this.c74 = c74;
+	}
+
+	public final Long getC75() {
+		return c75;
+	}
+
+	public final void setC75(Long c75) {
+		this.c75 = c75;
+	}
+
+	public final Long getC76() {
+		return c76;
+	}
+
+	public final void setC76(Long c76) {
+		this.c76 = c76;
+	}
+
+	public final Long getC77() {
+		return c77;
+	}
+
+	public final void setC77(Long c77) {
+		this.c77 = c77;
+	}
+
+	public final Long getC78() {
+		return c78;
+	}
+
+	public final void setC78(Long c78) {
+		this.c78 = c78;
 	}
 
 	public final Timestamp getSatelliteTime() {
