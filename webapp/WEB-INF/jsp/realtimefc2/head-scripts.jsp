@@ -28,12 +28,10 @@
 	
 	function refreshDiv(){
 		
-		/*
 		$.ajax({
-			  url: "/fcdw_ui/ui/realtime/${satelliteId}.json",
+			  url: "/fcdw_ui/ui/realtimefc2/${satelliteId}.json",
 		      type: 'GET',
 		      success : handleRealtime
 			 });
-		*/
 	}
 </script>
