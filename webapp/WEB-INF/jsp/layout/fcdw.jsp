@@ -97,8 +97,8 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 								<li><a href="http://www.funcube.org.uk" target="_blank">About</a></li>
 							</c:when>
 							<c:when test="${satelliteId == 1}">
-								<!--
 								<li><a href="<c:url value='/realtimefc2.html?satelliteId=1'/>">Real Time Data</a></li>
+								<!--
 								<li><a href="<c:url value='/highres.html?satelliteId=1'/>">High Resolution Data</a></li>
 								<li><a href="<c:url value='/wod.html?satelliteId=1'/>">Whole Orbit Data</a></li></li>
 								-->
@@ -149,13 +149,15 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 								<li id="info_packet_count"></li>
 							</ul>
 						</li>
-						<li>
-							<h2>Satellite Status</h2>
-							<ul>
-								<li id="info_satellite_mode"></li>
-								<li id="info_transponder_state"></li>
-							</ul>
-						</li>
+						<c:if  test="${satelliteId != 1}">
+							<li>
+								<h2>Satellite Status</h2>
+								<ul>
+									<li id="info_satellite_mode"></li>
+									<li id="info_transponder_state"></li>
+								</ul>
+							</li>
+						</c:if>
 					</c:when>
 				</c:choose>
 			</ul>
