@@ -5,9 +5,13 @@
 	<br>Some messages are wider than the web page, these are indicated by an ellipsis &hellip;
 	and can be viewed by hovering the cursor over the line.
 </p>
-<p>A text file which contains ALL the Fitter Messages that have been captured by groundstations 
-	up to 7 days ago can be downloaded <a href="/downloads/fitter.txt">here</a>
-</p>
+<c:choose>
+	<c:when test="${satelliteId != 1}">
+		<p>A text file which contains ALL the Fitter Messages that have been captured by groundstations 
+			up to 7 days ago can be downloaded <a href="/downloads/fitter.txt">here</a>
+		</p>
+	</c:when>
+</c:choose>
 <table style="width: 100%;">
 	<tr>
 		<td style="text-align: left; white-space: nowrap;">Message</td>
