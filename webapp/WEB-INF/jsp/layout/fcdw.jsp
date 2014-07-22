@@ -105,8 +105,8 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 								<li><a href="<c:url value='/fitter.html?satelliteId=1'/>">Fitter Messages</a></li>
 								<!--
 								<li><a href="<c:url value='/radio.html?satelliteId=1'/>">Amateur Radio Info</a></li>
-								<li><a href="<c:url value='/satmap.html?satelliteId=1'/>">Satellite Position</a></li>
 								-->
+								<li><a href="<c:url value='/satmap.html?satelliteId=1'/>">Satellite Position</a></li>
 								<li><a href="<c:url value='/ranking.html?satelliteId=1'/>">Upload Ranking</a></li>
 								<!--
 								<li><a href="http://www.funcube.org.uk" target="_blank">About</a></li>
