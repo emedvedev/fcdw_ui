@@ -225,6 +225,15 @@
 					<td id="eps_sol_volts_x_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
+				<tr>
+					<td style="text-align: center;">Battery Heater</td>
+					<td id="eps_sol_volts_x_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+					<td id="eps_sol_volts_x_min"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+					<td id="eps_sol_volts_x_max"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
 			</table>
 		</div>
 		<br>
@@ -311,62 +320,62 @@
 					<td style="text-align: center; white-space: nowrap;">Max.</td>
 				</tr>
 				<tr>
-					<td id="rf_receive_doppler_name" style="text-align: center;">$nbsp;</td>
+					<td id="rf_receive_doppler_name" style="text-align: center;">Receive Doppler</td>
 					<td id="rf_receive_doppler_value"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="rf_receive_doppler_min"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="rf_receive_doppler_max"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
-					<td id="rf_receive_rssi_name" style="text-align: center;">$nbsp;</td>
+					<td id="rf_receive_rssi_name" style="text-align: center;">Receiver RSSI</td>
 					<td id="rf_receive_rssi_value"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="rf_receive_rssi_min"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="rf_receive_rssi_max"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 
 				<tr>
-					<td id="rf_temperature_name" style="text-align: center;">$nbsp;</td>
+					<td id="rf_temperature_name" style="text-align: center;">Temperature</td>
 					<td id="rf_temperature_value"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="rf_temperature_min"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="rf_temperature_max"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 
 				<tr>
-					<td id="rf_receive_current_name" style="text-align: center;">$nbsp;</td>
+					<td id="rf_receive_current_name" style="text-align: center;">Receive Current</td>
 					<td id="rf_receive_current_value"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="rf_receive_current_min"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="rf_receive_current_max"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 
 				<tr>
-					<td id="rf_transmit_current_three_name" style="text-align: center;">$nbsp;</td>
+					<td id="rf_transmit_current_three_name" style="text-align: center;">Transmit Current 3.3V bus</td>
 					<td id="rf_transmit_current_three_value"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="rf_transmit_current_three_min"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="rf_transmit_current_three_max"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 
 				<tr>
-					<td id="rf_transmit_current_five_name" style="text-align: center;">$nbsp;</td>
+					<td id="rf_transmit_current_five_name" style="text-align: center;">Transmit Current 5.0V bus</td>
 					<td id="rf_transmit_current_five_value"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="rf_transmit_current_five_min"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="rf_transmit_current_five_max"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 			</table>
 		</div>
@@ -390,42 +399,42 @@
 					<td style="text-align: center; white-space: nowrap;">Max.</td>
 				</tr>
 				<tr>
-					<td id="pa_forward_power_name" style="text-align: center;">$nbsp;</td>
+					<td id="pa_forward_power_name" style="text-align: center;">Forward Power</td>
 					<td id="pa_forward_power_value"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="pa_forward_power_min"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="pa_forward_power_max"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
-					<td id="pa_reverse_power_name" style="text-align: center;">$nbsp;</td>
+					<td id="pa_reverse_power_name" style="text-align: center;">Reverse Power</td>
 					<td id="pa_reverse_power_value"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="pa_reverse_power_min"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="pa_reverse_power_max"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 
 				<tr>
-					<td id="pa_device_temperature_name" style="text-align: center;">$nbsp;</td>
+					<td id="pa_device_temperature_name" style="text-align: center;">Device Temperature</td>
 					<td id="pa_device_temperature_value"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="pa_device_temperature_min"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="pa_device_temperature_max"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 
 				<tr>
-					<td id="pa_bus_current_name" style="text-align: center;">$nbsp;</td>
+					<td id="pa_bus_current_name" style="text-align: center;">Bus Current</td>
 					<td id="pa_bus_current_value"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="pa_bus_current_min"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="pa_bus_current_max"
-						style="text-align: center; white-space: nowrap;">$nbsp;</td>
+						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 			</table>
 		</div>
@@ -442,6 +451,87 @@
 				<tr>
 					<td style="text-align: center;">Name</td>
 					<td style="text-align: center; white-space: nowrap;">Value</td>
+				</tr>
+				
+				<tr>
+					<td id="sw_sequence_number_name" style="text-align: center;">Eclipsed</td>
+					<td id="sw_sequence_number_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
+
+
+				<tr>
+					<td id="sw_command_count_name" style="text-align: center;">Mode Manager Mode</td>
+					<td id="sw_command_count_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
+
+				<tr>
+					<td id="sw_last_command_name" style="text-align: center;">Mode Manager Comms. Nominal</td>
+					<td id="sw_last_command_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
+
+				<tr>
+					<td id="sw_command_success_name" style="text-align: center;">Mode Manager Comms. State</td>
+					<td id="sw_command_success_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
+
+				<tr>
+					<td id="sw_valid_asib_name" style="text-align: center;">TMTC Mode Idle</td>
+					<td id="sw_valid_asib_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
+
+				<tr>
+					<td id="sw_valid_eps_name" style="text-align: center;">TMTC Event Forwarding</td>
+					<td id="sw_valid_eps_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
+				<tr>
+					<td id="sw_valid_pa_name" style="text-align: center;">TC Buffer RX Enable</td>
+					<td id="sw_valid_pa_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
+				<tr>
+					<td id="sw_valid_rf_name" style="text-align: center;">TC Buffer TX Enable</td>
+					<td id="sw_valid_rf_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
+
+				<tr>
+					<td id="sw_valid_mse_name" style="text-align: center;">OBC Soft Reset Count</td>
+					<td id="sw_valid_mse_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
+
+				<tr>
+					<td id="sw_valid_ants_bus_a_name" style="text-align: center;">EPS Hard Reset Count</td>
+					<td id="sw_valid_ants_bus_a_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
+
+				<tr>
+					<td id="sw_valid_ants_bus_b_name" style="text-align: center;">Sequence Number</td>
+					<td id="sw_valid_ants_bus_b_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
+
+				<tr>
+					<td id="sw_eclipse_mode_name" style="text-align: center;">DTMF Command Count</td>
+					<td id="sw_eclipse_mode_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
+				<tr>
+					<td id="sw_safe_mode_name" style="text-align: center;">DTMF Last Command</td>
+					<td id="sw_safe_mode_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
+				<tr>
+					<td id="sw_hardware_abf_name" style="text-align: center;">DTMF Command Success</td>
+					<td id="sw_hardware_abf_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 			</table>
 		</div>
