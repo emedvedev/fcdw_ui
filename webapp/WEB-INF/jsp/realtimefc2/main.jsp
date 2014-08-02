@@ -38,191 +38,191 @@
 				</tr>
 				<tr>
 					<td style="text-align: center;">Solar Array +Y Deployable +</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_sol_1_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_sol_1_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_sol_1_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Solar Array +Y Deployable -</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_sol_2_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_sol_2_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_sol_2_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Solar Array Y Fixed +</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_sol_3_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_sol_3_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_sol_3_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Solar Array Y Fixed -</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_sol_4_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_sol_4_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_sol_4_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Solar Array Z Fixed +</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_sol_5_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_sol_5_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_sol_5_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Solar Array Z Fixed -</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_sol_6_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_sol_6_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_sol_6_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Solar Array -Y Deployable +</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_sol_7_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_sol_7_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_sol_7_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Solar Array -Y Deployable -</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_sol_8_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_sol_8_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_sol_8_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Solar Array X Fixed +</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_sol_9_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_sol_9_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_sol_9_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Solar Array X Fixed -</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_sol_10_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_sol_10_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_sol_10_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Solar Array +X Deployable +</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_sol_11_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_sol_11_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_sol_11_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Solar Array +X Deployable -</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_sol_12_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_sol_12_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_sol_12_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Battery 0 Current</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_bat_1_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_bat_1_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_bat_1_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Battery 0 Voltage</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_bat_2_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_bat_2_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_bat_2_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
-					<td style="text-align: center;">Battery 0 Temprature</td>
-					<td id="eps_sol_volts_x_value"
+					<td style="text-align: center;">Battery 0 Temperature</td>
+					<td id="eps_bat_3_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_bat_3_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_bat_3_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Battery 1 Current</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_bat_4_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_bat_4_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_bat_4_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Battery 1 Voltage</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_bat_5_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_bat_5_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_bat_5_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
-					<td style="text-align: center;">Battery 1 Temprature</td>
-					<td id="eps_sol_volts_x_value"
+					<td style="text-align: center;">Battery 1 Temperature</td>
+					<td id="eps_bat_6_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_bat_6_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_bat_6_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Battery 2 Current</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_bat_7_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_bat_7_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_bat_7_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Battery 2 Voltage</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="eps_bat_8_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_bat_8_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_bat_8_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
-					<td style="text-align: center;">Battery 2 Temprature</td>
-					<td id="eps_sol_volts_x_value"
+					<td style="text-align: center;">Battery 2 Temperature</td>
+					<td id="eps_bat_9_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="eps_bat_9_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="eps_bat_9_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>

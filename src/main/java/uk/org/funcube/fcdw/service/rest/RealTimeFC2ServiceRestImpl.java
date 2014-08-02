@@ -33,6 +33,7 @@ import uk.org.funcube.fcdw.server.model.UserEntity;
 import uk.org.funcube.fcdw.server.service.impl.AbstractService;
 import uk.org.funcube.fcdw.server.shared.RealTime;
 import uk.org.funcube.fcdw.server.shared.RealTimeFC2;
+import uk.org.funcube.fcdw.server.shared.RealTimeFC2Info;
 import uk.org.funcube.fcdw.server.shared.RealTimeInfo;
 import uk.org.funcube.fcdw.server.shared.SharedInfo;
 import uk.org.funcube.fcdw.server.shared.StringPair;
@@ -45,13 +46,14 @@ import uk.org.funcube.fcdw.web.controller.RealtimeController;
 public class RealTimeFC2ServiceRestImpl extends AbstractService {
 
 	private static final String PA_MILLI_WATT_FORMAT = "%4.1f mW";
-	private static final String MILLI_VOLT_FORMAT = "%4d mV";
-	private static final String TEMPERATURE_FORMAT = "%4d C";
+	private static final String MILLI_VOLT_FORMAT = "%s mV";
+	private static final String VOLTS_FORMAT = "%s V";
+	private static final String TEMPERATURE_FORMAT = "%s C";
 	private static final String SOL_TEMPERATURE_FORMAT = "%5.1f C";
 	private static final String ANTS_TEMPERATURE_FORMAT = "%5.1f C";
 	private static final String PA_TEMPERATURE_FORMAT = "%4.1f C";
 	private static final String PA_MILLI_AMPS_FORMAT = "%4.1f mA";
-	private static final String MILLI_AMPS_FORMAT = "%4d mA";
+	private static final String MILLI_AMPS_FORMAT = "%s mA";
 	private static final String N_A = "N/A";
 	private static final String UNDEPLOYED = "Undeployed";
 	private static final String DEPLOYED = "Deployed";
@@ -81,18 +83,14 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 		
 		this.satelliteId = theSatelliteId;
 		
-		List<MinMax> minMaxValues = minMaxDao.findBySatelliteId(satelliteId);
-
 		satelliteId = (satelliteId != null) ? satelliteId : new Long(2L);
-
-		ModelAndView mv = new ModelAndView("realtime");
 
 		final HexFrame latestHexFrame = hexFrameDao.getLatest(satelliteId);
 		
 		final RealTimeEntity realTimeEntity = realTimeDao.getLastEntry(satelliteId);
 
 		if (latestHexFrame == null) {
-			return new RealTimeInfo();
+			return new RealTimeFC2Info();
 		}
 		
 		RealTimeFC2 realTimeFC2 = new RealTimeFC2(realTimeEntity);
@@ -140,12 +138,34 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 		List<ValMinMax> antsValues = new ArrayList<ValMinMax>();
 		List<StringPair> swValues = new ArrayList<StringPair>();
 		
-		epsValues.add(new ValMinMax("Battery Volts 0", realTimeFC2.getBattery0Volts().toString(), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array +Y Deployable +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent1Plus()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array +Y Deployable -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent1Minus()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array Y Fixed +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent2Plus()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array Y Fixed -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent2Minus()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array Z Fixed +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent3Plus()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array Z Fixed -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent3Minus()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array -Y Deployable +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent4Plus()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array -Y Deployable -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent4Minus()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array X Fixed +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent5Plus()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array X Fixed -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent5Minus()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array +X Deployable +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent6Plus()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array +X Deployable -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent6Minus()), N_A, N_A));
+		
+		epsValues.add(new ValMinMax("Battery 0 Current", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getBattery0CurrentString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Battery 0 Voltage", String.format(VOLTS_FORMAT, realTimeFC2.getBattery0VoltsString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Battery 0 Temperature", String.format(TEMPERATURE_FORMAT, realTimeFC2.getBattery0TemperatureString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Battery 1 Current", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getBattery1CurrentString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Battery 1 Voltage", String.format(VOLTS_FORMAT, realTimeFC2.getBattery1VoltsString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Battery 1 Temperature", String.format(TEMPERATURE_FORMAT, realTimeFC2.getBattery1TemperatureString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Battery 2 Current", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getBattery2CurrentString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Battery 2 Voltage", String.format(VOLTS_FORMAT, realTimeFC2.getBattery2VoltsString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Battery 2 Temperature", String.format(TEMPERATURE_FORMAT, realTimeFC2.getBattery2TemperatureString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Battery Heater", N_A, N_A, N_A));
 		
 		SharedInfo realtimeInfo 
-			= new RealTimeInfo(realTimeEntity.getSequenceNumber(), 
+			= new RealTimeFC2Info(realTimeEntity.getSequenceNumber(), 
 					SDTF.format(createdDate),
-					epsValues, asibValues, rfValues, paValues, antsValues, swValues,
+					epsValues, asibValues, rfValues, paValues, swValues,
 					siteList, SDTF.format(minmaxResetDate),
 					latitude, longitude, packetCount, satelliteMode, transponderState);
 		

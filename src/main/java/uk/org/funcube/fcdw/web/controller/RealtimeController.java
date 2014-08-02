@@ -63,9 +63,6 @@ public class RealtimeController extends AbstractService {
 	@Autowired
 	private MinMaxDao minMaxDao;
 	
-	
-	private Long satelliteId;
-
 	@Transactional(readOnly = true)
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView realtime(@QueryParam(value = "satelliteId") Long satelliteId) {
@@ -76,7 +73,6 @@ public class RealtimeController extends AbstractService {
 
 		ModelAndView mv = new ModelAndView("realtime");
 
-		this.satelliteId = satelliteId;
 		final HexFrame latestFrame = hexFrameDao.getLatest(satelliteId);
 
 		if (latestFrame == null) {

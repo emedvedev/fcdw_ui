@@ -99,6 +99,8 @@ public class RealTimeFC2 extends RealTime {
 	}
 
 	public RealTimeFC2(RealTimeEntity realTimeEntity) {
+		
+		setCreatedDate(realTimeEntity.getCreatedDate());
 
 		setEclipsed(realTimeEntity.getC44());
 		
@@ -804,5 +806,73 @@ public class RealTimeFC2 extends RealTime {
 
 	public final void setEpsHardResetCount(Long epsHardResetCount) {
 		this.epsHardResetCount = epsHardResetCount;
+	}
+	
+	public String getBattery0CurrentString() {
+		return String.format("%4.0f", ((battery0Current * -3.200E+00) + 2.926E+03));
+	}
+	
+	public String getBattery0VoltsString() {
+		return String.format("%4.1f", (battery0Volts * -9.470E-03) + 9.798896E+00);
+	}
+
+	public String getBattery0TemperatureString() {
+		return String.format("%5.1f", (battery0Temperature * -1.630E-01) + 4.753E+00);
+	}
+
+	public String getBattery1CurrentString() {
+			return String.format("%4.0f", ((battery1Current * -3.200E+00) + 2.926E+03));
+	}
+
+	public String getBattery1VoltsString() {
+		return String.format("%4.1f", (battery1Volts * -9.470E-03) + 9.798896E+00);
+	}
+
+	public String getBattery1TemperatureString() {
+		return String.format("%5.1f", (battery1Temperature * -1.630E-01) + 4.753E+00);
+	}
+
+	public String getBattery2CurrentString() {
+			return String.format("%4.0f", ((battery2Current * -3.200E+00) + 2.926E+03));
+	}
+
+	public String getBattery2VoltsString() {
+		return String.format("%4.1f", (battery2Volts * -9.470E-03) + 9.798896E+00);
+	}
+
+	public String getBattery2TemperatureString() {
+		return String.format("%5.1f", (battery2Temperature * -1.630E-01) + 4.753E+00);
+	}
+
+	public String getForwardPowerString() {
+		return String.format("%5.1f", (forwardPower * 2.063E+00) + 5.000E-03);
+	}
+
+	public String getReversePowerString() {
+		return String.format("%5.1f", (reversePower * 2.063E+00) + 5.000E-03);
+	}
+
+	public String getPaDeviceTemperatureString() {
+		return String.format("%5.1f", (paBoardTemperature * -8.570E-01) + 1.937E+02);
+	}
+
+	public String getPaBusCurrentString() {
+		return String.format("%5.1f", (paBoardCurrent * 5.496E-01) + 2.544E+00);
+	}
+
+	public String getReceiverTemperatureString() {
+		return String.format("%5.1f", (receiverTemperature * -0.857) + 193.672);
+	}
+
+	public String getReceiverCurrentString() {
+		return String.format("%4d", receiverCurrent);
+	}
+
+	public String getTransmitCurrent3v3String() {
+		return String.format("%4d", transmitCurrent3v3);
+	}
+
+	public String getTransmitCurrent5v0String() {
+		return String.format("%4d", transmitCurrent5v0);
 	}
 }

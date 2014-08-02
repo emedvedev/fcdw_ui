@@ -7,7 +7,6 @@
 package uk.org.funcube.fcdw.web.controller;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -23,17 +22,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import uk.org.funcube.fcdw.server.dao.HexFrameDao;
 import uk.org.funcube.fcdw.server.dao.MinMaxDao;
+import uk.org.funcube.fcdw.server.dao.RealTimeDao;
 import uk.org.funcube.fcdw.server.model.HexFrame;
-import uk.org.funcube.fcdw.server.model.MinMax;
+import uk.org.funcube.fcdw.server.model.RealTimeEntity;
 import uk.org.funcube.fcdw.server.model.UserEntity;
 import uk.org.funcube.fcdw.server.service.impl.AbstractService;
-import uk.org.funcube.fcdw.server.shared.Antenna;
-import uk.org.funcube.fcdw.server.shared.DTMF;
-import uk.org.funcube.fcdw.server.shared.EPS;
-import uk.org.funcube.fcdw.server.shared.RF;
-import uk.org.funcube.fcdw.server.shared.RealTime;
-import uk.org.funcube.fcdw.server.shared.SoftwareState;
-import uk.org.funcube.fcdw.server.shared.StringPair;
+import uk.org.funcube.fcdw.server.shared.RealTimeFC2;
 import uk.org.funcube.fcdw.server.shared.ValMinMax;
 
 @Controller
@@ -41,13 +35,13 @@ import uk.org.funcube.fcdw.server.shared.ValMinMax;
 public class RealtimeFC2Controller extends AbstractService {
 
 	private static final String PA_MILLI_WATT_FORMAT = "%4.1f mW";
-	private static final String MILLI_VOLT_FORMAT = "%4d mV";
-	private static final String TEMPERATURE_FORMAT = "%4d &deg;C";
+	private static final String MILLI_VOLT_FORMAT = "%s mV";
+	private static final String TEMPERATURE_FORMAT = "%s &deg;C";
 	private static final String SOL_TEMPERATURE_FORMAT = "%5.1f &deg;C";
 	private static final String ANTS_TEMPERATURE_FORMAT = "%5.1f &deg;C";
 	private static final String PA_TEMPERATURE_FORMAT = "%4.1f &deg;C";
 	private static final String PA_MILLI_AMPS_FORMAT = "%4.1f mA";
-	private static final String MILLI_AMPS_FORMAT = "%4d mA";
+	private static final String MILLI_AMPS_FORMAT = "%s mA";
 	private static final String N_A = "N/A";
 	private static final String UNDEPLOYED = "Undeployed";
 	private static final String DEPLOYED = "Deployed";
@@ -61,20 +55,20 @@ public class RealtimeFC2Controller extends AbstractService {
 	private HexFrameDao hexFrameDao;
 	
 	@Autowired
+	private RealTimeDao realTimeDao;
+	
+	@Autowired
 	private MinMaxDao minMaxDao;
 	
 	
-	private Long satelliteId;
-
 	@Transactional(readOnly = true)
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView realtime(@QueryParam(value = "satelliteId") Long satelliteId) {
 		
-		satelliteId = (satelliteId != null) ? satelliteId : new Long(2L);
+		satelliteId = (satelliteId != null) ? satelliteId : 2;
 
 		ModelAndView mv = new ModelAndView("realtimefc2");
 
-		this.satelliteId = satelliteId;
 		final HexFrame latestFrame = hexFrameDao.getLatest(satelliteId);
 
 		if (latestFrame == null) {
@@ -92,32 +86,13 @@ public class RealtimeFC2Controller extends AbstractService {
 		for (UserEntity user : users) {
 			siteList.add(user.getSiteId());
 		}
-
-		//mv.addObject("createdDate", SDTF.format(createdDate));
+		
 		mv.addObject("siteList", siteList);
 		mv.addObject("satelliteId", satelliteId);
 		mv.addObject("packetCount", packetCount);
 		mv.addObject("showStatus", new Long(1));
+		mv.addObject("createdDate", SDTF.format(latestFrame.getCreatedDate()));
 		return mv;
-	}
-
-	private String scaleOffsetAndFormat(String format, Long value, double multiplier,
-			double offset) {
-		if (value == 99999 || value == -99999) {
-			return N_A;
-		}
-		
-		double calculatedValue = scaleAndOffset(value, multiplier, offset);
-		
-		return String.format(format, calculatedValue);
-	}
-
-	private String format(String format, Long value) {
-		if (value >= 99999 || value <= -99999) {
-			return N_A;
-		}
-		
-		return String.format(format, value);
 	}
 
 	public void setHexFrameDao(HexFrameDao hexFrameDao) {
