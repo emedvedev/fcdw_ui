@@ -134,6 +134,31 @@
 		$("#eps_bat_9_min").text(data.epsValues[20].min);
 		$("#eps_bat_9_max").text(data.epsValues[20].max);
 		
+		$("#amac_1_name").text(data.amacValues[0].name);
+		$("#amac_1_value").text(data.amacValues[0].value);
+		$("#amac_1_min").text(data.amacValues[0].min);
+		$("#amac_1_max").text(data.amacValues[0].max);
+		
+		$("#amac_2_name").text(data.amacValues[1].name);
+		$("#amac_2_value").text(data.amacValues[1].value);
+		$("#amac_2_min").text(data.amacValues[1].min);
+		$("#amac_2_max").text(data.amacValues[1].max);
+		
+		$("#amac_3_name").text(data.amacValues[2].name);
+		$("#amac_3_value").text(data.amacValues[2].value);
+		$("#amac_3_min").text(data.amacValues[2].min);
+		$("#amac_3_max").text(data.amacValues[2].max);
+		
+		$("#amac_4_name").text(data.amacValues[3].name);
+		$("#amac_4_value").text(data.amacValues[3].value);
+		$("#amac_4_min").text(data.amacValues[3].min);
+		$("#amac_4_max").text(data.amacValues[3].max);
+		
+		$("#amac_5_name").text(data.amacValues[4].name);
+		$("#amac_5_value").text(data.amacValues[4].value);
+		$("#amac_5_min").text(data.amacValues[4].min);
+		$("#amac_5_max").text(data.amacValues[4].max);
+		
 		
 	}
 	

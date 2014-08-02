@@ -31,7 +31,6 @@ public class RealTimeFC2Info extends SharedInfo {
 		this.amacValues = amacValues;
 		this.rfValues = rfValues;
 		this.paValues = paValues;
-		this.antsValues = antsValues;
 		this.swValues = swValues;
 		this.siteList = siteList;
 		this.minmaxReset = minmaxReset;

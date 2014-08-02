@@ -875,4 +875,31 @@ public class RealTimeFC2 extends RealTime {
 	public String getTransmitCurrent5v0String() {
 		return String.format("%4d", transmitCurrent5v0);
 	}
+
+	public String getBatteryHeaterForcedOnString() {
+		return batteryHeaterForcedOn ? "On" : "Off";
+	}
+
+	public String getAmacModeString() {
+		return amacMode.toString();
+	}
+
+	public String getMagnetometer0String() {
+		return String.format("%7d", (long)(magnetometer0 * 3.6495));
+	}
+
+	public String getMagnetometer1String() {
+		return String.format("%7d", (long)(magnetometer1 * 3.6495));
+	}
+
+	public String getMagnetometer2String() {
+		return String.format("%7d", (long)(magnetometer2 * 3.6495));
+	}
+
+	public String getMagnetometerMagnitudeString() {
+		long value = (long) (Math.sqrt(((magnetometer0 * 3.6495) * (magnetometer0 * 3.6495)) + 
+				((magnetometer0 * 3.6495) * (magnetometer0 * 3.6495)) + 
+				((magnetometer0 * 3.6495) * (magnetometer0 * 3.6495))));
+		return String.format("%7d", value);
+	}
 }

@@ -226,7 +226,7 @@
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
-					<td style="text-align: center;">Battery Heater</td>
+					<td style="text-align: center;">Auto Thermal Control</td>
 					<td id="eps_sol_volts_x_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 					<td id="eps_sol_volts_x_min"
@@ -255,48 +255,48 @@
 					<td style="text-align: center; white-space: nowrap;">Max.</td>
 				</tr>
 				<tr>
-					<td style="text-align: center;">Array Temperature</td>
-					<td id="eps_sol_volts_x_value"
-						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
-						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
-						style="text-align: center; white-space: nowrap;">N/A</td>
-				</tr>
-				<tr>
 					<td style="text-align: center;">Controller Mode</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="amac_1_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="amac_1_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="amac_1_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Mag. Flux Density X</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="amac_2_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="amac_2_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="amac_2_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Mag. Flux Density Y</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="amac_3_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="amac_3_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="amac_3_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
 					<td style="text-align: center;">Mag. Flux Density Z</td>
-					<td id="eps_sol_volts_x_value"
+					<td id="amac_4_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_min"
+					<td id="amac_4_min"
 						style="text-align: center; white-space: nowrap;">N/A</td>
-					<td id="eps_sol_volts_x_max"
+					<td id="amac_4_max"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
+				<tr>
+					<td style="text-align: center;">Mag. Flux Magnitude</td>
+					<td id="amac_5_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+					<td id="amac_5_min"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+					<td id="amac_5_max"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 			</table>

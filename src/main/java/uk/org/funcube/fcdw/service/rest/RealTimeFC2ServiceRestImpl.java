@@ -57,6 +57,7 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 	private static final String N_A = "N/A";
 	private static final String UNDEPLOYED = "Undeployed";
 	private static final String DEPLOYED = "Deployed";
+	private static final String MAG_FLUX = "%s nT";
 
 	private static final Logger LOGGER = Logger.getLogger(RealtimeController.class.getName());
 
@@ -132,7 +133,7 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 		}
 
 		List<ValMinMax> epsValues = new ArrayList<ValMinMax>();
-		List<ValMinMax> asibValues = new ArrayList<ValMinMax>();
+		List<ValMinMax> amacValues = new ArrayList<ValMinMax>();
 		List<ValMinMax> rfValues = new ArrayList<ValMinMax>();
 		List<ValMinMax> paValues = new ArrayList<ValMinMax>();
 		List<ValMinMax> antsValues = new ArrayList<ValMinMax>();
@@ -160,12 +161,18 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 		epsValues.add(new ValMinMax("Battery 2 Current", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getBattery2CurrentString()), N_A, N_A));
 		epsValues.add(new ValMinMax("Battery 2 Voltage", String.format(VOLTS_FORMAT, realTimeFC2.getBattery2VoltsString()), N_A, N_A));
 		epsValues.add(new ValMinMax("Battery 2 Temperature", String.format(TEMPERATURE_FORMAT, realTimeFC2.getBattery2TemperatureString()), N_A, N_A));
-		epsValues.add(new ValMinMax("Battery Heater", N_A, N_A, N_A));
+		epsValues.add(new ValMinMax("Auto Thermal Control", realTimeFC2.getBatteryHeaterForcedOnString(), N_A, N_A));
+		
+		amacValues.add(new ValMinMax("Controller Mode", realTimeFC2.getAmacModeString(), N_A, N_A));
+		amacValues.add(new ValMinMax("Mag. Flux Density X", String.format(MAG_FLUX, realTimeFC2.getMagnetometer0String()), N_A, N_A));
+		amacValues.add(new ValMinMax("Mag. Flux Density Y", String.format(MAG_FLUX, realTimeFC2.getMagnetometer1String()), N_A, N_A));
+		amacValues.add(new ValMinMax("Mag. Flux Density Z", String.format(MAG_FLUX, realTimeFC2.getMagnetometer2String()), N_A, N_A));
+		amacValues.add(new ValMinMax("Mag. Flux Magnitude", String.format(MAG_FLUX, realTimeFC2.getMagnetometerMagnitudeString()), N_A, N_A));
 		
 		SharedInfo realtimeInfo 
 			= new RealTimeFC2Info(realTimeEntity.getSequenceNumber(), 
 					SDTF.format(createdDate),
-					epsValues, asibValues, rfValues, paValues, swValues,
+					epsValues, amacValues, rfValues, paValues, swValues,
 					siteList, SDTF.format(minmaxResetDate),
 					latitude, longitude, packetCount, satelliteMode, transponderState);
 		
