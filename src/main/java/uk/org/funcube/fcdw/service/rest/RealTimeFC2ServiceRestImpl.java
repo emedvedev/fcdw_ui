@@ -181,6 +181,21 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 		paValues.add(new ValMinMax("Device Temperature", String.format(PA_TEMPERATURE_FORMAT, realTimeFC2.getPaDeviceTemperatureString()), N_A, N_A));
 		paValues.add(new ValMinMax("Bus Current", String.format(PA_MILLI_AMPS_FORMAT, realTimeFC2.getPaBusCurrentString()), N_A, N_A));
 		
+		swValues.add(new StringPair("Eclipsed", (realTimeFC2.isEclipsed()) ? "Yes" : "No"));
+		swValues.add(new StringPair("Mode Manager Mode", realTimeFC2.getModeManagerModeString()));
+		swValues.add(new StringPair("Mode Manager Comms. Nominal", (realTimeFC2.getModeManagerCommsNominal()) ? "Yes" : "No"));
+		swValues.add(new StringPair("Mode Manager Comms. State", realTimeFC2.getModeManagerCommsStateString()));
+		swValues.add(new StringPair("TMTC Mode Idle", (realTimeFC2.getTmtcManagerIdleEnable()) ? "Yes" : "No"));
+		swValues.add(new StringPair("TMTC Event Forwarding", (realTimeFC2.getTmtcEventForwarding()) ? "Yes" : "No"));
+		swValues.add(new StringPair("TC Buffer RX Enable", (realTimeFC2.getTcBufferReceiveEnable() == 1) ? "Yes" : "No"));
+		swValues.add(new StringPair("TC Buffer TX Enable", (realTimeFC2.getTcBufferSendEnable() == 1) ? "Yes" : "No"));
+		swValues.add(new StringPair("OBC Soft Reset Count", realTimeFC2.getObcSoftResetCountString()));
+		swValues.add(new StringPair("EPS Hard Reset Count", realTimeFC2.getEpsHardResetCountString()));
+		swValues.add(new StringPair("Sequence Number", realTimeFC2.getSequenceNumberString()));
+		swValues.add(new StringPair("DTMF Command Count", realTimeFC2.getDtmfCommandCountString()));
+		swValues.add(new StringPair("DTMF Last Command", realTimeFC2.getDtmfLastCommandString()));
+		swValues.add(new StringPair("DTMF Command Success", (realTimeFC2.getDtmfCommandSuccess()) ? "Yes" : "No"));
+		
 		SharedInfo realtimeInfo 
 			= new RealTimeFC2Info(realTimeEntity.getSequenceNumber(), 
 					SDTF.format(createdDate),

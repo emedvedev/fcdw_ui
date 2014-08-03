@@ -454,83 +454,83 @@
 				</tr>
 				
 				<tr>
-					<td id="sw_sequence_number_name" style="text-align: center;">Eclipsed</td>
-					<td id="sw_sequence_number_value"
+					<td id="sw_value_1_name" style="text-align: center;">Eclipsed</td>
+					<td id="sw_value_1_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 
 
 				<tr>
-					<td id="sw_command_count_name" style="text-align: center;">Mode Manager Mode</td>
-					<td id="sw_command_count_value"
+					<td id="sw_value_2_name" style="text-align: center;">Mode Manager Mode</td>
+					<td id="sw_value_2_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 
 				<tr>
-					<td id="sw_last_command_name" style="text-align: center;">Mode Manager Comms. Nominal</td>
-					<td id="sw_last_command_value"
+					<td id="sw_value_3_name" style="text-align: center;">Mode Manager Comms. Nominal</td>
+					<td id="sw_value_3_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 
 				<tr>
-					<td id="sw_command_success_name" style="text-align: center;">Mode Manager Comms. State</td>
-					<td id="sw_command_success_value"
+					<td id="sw_value_4_name" style="text-align: center;">Mode Manager Comms. State</td>
+					<td id="sw_value_4_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 
 				<tr>
-					<td id="sw_valid_asib_name" style="text-align: center;">TMTC Mode Idle</td>
-					<td id="sw_valid_asib_value"
+					<td id="sw_value_5_name" style="text-align: center;">TMTC Mode Idle</td>
+					<td id="sw_value_5_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 
 				<tr>
-					<td id="sw_valid_eps_name" style="text-align: center;">TMTC Event Forwarding</td>
-					<td id="sw_valid_eps_value"
+					<td id="sw_value_6_name" style="text-align: center;">TMTC Event Forwarding</td>
+					<td id="sw_value_6_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
-					<td id="sw_valid_pa_name" style="text-align: center;">TC Buffer RX Enable</td>
-					<td id="sw_valid_pa_value"
+					<td id="sw_value_7_name" style="text-align: center;">TC Buffer RX Enable</td>
+					<td id="sw_value_7_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
-					<td id="sw_valid_rf_name" style="text-align: center;">TC Buffer TX Enable</td>
-					<td id="sw_valid_rf_value"
-						style="text-align: center; white-space: nowrap;">N/A</td>
-				</tr>
-
-				<tr>
-					<td id="sw_valid_mse_name" style="text-align: center;">OBC Soft Reset Count</td>
-					<td id="sw_valid_mse_value"
+					<td id="sw_value_8_name" style="text-align: center;">TC Buffer TX Enable</td>
+					<td id="sw_value_8_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 
 				<tr>
-					<td id="sw_valid_ants_bus_a_name" style="text-align: center;">EPS Hard Reset Count</td>
-					<td id="sw_valid_ants_bus_a_value"
+					<td id="sw_value_9_name" style="text-align: center;">OBC Soft Reset Count</td>
+					<td id="sw_value_9_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 
 				<tr>
-					<td id="sw_valid_ants_bus_b_name" style="text-align: center;">Sequence Number</td>
-					<td id="sw_valid_ants_bus_b_value"
+					<td id="sw_value_10_name" style="text-align: center;">EPS Hard Reset Count</td>
+					<td id="sw_value_10_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 
 				<tr>
-					<td id="sw_eclipse_mode_name" style="text-align: center;">DTMF Command Count</td>
-					<td id="sw_eclipse_mode_value"
+					<td id="sw_value_11_name" style="text-align: center;">Sequence Number</td>
+					<td id="sw_value_11_value"
+						style="text-align: center; white-space: nowrap;">N/A</td>
+				</tr>
+
+				<tr>
+					<td id="sw_value_12_name" style="text-align: center;">DTMF Command Count</td>
+					<td id="sw_value_12_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
-					<td id="sw_safe_mode_name" style="text-align: center;">DTMF Last Command</td>
-					<td id="sw_safe_mode_value"
+					<td id="sw_value_13_name" style="text-align: center;">DTMF Last Command</td>
+					<td id="sw_value_13_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
-					<td id="sw_hardware_abf_name" style="text-align: center;">DTMF Command Success</td>
-					<td id="sw_hardware_abf_value"
+					<td id="sw_value_14_name" style="text-align: center;">DTMF Command Success</td>
+					<td id="sw_value_14_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 			</table>

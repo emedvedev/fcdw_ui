@@ -9,7 +9,9 @@ package uk.org.funcube.fcdw.server.shared;
 import java.util.Date;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.pattern.SequenceNumberPatternConverter;
 
+import sun.jdbc.odbc.OdbcDef;
 import uk.org.funcube.fcdw.server.model.RealTimeEntity;
 
 /**
@@ -78,7 +80,7 @@ public class RealTimeFC2 extends RealTime {
     private Boolean tmtcManagerIdleEnable;
     private Boolean tmtcEventForwarding;
     private Long tcBufferReceiveEnable;
-    private Long tmBufferSendEnable;
+    private Long tcBufferSendEnable;
     private Long obcSoftResetCount;
     private Long epsHardResetCount;
 	
@@ -167,7 +169,7 @@ public class RealTimeFC2 extends RealTime {
         setTmtcManagerIdleEnable(realTimeEntity.getC50());
         setTmtcEventForwarding(realTimeEntity.getC51());
         setTcBufferReceiveEnable(realTimeEntity.getC73());
-        setTmBufferSendEnable(realTimeEntity.getC74());
+        setTcBufferSendEnable(realTimeEntity.getC74());
         setObcSoftResetCount(realTimeEntity.getC75());
         setEpsHardResetCount(realTimeEntity.getC76());
         
@@ -258,7 +260,7 @@ public class RealTimeFC2 extends RealTime {
         setTmtcManagerIdleEnable(get1BitAsInt(binaryString) == 1);
         setTmtcEventForwarding(get1BitAsInt(binaryString) == 1);
         setTcBufferReceiveEnable(get3BitsAsULong(binaryString));
-        setTmBufferSendEnable(get3BitsAsULong(binaryString));
+        setTcBufferSendEnable(get3BitsAsULong(binaryString));
         setObcSoftResetCount(get8BitsAsULong(binaryString));
         setEpsHardResetCount(get8BitsAsULong(binaryString));
         
@@ -784,12 +786,12 @@ public class RealTimeFC2 extends RealTime {
 		this.tcBufferReceiveEnable = tcBufferReceiveEnable;
 	}
 
-	public final Long getTmBufferSendEnable() {
-		return tmBufferSendEnable;
+	public final Long getTcBufferSendEnable() {
+		return tcBufferSendEnable;
 	}
 
-	public final void setTmBufferSendEnable(Long tmBufferSendEnable) {
-		this.tmBufferSendEnable = tmBufferSendEnable;
+	public final void setTcBufferSendEnable(Long tcBufferSendEnable) {
+		this.tcBufferSendEnable = tcBufferSendEnable;
 	}
 
 	public final Long getObcSoftResetCount() {
@@ -926,5 +928,35 @@ public class RealTimeFC2 extends RealTime {
 
 	public String getReceiverRSSIString() {
 		return String.format("%4d", receiverRSSI);
+	}
+
+	public String getModeManagerModeString() {
+		// TODO find enum
+		return String.format("%d", modeManagerMode);
+	}
+
+	public String getModeManagerCommsStateString() {
+		// TODO find enum
+		return String.format("%d", modeManagerCommsState);
+	}
+
+	public String getObcSoftResetCountString() {
+		return String.format("%d", obcSoftResetCount);
+	}
+
+	public String getEpsHardResetCountString() {
+		return String.format("%d", epsHardResetCount);
+	}
+
+	public String getSequenceNumberString() {
+		return String.format("%d", getSequenceNumber());
+	}
+
+	public String getDtmfCommandCountString() {
+		return String.format("%d", dtmfCommandCount);
+	}
+
+	public String getDtmfLastCommandString() {
+		return String.format("%d", dtmfLastCommand);
 	}
 }

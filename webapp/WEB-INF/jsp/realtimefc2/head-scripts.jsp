@@ -204,6 +204,37 @@
 		$("#pa_bus_current_value").text(data.paValues[3].value);
 		$("#pa_bus_current_min").text(data.paValues[3].min);
 		$("#pa_bus_current_max").text(data.paValues[3].max);
+		
+		$("#sw_created_date").text("Uploaded at: " + data.lastUpdated + ", MinMax from: " + data.minmaxReset);
+		$("#sw_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
+		$("#sw_value_1_name").text(data.swValues[0].name);
+		$("#sw_value_1_value").text(data.swValues[0].value);
+		$("#sw_value_2_name").text(data.swValues[1].name);
+		$("#sw_value_2_value").text(data.swValues[1].value);
+		$("#sw_value_3_name").text(data.swValues[2].name);
+		$("#sw_value_3_value").text(data.swValues[2].value);
+		$("#sw_value_4_name").text(data.swValues[3].name);
+		$("#sw_value_4_value").text(data.swValues[3].value);
+		$("#sw_value_5_name").text(data.swValues[4].name);
+		$("#sw_value_5_value").text(data.swValues[4].value);
+		$("#sw_value_6_name").text(data.swValues[5].name);
+		$("#sw_value_6_value").text(data.swValues[5].value);
+		$("#sw_value_7_name").text(data.swValues[6].name);
+		$("#sw_value_7_value").text(data.swValues[6].value);
+		$("#sw_value_8_name").text(data.swValues[7].name);
+		$("#sw_value_8_value").text(data.swValues[7].value);
+		$("#sw_value_9_name").text(data.swValues[8].name);
+		$("#sw_value_9_value").text(data.swValues[8].value);
+		$("#sw_value_10_name").text(data.swValues[9].name);
+		$("#sw_value_10_value").text(data.swValues[9].value);
+		$("#sw_value_11_name").text(data.swValues[10].name);
+		$("#sw_value_11_value").text(data.swValues[10].value);
+		$("#sw_value_12_name").text(data.swValues[11].name);
+		$("#sw_value_12_value").text(data.swValues[11].value);
+		$("#sw_value_13_name").text(data.swValues[12].name);
+		$("#sw_value_13_value").text(data.swValues[12].value);
+		$("#sw_value_14_name").text(data.swValues[13].name);
+		$("#sw_value_14_value").text(data.swValues[13].value);
 	}
 	
 	function refreshDiv(){
