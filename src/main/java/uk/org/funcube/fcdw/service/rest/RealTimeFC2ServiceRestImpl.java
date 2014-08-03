@@ -46,13 +46,13 @@ import uk.org.funcube.fcdw.web.controller.RealtimeController;
 @RequestMapping(value = "/ui/realtimefc2")
 public class RealTimeFC2ServiceRestImpl extends AbstractService {
 
-	private static final String PA_MILLI_WATT_FORMAT = "%4.1f mW";
+	private static final String PA_MILLI_WATT_FORMAT = "%s mW";
 	private static final String MILLI_VOLT_FORMAT = "%s mV";
 	private static final String VOLTS_FORMAT = "%s V";
 	private static final String TEMPERATURE_FORMAT = "%s C";
 	private static final String ANTS_TEMPERATURE_FORMAT = "%5.1f C";
-	private static final String PA_TEMPERATURE_FORMAT = "%4.1f C";
-	private static final String PA_MILLI_AMPS_FORMAT = "%4.1f mA";
+	private static final String PA_TEMPERATURE_FORMAT = "%s C";
+	private static final String PA_MILLI_AMPS_FORMAT = "%s mA";
 	private static final String MILLI_AMPS_FORMAT = "%s mA";
 	private static final String N_A = "N/A";
 	private static final String UNDEPLOYED = "Undeployed";
@@ -175,6 +175,11 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 		rfValues.add(new ValMinMax("Receive Current", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getReceiverCurrentString()), N_A, N_A));
 		rfValues.add(new ValMinMax("Transmit Current 3.3V bus", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getTransmitCurrent3v3String()), N_A, N_A));
 		rfValues.add(new ValMinMax("Transmit Current 5.0V bus", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getTransmitCurrent5v0String()), N_A, N_A));
+		
+		paValues.add(new ValMinMax("Forward Power", String.format(PA_MILLI_WATT_FORMAT, realTimeFC2.getForwardPowerString()), N_A, N_A));
+		paValues.add(new ValMinMax("Reverse Power", String.format(PA_MILLI_WATT_FORMAT, realTimeFC2.getReversePowerString()), N_A, N_A));
+		paValues.add(new ValMinMax("Device Temperature", String.format(PA_TEMPERATURE_FORMAT, realTimeFC2.getPaDeviceTemperatureString()), N_A, N_A));
+		paValues.add(new ValMinMax("Bus Current", String.format(PA_MILLI_AMPS_FORMAT, realTimeFC2.getPaBusCurrentString()), N_A, N_A));
 		
 		SharedInfo realtimeInfo 
 			= new RealTimeFC2Info(realTimeEntity.getSequenceNumber(), 

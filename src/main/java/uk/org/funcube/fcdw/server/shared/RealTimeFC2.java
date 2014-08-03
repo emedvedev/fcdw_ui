@@ -150,8 +150,8 @@ public class RealTimeFC2 extends RealTime {
 		setTransmitCurrent3v3(realTimeEntity.getC33()); 
 		setTransmitCurrent5v0(realTimeEntity.getC34()); 
 
-		setReversePower(realTimeEntity.getC35()); 
-		setForwardPower(realTimeEntity.getC36()); 
+		setForwardPower(realTimeEntity.getC35()); 
+		setReversePower(realTimeEntity.getC36()); 
 		setPaBoardTemperature(realTimeEntity.getC37()); ;
 		setPaBoardCurrent(realTimeEntity.getC38()); 
         
@@ -853,7 +853,24 @@ public class RealTimeFC2 extends RealTime {
 	}
 
 	public String getPaDeviceTemperatureString() {
-		return String.format("%5.1f", (paBoardTemperature * -8.570E-01) + 1.937E+02);
+		
+		/*
+		4th Degree Polynomial Fit:  y=a+bx+cx^2+dx^3+ex^4
+				Coefficient Data:
+				a =          6.29764694373E+001
+				b =         3.80132039683E-001
+				c =          -9.59767044686E-003
+				d =         5.15917746352E-005
+				e =         -9.77975220499E-008
+		*/
+				
+		double value = 6.29764694373E+001 +
+				(3.80132039683E-001 * paBoardTemperature) +
+				(-9.59767044686E-003 * paBoardTemperature * paBoardTemperature) +
+				(5.15917746352E-005 * paBoardTemperature * paBoardTemperature * paBoardTemperature) +
+				(-9.77975220499E-008 * paBoardTemperature * paBoardTemperature * paBoardTemperature * paBoardTemperature);
+		
+		return String.format("%5.1f", value);
 	}
 
 	public String getPaBusCurrentString() {

@@ -185,6 +185,25 @@
 		$("#rf_transmit_current_five_value").text(data.rfValues[5].value);
 		$("#rf_transmit_current_five_min").text(data.rfValues[5].min);
 		$("#rf_transmit_current_five_max").text(data.rfValues[5].max);
+		
+		$("#pa_created_date").text("Uploaded at: " + data.lastUpdated + ", MinMax from: " + data.minmaxReset);
+		$("#pa_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
+		$("#pa_forward_power_name").text(data.paValues[0].name);
+		$("#pa_forward_power_value").text(data.paValues[0].value);
+		$("#pa_forward_power_min").text(data.paValues[0].min);
+		$("#pa_forward_power_max").text(data.paValues[0].max);
+		$("#pa_reverse_power_name").text(data.paValues[1].name);
+		$("#pa_reverse_power_value").text(data.paValues[1].value);
+		$("#pa_reverse_power_min").text(data.paValues[1].min);
+		$("#pa_reverse_power_max").text(data.paValues[1].max);
+		$("#pa_device_temperature_name").text(data.paValues[2].name);
+		$("#pa_device_temperature_value").text(data.paValues[2].value);
+		$("#pa_device_temperature_min").text(data.paValues[2].min);
+		$("#pa_device_temperature_max").text(data.paValues[2].max);
+		$("#pa_bus_current_name").text(data.paValues[3].name);
+		$("#pa_bus_current_value").text(data.paValues[3].value);
+		$("#pa_bus_current_min").text(data.paValues[3].min);
+		$("#pa_bus_current_max").text(data.paValues[3].max);
 	}
 	
 	function refreshDiv(){
