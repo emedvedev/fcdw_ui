@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import sun.reflect.ReflectionFactory.GetReflectionFactoryAction;
 import uk.org.funcube.fcdw.server.dao.HexFrameDao;
 import uk.org.funcube.fcdw.server.dao.MinMaxDao;
 import uk.org.funcube.fcdw.server.dao.RealTimeDao;
@@ -49,7 +50,6 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 	private static final String MILLI_VOLT_FORMAT = "%s mV";
 	private static final String VOLTS_FORMAT = "%s V";
 	private static final String TEMPERATURE_FORMAT = "%s C";
-	private static final String SOL_TEMPERATURE_FORMAT = "%5.1f C";
 	private static final String ANTS_TEMPERATURE_FORMAT = "%5.1f C";
 	private static final String PA_TEMPERATURE_FORMAT = "%4.1f C";
 	private static final String PA_MILLI_AMPS_FORMAT = "%4.1f mA";
@@ -168,6 +168,13 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 		amacValues.add(new ValMinMax("Mag. Flux Density Y", String.format(MAG_FLUX, realTimeFC2.getMagnetometer1String()), N_A, N_A));
 		amacValues.add(new ValMinMax("Mag. Flux Density Z", String.format(MAG_FLUX, realTimeFC2.getMagnetometer2String()), N_A, N_A));
 		amacValues.add(new ValMinMax("Mag. Flux Magnitude", String.format(MAG_FLUX, realTimeFC2.getMagnetometerMagnitudeString()), N_A, N_A));
+		
+		rfValues.add(new ValMinMax("Receiver Doppler", realTimeFC2.getReceiverDopplerString(), N_A, N_A));
+		rfValues.add(new ValMinMax("Receiver RSSI", realTimeFC2.getReceiverRSSIString(), N_A, N_A));
+		rfValues.add(new ValMinMax("Temperature", String.format(TEMPERATURE_FORMAT, realTimeFC2.getReceiverTemperatureString()), N_A, N_A));
+		rfValues.add(new ValMinMax("Receive Current", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getReceiverCurrentString()), N_A, N_A));
+		rfValues.add(new ValMinMax("Transmit Current 3.3V bus", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getTransmitCurrent3v3String()), N_A, N_A));
+		rfValues.add(new ValMinMax("Transmit Current 5.0V bus", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getTransmitCurrent5v0String()), N_A, N_A));
 		
 		SharedInfo realtimeInfo 
 			= new RealTimeFC2Info(realTimeEntity.getSequenceNumber(), 

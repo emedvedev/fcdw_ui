@@ -14,7 +14,7 @@
 		<li><a href="<c:url value='#tabs-eps'/>"
 			title="Electrical Power Subsystem">EPS</a></li>
 		<li><a href="<c:url value='#tabs-amac'/>"
-			title="Attitude Control Subsystem">AMAC</a></li>
+			title="Active Magnetic Attitude Control Subsystem">AMAC</a></li>
 		<li><a href="<c:url value='#tabs-rf'/>"
 			title="Communication Subsystem">RF</a></li>
 		<li><a href="<c:url value='#tabs-pa'/>"

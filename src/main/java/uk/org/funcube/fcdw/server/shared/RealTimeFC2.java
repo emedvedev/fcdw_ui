@@ -902,4 +902,12 @@ public class RealTimeFC2 extends RealTime {
 				((magnetometer0 * 3.6495) * (magnetometer0 * 3.6495))));
 		return String.format("%7d", value);
 	}
+
+	public String getReceiverDopplerString() {
+		return String.format("%4d", receiverDoppler);
+	}
+
+	public String getReceiverRSSIString() {
+		return String.format("%4d", receiverRSSI);
+	}
 }
