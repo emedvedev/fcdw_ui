@@ -139,18 +139,18 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 		List<ValMinMax> antsValues = new ArrayList<ValMinMax>();
 		List<StringPair> swValues = new ArrayList<StringPair>();
 		
-		epsValues.add(new ValMinMax("Solar Array +Y Deployable +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent1Plus()), N_A, N_A));
-		epsValues.add(new ValMinMax("Solar Array +Y Deployable -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent1Minus()), N_A, N_A));
-		epsValues.add(new ValMinMax("Solar Array Y Fixed +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent2Plus()), N_A, N_A));
-		epsValues.add(new ValMinMax("Solar Array Y Fixed -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent2Minus()), N_A, N_A));
-		epsValues.add(new ValMinMax("Solar Array Z Fixed +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent3Plus()), N_A, N_A));
-		epsValues.add(new ValMinMax("Solar Array Z Fixed -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent3Minus()), N_A, N_A));
-		epsValues.add(new ValMinMax("Solar Array -Y Deployable +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent4Plus()), N_A, N_A));
-		epsValues.add(new ValMinMax("Solar Array -Y Deployable -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent4Minus()), N_A, N_A));
-		epsValues.add(new ValMinMax("Solar Array X Fixed +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent5Plus()), N_A, N_A));
-		epsValues.add(new ValMinMax("Solar Array X Fixed -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent5Minus()), N_A, N_A));
-		epsValues.add(new ValMinMax("Solar Array +X Deployable +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent6Plus()), N_A, N_A));
-		epsValues.add(new ValMinMax("Solar Array +X Deployable -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent6Minus()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array +Y Deployable +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent1PlusString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array +Y Deployable -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent1MinusString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array Y Fixed +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent2PlusString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array Y Fixed -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent2MinusString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array Z Fixed +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent3PlusString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array Z Fixed -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent3MinusString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array -Y Deployable +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent4PlusString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array -Y Deployable -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent4MinusString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array X Fixed +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent5PlusString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array X Fixed -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent5MinusString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array +X Deployable +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent6PlusString()), N_A, N_A));
+		epsValues.add(new ValMinMax("Solar Array +X Deployable -", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent6MinusString()), N_A, N_A));
 		
 		epsValues.add(new ValMinMax("Battery 0 Current", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getBattery0CurrentString()), N_A, N_A));
 		epsValues.add(new ValMinMax("Battery 0 Voltage", String.format(VOLTS_FORMAT, realTimeFC2.getBattery0VoltsString()), N_A, N_A));
@@ -181,7 +181,7 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 		paValues.add(new ValMinMax("Device Temperature", String.format(PA_TEMPERATURE_FORMAT, realTimeFC2.getPaDeviceTemperatureString()), N_A, N_A));
 		paValues.add(new ValMinMax("Bus Current", String.format(PA_MILLI_AMPS_FORMAT, realTimeFC2.getPaBusCurrentString()), N_A, N_A));
 		
-		swValues.add(new StringPair("Eclipsed", (realTimeFC2.isEclipsed()) ? "Yes" : "No"));
+		swValues.add(new StringPair("In Eclipse", (realTimeFC2.isEclipsed()) ? "No" : "Yes"));
 		swValues.add(new StringPair("Mode Manager Mode", realTimeFC2.getModeManagerModeString()));
 		swValues.add(new StringPair("Mode Manager Comms. Nominal", (realTimeFC2.getModeManagerCommsNominal()) ? "Yes" : "No"));
 		swValues.add(new StringPair("Mode Manager Comms. State", realTimeFC2.getModeManagerCommsStateString()));

@@ -152,8 +152,8 @@ public class RealTimeFC2 extends RealTime {
 		setTransmitCurrent3v3(realTimeEntity.getC33()); 
 		setTransmitCurrent5v0(realTimeEntity.getC34()); 
 
-		setForwardPower(realTimeEntity.getC35()); 
-		setReversePower(realTimeEntity.getC36()); 
+		setReversePower(realTimeEntity.getC35()); 
+		setForwardPower(realTimeEntity.getC36()); 
 		setPaBoardTemperature(realTimeEntity.getC37()); ;
 		setPaBoardCurrent(realTimeEntity.getC38()); 
         
@@ -811,39 +811,39 @@ public class RealTimeFC2 extends RealTime {
 	}
 	
 	public String getBattery0CurrentString() {
-		return String.format("%4.0f", ((battery0Current * -3.200E+00) + 2.926E+03));
+		return generateBatteryCurrentString(battery0Current);
 	}
 	
 	public String getBattery0VoltsString() {
-		return String.format("%4.1f", (battery0Volts * -9.470E-03) + 9.798896E+00);
+		return generateVoltageString(battery0Volts);
 	}
 
 	public String getBattery0TemperatureString() {
-		return String.format("%5.1f", (battery0Temperature * -1.630E-01) + 4.753E+00);
+		return generateBatteryTemperatureString(battery0Temperature);
 	}
 
 	public String getBattery1CurrentString() {
-			return String.format("%4.0f", ((battery1Current * -3.200E+00) + 2.926E+03));
+		return generateBatteryCurrentString(battery1Current);
 	}
 
 	public String getBattery1VoltsString() {
-		return String.format("%4.1f", (battery1Volts * -9.470E-03) + 9.798896E+00);
+		return generateVoltageString(battery1Volts);
 	}
 
 	public String getBattery1TemperatureString() {
-		return String.format("%5.1f", (battery1Temperature * -1.630E-01) + 4.753E+00);
+		return generateBatteryTemperatureString(battery1Temperature);
 	}
 
 	public String getBattery2CurrentString() {
-			return String.format("%4.0f", ((battery2Current * -3.200E+00) + 2.926E+03));
+		return generateBatteryCurrentString(battery2Current);
 	}
 
 	public String getBattery2VoltsString() {
-		return String.format("%4.1f", (battery2Volts * -9.470E-03) + 9.798896E+00);
+		return generateVoltageString(battery2Volts);
 	}
 
 	public String getBattery2TemperatureString() {
-		return String.format("%5.1f", (battery2Temperature * -1.630E-01) + 4.753E+00);
+		return generateBatteryTemperatureString(battery2Temperature);
 	}
 
 	public String getForwardPowerString() {
@@ -874,6 +874,16 @@ public class RealTimeFC2 extends RealTime {
 		
 		return String.format("%5.1f", value);
 	}
+	
+	/*
+	 * -0.857 * x + 193.672       ' rf temp from FC1
+		0.636 * x                  ' rf curr from FC1
+		0.636 * x                  ' rf txcurr_3 from FC1
+		1.272 * x                   ' rf txcurr_5 from FC1
+		0.005 * x ^ 2.0629         ' power rev
+		0.005 * x ^ 2.0629         ' power forw
+	 */
+	
 
 	public String getPaBusCurrentString() {
 		return String.format("%5.1f", (paBoardCurrent * 5.496E-01) + 2.544E+00);
@@ -884,15 +894,15 @@ public class RealTimeFC2 extends RealTime {
 	}
 
 	public String getReceiverCurrentString() {
-		return String.format("%4d", receiverCurrent);
+		return String.format("%5.1f", receiverCurrent * 0.636);
 	}
 
 	public String getTransmitCurrent3v3String() {
-		return String.format("%4d", transmitCurrent3v3);
+		return String.format("%5.1f", transmitCurrent3v3 * 0.636);
 	}
 
 	public String getTransmitCurrent5v0String() {
-		return String.format("%4d", transmitCurrent5v0);
+		return String.format("%5.1f", transmitCurrent5v0 * 0.636);
 	}
 
 	public String getBatteryHeaterForcedOnString() {
@@ -958,5 +968,81 @@ public class RealTimeFC2 extends RealTime {
 
 	public String getDtmfLastCommandString() {
 		return String.format("%d", dtmfLastCommand);
+	}
+
+	private String generateVoltageString(Long volts) {
+		if (volts == 0) {
+			return "0";
+		} else {
+			return String.format("%4.1f", (volts * 4 * -9.470E-03) + 9.798896E+00);
+		}
+	}
+
+	private String generateBatteryCurrentString(Long current) {
+		if (current == 0) {
+			return "0";
+		} else {
+			return String.format("%4.0f", ((current * 4 * -3.200E+00) + 2.926E+03));
+		}
+	}
+
+	public String getSolarArrayCurrent1PlusString() {
+		return generateSolarArrayCurrentString(solarArrayCurrent1Plus);
+	}
+
+	public String getSolarArrayCurrent1MinusString() {
+		return generateSolarArrayCurrentString(solarArrayCurrent1Minus);
+	}
+
+	public String getSolarArrayCurrent2PlusString() {
+		return generateSolarArrayCurrentString(solarArrayCurrent2Plus);
+	}
+
+	public String getSolarArrayCurrent2MinusString() {
+		return generateSolarArrayCurrentString(solarArrayCurrent2Minus);
+	}
+
+	public String getSolarArrayCurrent3PlusString() {
+		return generateSolarArrayCurrentString(solarArrayCurrent3Plus);
+	}
+
+	public String getSolarArrayCurrent3MinusString() {
+		return generateSolarArrayCurrentString(solarArrayCurrent3Minus);
+	}
+
+	public String getSolarArrayCurrent4PlusString() {
+		return generateSolarArrayCurrentString(solarArrayCurrent4Plus);
+	}
+
+	public String getSolarArrayCurrent4MinusString() {
+		return generateSolarArrayCurrentString(solarArrayCurrent4Minus);
+	}
+
+	public String getSolarArrayCurrent5PlusString() {
+		return generateSolarArrayCurrentString(solarArrayCurrent5Plus);
+	}
+
+	public String getSolarArrayCurrent5MinusString() {
+		return generateSolarArrayCurrentString(solarArrayCurrent5Minus);
+	}
+
+	public String getSolarArrayCurrent6PlusString() {
+		return generateSolarArrayCurrentString(solarArrayCurrent6Plus);
+	}
+
+	public String getSolarArrayCurrent6MinusString() {
+		return generateSolarArrayCurrentString(solarArrayCurrent6Minus);
+	}
+	
+	private String generateSolarArrayCurrentString(Long current) {
+		if (current == 1023) {
+			return "0";
+		} else {
+			return String.format("%3.1f", (current * -0.54312) +  + 555.61);
+		}
+	}
+	
+	private String generateBatteryTemperatureString(Long temperature) {
+		return String.format("%3.1f", (temperature * -0.163 * 4) +  + 75);
 	}
 }

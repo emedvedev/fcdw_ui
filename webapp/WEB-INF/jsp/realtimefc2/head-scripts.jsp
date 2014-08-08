@@ -22,6 +22,12 @@
 		$("#rf_created_date").text("Updated at: " + data.lastUpdated);
 		$("#sw_created_date").text("Updated at: " + data.lastUpdated);
 		
+		$("#eps_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
+		$("#amac_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
+		$("#rf_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
+		$("#pa_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
+		$("#sw_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
+		
 		$("#site_list").html('');
 	    var items = [];
 	    $.each(data.siteList, function (id, site) {
@@ -159,8 +165,6 @@
 		$("#amac_5_min").text(data.amacValues[4].min);
 		$("#amac_5_max").text(data.amacValues[4].max);
 		
-		$("#rf_created_date").text("Uploaded at: " + data.lastUpdated + ", MinMax from: " + data.minmaxReset);
-		$("#rf_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
 		$("#rf_receive_doppler_name").text(data.rfValues[0].name);
 		$("#rf_receive_doppler_value").text(data.rfValues[0].value);
 		$("#rf_receive_doppler_min").text(data.rfValues[0].min);
@@ -186,8 +190,6 @@
 		$("#rf_transmit_current_five_min").text(data.rfValues[5].min);
 		$("#rf_transmit_current_five_max").text(data.rfValues[5].max);
 		
-		$("#pa_created_date").text("Uploaded at: " + data.lastUpdated + ", MinMax from: " + data.minmaxReset);
-		$("#pa_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
 		$("#pa_forward_power_name").text(data.paValues[0].name);
 		$("#pa_forward_power_value").text(data.paValues[0].value);
 		$("#pa_forward_power_min").text(data.paValues[0].min);
@@ -205,8 +207,6 @@
 		$("#pa_bus_current_min").text(data.paValues[3].min);
 		$("#pa_bus_current_max").text(data.paValues[3].max);
 		
-		$("#sw_created_date").text("Uploaded at: " + data.lastUpdated + ", MinMax from: " + data.minmaxReset);
-		$("#sw_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
 		$("#sw_value_1_name").text(data.swValues[0].name);
 		$("#sw_value_1_value").text(data.swValues[0].value);
 		$("#sw_value_2_name").text(data.swValues[1].name);
