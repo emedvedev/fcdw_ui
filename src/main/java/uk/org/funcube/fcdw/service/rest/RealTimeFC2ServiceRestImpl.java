@@ -86,9 +86,15 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 		
 		satelliteId = (satelliteId != null) ? satelliteId : new Long(2L);
 
-		final HexFrame latestHexFrame = hexFrameDao.getLatest(satelliteId);
+		final HexFrame latestHexFrame = hexFrameDao.getLatestFC2();
 		
-		final RealTimeEntity realTimeEntity = realTimeDao.getLastEntry(satelliteId);
+		RealTimeEntity realTimeEntity;
+		
+		if (satelliteId != 1) {
+			realTimeEntity= realTimeDao.getLastEntry(satelliteId);
+		} else {
+			realTimeEntity= realTimeDao.getLastFC2Entry();
+		}
 
 		if (latestHexFrame == null) {
 			return new RealTimeFC2Info();
@@ -192,9 +198,9 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 		swValues.add(new StringPair("OBC Soft Reset Count", realTimeFC2.getObcSoftResetCountString()));
 		swValues.add(new StringPair("EPS Hard Reset Count", realTimeFC2.getEpsHardResetCountString()));
 		swValues.add(new StringPair("Sequence Number", realTimeFC2.getSequenceNumberString()));
-		swValues.add(new StringPair("DTMF Command Count", realTimeFC2.getDtmfCommandCountString()));
-		swValues.add(new StringPair("DTMF Last Command", realTimeFC2.getDtmfLastCommandString()));
-		swValues.add(new StringPair("DTMF Command Success", (realTimeFC2.getDtmfCommandSuccess()) ? "Yes" : "No"));
+		swValues.add(new StringPair("Command Count", realTimeFC2.getDtmfCommandCountString()));
+		swValues.add(new StringPair("Last Command", realTimeFC2.getDtmfLastCommandString()));
+		swValues.add(new StringPair("Command Success", (realTimeFC2.getDtmfCommandSuccess()) ? "Yes" : "No"));
 		
 		SharedInfo realtimeInfo 
 			= new RealTimeFC2Info(realTimeEntity.getSequenceNumber(), 

@@ -2,9 +2,9 @@
 
 <h2>Real Time Data</h2>
 <p>
-	This page will show the latest value of all the housekeeping parameters in
-	the spacecraft. <br>The data will have been collected by one or more of
-	the ground stations who will be submitting this data from all around the
+	This page shows the latest value of all the housekeeping parameters in
+	the spacecraft. <br>The data has been collected by one or more of
+	the ground stations who are submitting this data from all around the
 	world.
 </p>
 
@@ -519,17 +519,17 @@
 				</tr>
 
 				<tr>
-					<td id="sw_value_12_name" style="text-align: center;">DTMF Command Count</td>
+					<td id="sw_value_12_name" style="text-align: center;">Command Count</td>
 					<td id="sw_value_12_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
-					<td id="sw_value_13_name" style="text-align: center;">DTMF Last Command</td>
+					<td id="sw_value_13_name" style="text-align: center;">Last Command</td>
 					<td id="sw_value_13_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>
 				<tr>
-					<td id="sw_value_14_name" style="text-align: center;">DTMF Command Success</td>
+					<td id="sw_value_14_name" style="text-align: center;">Command Success</td>
 					<td id="sw_value_14_value"
 						style="text-align: center; white-space: nowrap;">N/A</td>
 				</tr>

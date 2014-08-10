@@ -28,4 +28,6 @@ public interface RealTimeDao extends DataAccessObject<RealTimeEntity, Long> {
 
 	RealTimeEntity saveOrUpdate(RealTimeEntity realTime);
 
+	RealTimeEntity getLastFC2Entry();
+
 }

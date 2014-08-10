@@ -44,4 +44,6 @@ public interface HexFrameDao extends DataAccessObject<HexFrame, Long> {
 	List<HexFrame> findUnprocessedRealtime(long satelliteId);
 
 	Long getMaxSequenceNumber(long satelliteId);
+
+	HexFrame getLatestFC2();
 }

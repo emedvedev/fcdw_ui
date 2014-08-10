@@ -69,7 +69,13 @@ public class RealtimeFC2Controller extends AbstractService {
 
 		ModelAndView mv = new ModelAndView("realtimefc2");
 
-		final HexFrame latestFrame = hexFrameDao.getLatest(satelliteId);
+		HexFrame latestFrame; 
+		
+		if (satelliteId != 1) {
+			latestFrame = hexFrameDao.getLatest(satelliteId);
+		} else {
+			latestFrame = hexFrameDao.getLatestFC2();
+		}
 
 		if (latestFrame == null) {
 			mv.addObject("satelliteId", satelliteId);

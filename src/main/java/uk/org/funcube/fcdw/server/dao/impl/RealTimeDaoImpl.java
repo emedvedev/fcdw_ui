@@ -55,6 +55,25 @@ public class RealTimeDaoImpl extends AbstractDataAccessObject<RealTimeEntity, Re
 
 		return entry;
 	}
+	
+	@Override
+	public RealTimeEntity getLastFC2Entry() {
+		final Query query = getEntityManager().createQuery(
+				"select rt1 from RealTimeEntity rt1 where rt1.satelliteId = :satelliteId and rt1.id"
+						+ " = (select max(rt2.id) from RealTimeEntity rt2 where rt2.satelliteId = :satelliteId)");
+		
+		query.setParameter("satelliteId", 1L);
+
+		RealTimeEntity entry = null;
+
+		final List<RealTimeEntity> realTimeList = findMany(query);
+
+		if (null != realTimeList && realTimeList.size() > 0) {
+			entry = realTimeList.get(0);
+		}
+
+		return entry;
+	}
 
 	@Override
 	public Long countAll() {

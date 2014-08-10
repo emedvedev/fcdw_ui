@@ -144,6 +144,23 @@ public class HexFrameDaoImpl extends AbstractDataAccessObject<HexFrame, HexFrame
 			return resultList.get(0);
 		}
 	}
+	
+	@Override
+	public HexFrame getLatestFC2() {
+		final Query query = getEntityManager().createQuery(
+				"select hf1 from HexFrameEntity hf1 where hf1.satelliteId = 1 and hf1.id"
+						+ " = (select max(hf2.id) from HexFrameEntity hf2 where hf2.satelliteId = 1)");
+
+		@SuppressWarnings("unchecked")
+		List<HexFrame> resultList = query.getResultList();
+
+		if (resultList.isEmpty()) {
+			return null;
+		} else {
+			return resultList.get(0);
+		}
+		
+	}
 
 	@Override
 	public List<HexFrame> getOrbitFrames(long satelliteId, Date createdDate) {
