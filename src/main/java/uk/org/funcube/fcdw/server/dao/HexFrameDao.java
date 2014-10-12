@@ -36,7 +36,6 @@ public interface HexFrameDao extends DataAccessObject<HexFrame, Long> {
 
 	void setWodProcessed(long satelliteId, long sequenceNumber);
 
-	@Cacheable(value = { "latestHexFrame" })
 	HexFrame getLatest(long satelliteId);
 
 	List<HexFrame> getOrbitFrames(long satelliteId, Date date);
