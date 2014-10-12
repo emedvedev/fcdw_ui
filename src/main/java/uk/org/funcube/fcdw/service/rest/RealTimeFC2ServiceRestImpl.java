@@ -19,23 +19,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
-import sun.reflect.ReflectionFactory.GetReflectionFactoryAction;
 import uk.org.funcube.fcdw.server.dao.HexFrameDao;
 import uk.org.funcube.fcdw.server.dao.MinMaxDao;
 import uk.org.funcube.fcdw.server.dao.RealTimeDao;
 import uk.org.funcube.fcdw.server.dao.SatelliteStatusDao;
 import uk.org.funcube.fcdw.server.model.HexFrame;
-import uk.org.funcube.fcdw.server.model.MinMax;
 import uk.org.funcube.fcdw.server.model.RealTimeEntity;
 import uk.org.funcube.fcdw.server.model.SatelliteStatus;
 import uk.org.funcube.fcdw.server.model.UserEntity;
 import uk.org.funcube.fcdw.server.service.impl.AbstractService;
-import uk.org.funcube.fcdw.server.shared.RealTime;
 import uk.org.funcube.fcdw.server.shared.RealTimeFC2;
 import uk.org.funcube.fcdw.server.shared.RealTimeFC2Info;
-import uk.org.funcube.fcdw.server.shared.RealTimeInfo;
 import uk.org.funcube.fcdw.server.shared.SharedInfo;
 import uk.org.funcube.fcdw.server.shared.StringPair;
 import uk.org.funcube.fcdw.server.shared.ValMinMax;
@@ -47,16 +42,12 @@ import uk.org.funcube.fcdw.web.controller.RealtimeController;
 public class RealTimeFC2ServiceRestImpl extends AbstractService {
 
 	private static final String PA_MILLI_WATT_FORMAT = "%s mW";
-	private static final String MILLI_VOLT_FORMAT = "%s mV";
 	private static final String VOLTS_FORMAT = "%s V";
 	private static final String TEMPERATURE_FORMAT = "%s C";
-	private static final String ANTS_TEMPERATURE_FORMAT = "%5.1f C";
 	private static final String PA_TEMPERATURE_FORMAT = "%s C";
 	private static final String PA_MILLI_AMPS_FORMAT = "%s mA";
 	private static final String MILLI_AMPS_FORMAT = "%s mA";
 	private static final String N_A = "N/A";
-	private static final String UNDEPLOYED = "Undeployed";
-	private static final String DEPLOYED = "Deployed";
 	private static final String MAG_FLUX = "%s nT";
 
 	private static final Logger LOGGER = Logger.getLogger(RealtimeController.class.getName());
@@ -211,34 +202,5 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 		
 		return realtimeInfo;
 		
-	}
-
-	private Long unWrap(Long value) {
-		
-		if (value >= 128) {
-			return ~value ^ 255;
-		}
-		else {
-			return value;
-		}
-	}
-
-	private String scaleOffsetAndFormat(String format, Long value, double multiplier,
-			double offset) {
-		if (value == 99999 || value == -99999) {
-			return N_A;
-		}
-		
-		double calculatedValue = scaleAndOffset(value, multiplier, offset);
-		
-		return String.format(format, calculatedValue);
-	}
-
-	private String format(String format, Long value) {
-		if (value >= 99999 || value <= -99999) {
-			return N_A;
-		}
-		
-		return String.format(format, value);
 	}
 }
