@@ -129,9 +129,16 @@ public class HexFrameDaoImpl extends AbstractDataAccessObject<HexFrame, HexFrame
 
 	@Override
 	public HexFrame getLatest(long satelliteId) {
-		final Query query = getEntityManager().createQuery(
-				"SELECT hf FROM HexFrameEntity hf where hf.satelliteId = :satelliteId " + "and hf.valid = 1 "
-						+ "order by hf.sequenceNumber desc, hf.frameType desc");
+		Query query;
+		if (satelliteId != 1) {
+			query = getEntityManager().createQuery(
+					"SELECT hf FROM HexFrameEntity hf where hf.satelliteId = :satelliteId " + "and hf.valid = 1 "
+							+ "order by hf.sequenceNumber desc, hf.frameType desc");
+		} else {
+			query = getEntityManager().createQuery(
+					"SELECT hf1 FROM HexFrameEntity hf1 where hf1.satelliteId = :satelliteId and hf1.id = " +
+							"(select max(hf2.id) from HexFrameEntity hf2 where hf2.satelliteId = :satelliteId " + "and hf2.valid = 1)");
+		}
 		query.setParameter("satelliteId", satelliteId);
 		query.setMaxResults(1);
 

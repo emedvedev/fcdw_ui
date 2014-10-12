@@ -39,9 +39,16 @@ public class RealTimeDaoImpl extends AbstractDataAccessObject<RealTimeEntity, Re
 
 	@Override
 	public RealTimeEntity getLastEntry(final Long satelliteId) {
-		final Query query = getEntityManager().createQuery(
+		Query query;
+		if (satelliteId != 1) {
+			query = getEntityManager().createQuery(
 				"select rt1 from RealTimeEntity rt1 where rt1.satelliteId = :satelliteId and rt1.sequenceNumber"
 						+ " = (select max(rt2.sequenceNumber) from RealTimeEntity rt2 where rt2.satelliteId = :satelliteId)");
+		} else {
+			query = getEntityManager().createQuery(
+					"SELECT rt1 FROM RealTimeEntity rt1 where rt1.satelliteId = :satelliteId and rt1.id = " +
+							"(select max(rt2.id) from RealTimeEntity rt2 where rt2.satelliteId = :satelliteId)");
+		}
 		
 		query.setParameter("satelliteId", satelliteId);
 
