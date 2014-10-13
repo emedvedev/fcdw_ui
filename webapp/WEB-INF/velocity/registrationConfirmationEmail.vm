@@ -1,20 +1,12 @@
 Thank you for registering ($siteName) to take part in the data upload
 for the FUNcube project.
 
-Your password is: $password
-
 Your authorisation code is: $authKey
 
 Please click on the link below (or past it into a browser) to activate vour account
+to enable you to upload data to the warehouse.
 
-https://warehouse.funcube.org.uk/authemail.html?s=$siteName&r=$registrationCode
-
-Once your account is active on the FUNcube Warehouse, you will be able to log into the site:
-
-https://warehouse.funcube.org.uk
-
-N.B.: WE ARE STILL WORKING ON THE PRIVATE AREAS, ALL OF THE DATA IS
-IN THE PUBLIC AREA
+http://warehouse.funcube.org.uk/authemail.html?s=$siteName&r=$registrationCode
 
 To upload data to the Warehouse, please go to the FUNcube Dashboard on you PC and 
 enter in the:
