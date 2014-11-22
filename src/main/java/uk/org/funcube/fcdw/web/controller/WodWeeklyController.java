@@ -7,6 +7,9 @@
 package uk.org.funcube.fcdw.web.controller;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import javax.ws.rs.QueryParam;
 
@@ -32,7 +35,9 @@ public class WodWeeklyController extends AbstractService {
 
 		mv.addObject("satelliteId", satelliteId);
 		mv.addObject("showStatus", new Long(0));
-		mv.addObject("fileList", fileLocation.list());
+		List<String> list = Arrays.asList(fileLocation.list());  
+		Collections.sort(list);
+		mv.addObject("fileList", list);
 
 		return mv;
 	}
