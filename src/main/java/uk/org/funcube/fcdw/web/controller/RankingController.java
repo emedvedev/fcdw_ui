@@ -67,12 +67,12 @@ public class RankingController extends AbstractService {
 			
 			if (oldNumber.longValue() != newNumber.longValue()) {
 				postedPosition = position;
-				ranking.add(new ValMinMax(userRanking.getSiteId(), newNumber.toString(),
+				ranking.add(new ValMinMax(userRanking.getSiteAlias(), newNumber.toString(),
 						Integer.toString(postedPosition), colour));
 				position++;
 			}
 			else {
-				ranking.add(new ValMinMax(userRanking.getSiteId(), newNumber.toString(),
+				ranking.add(new ValMinMax(userRanking.getSiteAlias(), newNumber.toString(),
 						Integer.toString(postedPosition), colour));
 				position++;
 			}

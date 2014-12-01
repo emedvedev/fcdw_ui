@@ -18,4 +18,6 @@ public interface UserRanking {
 	
 	Date getLatestUploadDate();
 
+	String getSiteAlias();
+
 }

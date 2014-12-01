@@ -27,6 +27,7 @@ public class UserRankingEntity implements UserRanking {
 	private String siteId;
 	private Long number;
 	private Timestamp latestUploadDate;
+	private String siteAlias;
 
 	public UserRankingEntity() {
 
@@ -90,6 +91,14 @@ public class UserRankingEntity implements UserRanking {
 
 	public final void setLatestUploadDate(Timestamp latestUploadDate) {
 		this.latestUploadDate = latestUploadDate;
+	}
+
+	public final String getSiteAlias() {
+		return siteAlias;
+	}
+
+	public final void setSiteAlias(String siteAlias) {
+		this.siteAlias = siteAlias;
 	}
 
 }
