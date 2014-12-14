@@ -987,62 +987,66 @@ public class RealTimeFC2 extends RealTime {
 	}
 
 	public String getSolarArrayCurrent1PlusString() {
-		return generateSolarArrayCurrentString(solarArrayCurrent1Plus);
+		return generateSolarArrayCurrentString(solarArrayCurrent1Plus, 0);
 	}
 
 	public String getSolarArrayCurrent1MinusString() {
-		return generateSolarArrayCurrentString(solarArrayCurrent1Minus);
+		return generateSolarArrayCurrentString(solarArrayCurrent1Minus, 0);
 	}
 
 	public String getSolarArrayCurrent2PlusString() {
-		return generateSolarArrayCurrentString(solarArrayCurrent2Plus);
+		return generateSolarArrayCurrentString(solarArrayCurrent2Plus, 0);
 	}
 
 	public String getSolarArrayCurrent2MinusString() {
-		return generateSolarArrayCurrentString(solarArrayCurrent2Minus);
+		return generateSolarArrayCurrentString(solarArrayCurrent2Minus, 0);
 	}
 
 	public String getSolarArrayCurrent3PlusString() {
-		return generateSolarArrayCurrentString(solarArrayCurrent3Plus);
+		return generateSolarArrayCurrentString(solarArrayCurrent3Plus, 0);
 	}
 
 	public String getSolarArrayCurrent3MinusString() {
-		return generateSolarArrayCurrentString(solarArrayCurrent3Minus);
+		return generateSolarArrayCurrentString(solarArrayCurrent3Minus, 0);
 	}
 
 	public String getSolarArrayCurrent4PlusString() {
-		return generateSolarArrayCurrentString(solarArrayCurrent4Plus);
+		return generateSolarArrayCurrentString(solarArrayCurrent4Plus, 1);
 	}
 
 	public String getSolarArrayCurrent4MinusString() {
-		return generateSolarArrayCurrentString(solarArrayCurrent4Minus);
+		return generateSolarArrayCurrentString(solarArrayCurrent4Minus, 1);
 	}
 
 	public String getSolarArrayCurrent5PlusString() {
-		return generateSolarArrayCurrentString(solarArrayCurrent5Plus);
+		return generateSolarArrayCurrentString(solarArrayCurrent5Plus, 1);
 	}
 
 	public String getSolarArrayCurrent5MinusString() {
-		return generateSolarArrayCurrentString(solarArrayCurrent5Minus);
+		return generateSolarArrayCurrentString(solarArrayCurrent5Minus, 1);
 	}
 
 	public String getSolarArrayCurrent6PlusString() {
-		return generateSolarArrayCurrentString(solarArrayCurrent6Plus);
+		return generateSolarArrayCurrentString(solarArrayCurrent6Plus, 1);
 	}
 
 	public String getSolarArrayCurrent6MinusString() {
-		return generateSolarArrayCurrentString(solarArrayCurrent6Minus);
+		return generateSolarArrayCurrentString(solarArrayCurrent6Minus, 1);
 	}
 	
-	private String generateSolarArrayCurrentString(Long current) {
+	private String generateSolarArrayCurrentString(Long current, int type) {
 		if (current == 1023) {
 			return "0";
 		} else {
-			return String.format("%3.1f", (current * -0.54312) +  + 555.61);
+			if (type == 0) {
+				return String.format("%3.1f", (current * -0.54312) +  + 555.61);
+			} else {
+				return String.format("%3.1f", (current * -0.575) +  + 588.22);
+			}
 		}
 	}
 	
 	private String generateBatteryTemperatureString(Long temperature) {
-		return String.format("%3.1f", (temperature * -0.163 * 4) +  + 75);
+		return String.format("%3.1f", (temperature * -0.163 * 4.75) + 75);
 	}
 }
