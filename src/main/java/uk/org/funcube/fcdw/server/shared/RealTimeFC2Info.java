@@ -23,7 +23,8 @@ public class RealTimeFC2Info extends SharedInfo {
 			List<StringPair> swValues,
 			List<String>siteList, String minmaxReset,
 			String latitude, String longitude, String packetCount,
-			String satelliteMode, String transponderState) {
+			String satelliteMode, String transponderState,
+			Integer valid) {
 		super();
 		this.sequenceNumber = sequenceNumber;
 		this.lastUpdated = lastUpdated;
@@ -39,6 +40,7 @@ public class RealTimeFC2Info extends SharedInfo {
 		this.packetCount = packetCount;
 		this.satelliteMode = satelliteMode;
 		this.transponderState = transponderState;
+		this.valid = valid;
 		
 	}
 

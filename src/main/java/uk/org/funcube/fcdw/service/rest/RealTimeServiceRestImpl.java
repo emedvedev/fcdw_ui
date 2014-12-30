@@ -131,7 +131,7 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		int frameType = frameId & 63;
 
 		RealTime realTime = new RealTime(satelliteId.intValue(), frameType, sensorId, createdDate, binaryString);
-
+		
 		Set<UserEntity> users = latestFrame.getUsers();
 
 		List<String> siteList = new ArrayList<String>();
@@ -312,12 +312,14 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		swValues.add(new StringPair("Software ABF", (softwareState.getC12()) ? "On" : "Off"));
 		swValues.add(new StringPair("Deployment Wait At Next Boot", (softwareState.getC13()) ? "Yes" : "No"));
 		
+		int valid = 1;
+		
 		SharedInfo realtimeInfo 
 			= new RealTimeInfo(realTime.getSequenceNumber(), 
 					SDTF.format(createdDate),
 					epsValues, asibValues, rfValues, paValues, antsValues, swValues,
 					siteList, SDTF.format(minmaxResetDate),
-					latitude, longitude, packetCount, satelliteMode, transponderState);
+					latitude, longitude, packetCount, satelliteMode, transponderState, valid);
 		
 		return realtimeInfo;
 		

@@ -9,6 +9,7 @@ public class SharedInfo {
 	protected List<String> siteList;
 	protected String satelliteMode;
 	protected String transponderState;
+	protected Integer valid;
 
 	public SharedInfo() {
 		super();
@@ -37,6 +38,14 @@ public class SharedInfo {
 
 	public final void setTransponderState(String transponderState) {
 		this.transponderState = transponderState;
+	}
+
+	public final Integer getValid() {
+		return valid;
+	}
+
+	public final void setValid(Integer valid) {
+		this.valid = valid;
 	}
 
 }

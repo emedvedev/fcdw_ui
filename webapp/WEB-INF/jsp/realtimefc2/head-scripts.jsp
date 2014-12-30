@@ -22,6 +22,20 @@
 		$("#rf_created_date").text("Updated at: " + data.lastUpdated);
 		$("#sw_created_date").text("Updated at: " + data.lastUpdated);
 		
+		if (data.valid == 0) {
+			$("#eps_invalid").show();
+			$("#amac_invalid").show();
+			$("#pa_invalid").show();
+			$("#rf_invalid").show();
+			$("#sw_invalid").show();
+		} else {
+			$("#eps_invalid").hide();
+			$("#amac_invalid").hide();
+			$("#pa_invalid").hide();
+			$("#rf_invalid").hide();
+			$("#sw_invalid").hide();
+		}
+		
 		$("#eps_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
 		$("#amac_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);
 		$("#rf_lat_long").text("Satellite Latitude: " + data.latitude + ", Longitude: " + data.longitude);

@@ -198,7 +198,8 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 					SDTF.format(createdDate),
 					epsValues, amacValues, rfValues, paValues, swValues,
 					siteList, SDTF.format(minmaxResetDate),
-					latitude, longitude, packetCount, satelliteMode, transponderState);
+					latitude, longitude, packetCount, satelliteMode, transponderState,
+					realTimeEntity.isValid() ? 1 : 0);
 		
 		return realtimeInfo;
 		

@@ -29,6 +29,7 @@
 			<h3 id="eps_lat_long" style="text-align: left;">Satellite Latitude, Longitude:</h3>
 			<h3 id="eps_created_date" style="text-align: left;">Latest
 				update at:</h3>
+			<h3 id="eps_invalid" style="text-align: left; color: red"><strong>DATA IS INVALID</strong></h3>
 			<table style="width: 100%;">
 				<tr>
 					<td style="text-align: center;">Name</td>
@@ -247,6 +248,7 @@
 			<h3 id="amac_lat_long" style="text-align: left;">Satellite Latitude, Longitude:</h3>
 			<h3 id="amac_created_date" style="text-align: left;">Latest
 				update at:</h3>
+			<h3 id="amac_invalid" style="text-align: left; color: red"><strong>DATA IS INVALID</strong></h3>
 			<table style="width: 100%;">
 				<tr>
 					<td style="text-align: center;">Name</td>
@@ -312,6 +314,7 @@
 			<h3 id="rf_lat_long" style="text-align: left;">Satellite Latitude, Longitude:</h3>
 			<h3 id="rf_created_date" style="text-align: left;">Latest update
 				at:</h3>
+			<h3 id="rf_invalid" style="text-align: left; color: red"><strong>DATA IS INVALID</strong></h3>
 			<table style="width: 100%;">
 				<tr>
 					<td style="text-align: center;">Name</td>
@@ -391,6 +394,7 @@
 			<h3 id="pa_lat_long" style="text-align: left;">Satellite Latitude, Longitude:</h3>
 			<h3 id="pa_created_date" style="text-align: left;">Latest update
 				at:</h3>
+			<h3 id="pa_invalid" style="text-align: left; color: red"><strong>DATA IS INVALID</strong></h3>
 			<table style="width: 100%;">
 				<tr>
 					<td style="text-align: center;">Name</td>
@@ -447,6 +451,7 @@
 			<h3 id="sw_lat_long" style="text-align: left;">Satellite Latitude, Longitude:</h3>
 			<h3 id="sw_created_date" style="text-align: left;">Latest update
 				at:</h3>
+			<h3 id="sw_invalid" style="text-align: left; color: red"><strong>DATA IS INVALID</strong></h3>
 			<table style="width: 100%;">
 				<tr>
 					<td style="text-align: center;">Name</td>

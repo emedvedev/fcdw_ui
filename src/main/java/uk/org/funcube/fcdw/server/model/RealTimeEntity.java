@@ -38,6 +38,7 @@ public class RealTimeEntity {
 	private long commandCount;
 	private long lastCommand;
 	private Timestamp satelliteTime;
+	private Boolean valid;
 
 	private Long c1;
 	private Long c2;
@@ -206,6 +207,13 @@ public class RealTimeEntity {
 		DTMF dtmf = realTime.getDTMF();
 		commandCount = dtmf.getCommandCount();
 		lastCommand = dtmf.getLastCommand();
+		
+		// derive the valid flag
+		if (satelliteId == 1) {
+			valid = (getC53() && getC54());
+		} else {
+			valid = true;
+		}
 	}
 
 	public final Long getId() {
@@ -902,6 +910,14 @@ public class RealTimeEntity {
 
 	public final void setSatelliteTime(Timestamp satelliteTime) {
 		this.satelliteTime = satelliteTime;
+	}
+	
+	public void setValid(boolean valid) {
+		this.valid = valid;
+	}
+
+	public boolean isValid() {
+		return valid;
 	}
 
 }

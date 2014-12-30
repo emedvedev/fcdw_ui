@@ -23,7 +23,7 @@ public class RealTimeInfo extends SharedInfo {
 			List<ValMinMax> antsValues, List<StringPair> swValues,
 			List<String>siteList, String minmaxReset,
 			String latitude, String longitude, String packetCount,
-			String satelliteMode, String transponderState) {
+			String satelliteMode, String transponderState, Integer valid) {
 		super();
 		this.sequenceNumber = sequenceNumber;
 		this.lastUpdated = lastUpdated;
@@ -40,6 +40,7 @@ public class RealTimeInfo extends SharedInfo {
 		this.packetCount = packetCount;
 		this.satelliteMode = satelliteMode;
 		this.transponderState = transponderState;
+		setValid(valid);
 		
 	}
 
