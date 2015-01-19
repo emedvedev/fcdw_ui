@@ -66,6 +66,10 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 
 	private Long satelliteId;
 	
+	public RealTimeFC2ServiceRestImpl() {
+		super();
+	}
+
 	// get all data for one orbit for a given satellite
 	@Transactional(readOnly = true)
 	@RequestMapping(value = "/{satelliteId}", method = RequestMethod.GET, produces = "application/json")
@@ -133,7 +137,6 @@ public class RealTimeFC2ServiceRestImpl extends AbstractService {
 		List<ValMinMax> amacValues = new ArrayList<ValMinMax>();
 		List<ValMinMax> rfValues = new ArrayList<ValMinMax>();
 		List<ValMinMax> paValues = new ArrayList<ValMinMax>();
-		List<ValMinMax> antsValues = new ArrayList<ValMinMax>();
 		List<StringPair> swValues = new ArrayList<StringPair>();
 		
 		epsValues.add(new ValMinMax("Solar Array +Y Deployable +", String.format(MILLI_AMPS_FORMAT, realTimeFC2.getSolarArrayCurrent1PlusString()), N_A, N_A));

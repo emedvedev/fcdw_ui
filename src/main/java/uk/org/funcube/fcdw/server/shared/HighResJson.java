@@ -2,20 +2,18 @@ package uk.org.funcube.fcdw.server.shared;
 
 import java.util.LinkedList;
 
-import javax.xml.bind.annotation.XmlElement;
-
 import org.codehaus.jackson.annotate.JsonProperty;
 
 public class HighResJson extends SharedInfo {
 	
-	private LinkedList series = new LinkedList();
+	private LinkedList<DataElement> series = new LinkedList<DataElement>();
 	private XAxis xAxis = new XAxis();
 	
 	public HighResJson() {
 		xAxis.setMax(0);
 	}
 	
-	public LinkedList getSeries() {
+	public LinkedList<DataElement> getSeries() {
 		return series;
 	}
 	

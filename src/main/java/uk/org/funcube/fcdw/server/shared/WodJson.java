@@ -4,13 +4,13 @@ import java.util.LinkedList;
 
 public class WodJson extends SharedInfo {
 	
-	private LinkedList series = new LinkedList();
+	private LinkedList<DataElement> series = new LinkedList<DataElement>();
 	
 	public WodJson() {
 		
 	}
 	
-	public LinkedList getSeries() {
+	public LinkedList<DataElement> getSeries() {
 		return series;
 	}
 	

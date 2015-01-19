@@ -32,6 +32,10 @@ public class CctDebugController extends AbstractService {
 	@Autowired
 	private FitterMessageDao fitterMessageDao;
 
+	public CctDebugController() {
+		super();
+	}
+
 	@Transactional(readOnly = true)
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView fitter(@QueryParam(value = "satelliteId") Long satelliteId) {

@@ -11,24 +11,27 @@ import java.util.TimeZone;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class AbstractService {
+public abstract class AbstractService {
 
 	private static final int HEX_0X0F = 0x0F;
 	private static final int I_256 = 256;
 	private static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss zzz";
 	private static final String DATE_FORMAT = "yyyy-MM-dd";
-	protected static final SimpleDateFormat SDTF = new SimpleDateFormat(DATE_TIME_FORMAT);
-	protected static final SimpleDateFormat SDF = new SimpleDateFormat(DATE_FORMAT);
+	protected final SimpleDateFormat SDTF = new SimpleDateFormat(DATE_TIME_FORMAT);
+	protected final SimpleDateFormat SDF = new SimpleDateFormat(DATE_FORMAT);
 	private static final TimeZone UTC = TimeZone.getTimeZone("UTC");
 	private static final double[] PA_TEMPS = new double[I_256];
 	protected static final double[] ANTS_TEMPS = new double[I_256];
 	protected static double[] SOL_ILLUMINATION = new double[1024];
 
 	static {
-		SDTF.setTimeZone(UTC);
 		setupPaTemps();
 		setupAntsTemps();
 		setupSunSensors();
+	}
+	
+	protected AbstractService() {
+		SDTF.setTimeZone(UTC);
 	}
 
 	protected static String convertHexBytePairToBinary(final String hexString) {
@@ -181,10 +184,6 @@ public class AbstractService {
 
 	protected static double scaleAndOffset(final long value, final double multiplier, final double offset) {
 		return (value * multiplier) + offset;
-	}
-
-	public AbstractService() {
-		super();
 	}
 
 	public static final double getPaTemp(final long value) {

@@ -72,6 +72,10 @@ public class RealTimeServiceRestImpl extends AbstractService {
 
 	private Long satelliteId;
 	
+	public RealTimeServiceRestImpl() {
+		super();
+	}
+
 	// get all data for one orbit for a given satellite
 	@Transactional(readOnly = true)
 	@RequestMapping(value = "/{satelliteId}", method = RequestMethod.GET, produces = "application/json")
@@ -81,11 +85,8 @@ public class RealTimeServiceRestImpl extends AbstractService {
 		
 		this.satelliteId = theSatelliteId;
 		
-		List<MinMax> minMaxValues = minMaxDao.findBySatelliteId(satelliteId);
-
 		satelliteId = (satelliteId != null) ? satelliteId : new Long(2L);
-
-		ModelAndView mv = new ModelAndView("realtime");
+		List<MinMax> minMaxValues = minMaxDao.findBySatelliteId(satelliteId);
 
 		final HexFrame latestFrame = hexFrameDao.getLatest(satelliteId);
 

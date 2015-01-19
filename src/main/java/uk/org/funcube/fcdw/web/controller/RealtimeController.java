@@ -52,9 +52,6 @@ public class RealtimeController extends AbstractService {
 	private static final String UNDEPLOYED = "Undeployed";
 	private static final String DEPLOYED = "Deployed";
 
-	private double minPV1 = 0.0;
-	private double maxPV1 = 0.0;
-
 	private static final Logger LOGGER = Logger.getLogger(RealtimeController.class.getName());
 
 	@Autowired
@@ -67,9 +64,8 @@ public class RealtimeController extends AbstractService {
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView realtime(@QueryParam(value = "satelliteId") Long satelliteId) {
 		
-		List<MinMax> minMaxValues = minMaxDao.findBySatelliteId(satelliteId);
-
 		satelliteId = (satelliteId != null) ? satelliteId : new Long(2L);
+		List<MinMax> minMaxValues = minMaxDao.findBySatelliteId(satelliteId);
 
 		ModelAndView mv = new ModelAndView("realtime");
 
@@ -120,8 +116,6 @@ public class RealtimeController extends AbstractService {
 		for (UserEntity user : users) {
 			siteList.add(user.getSiteId());
 		}
-
-		calculateMinMax(0, createdDate);
 
 		List<ValMinMax> epsValues = new ArrayList<ValMinMax>();
 		List<ValMinMax> asibValues = new ArrayList<ValMinMax>();
@@ -317,14 +311,6 @@ public class RealtimeController extends AbstractService {
 		}
 		
 		return String.format(format, value);
-	}
-
-	private void calculateMinMax(int satelliteId, Date createdDate) {
-		int orbitSeconds = 104 * 60 * 1000;
-		final List<HexFrame> orbitFrames = hexFrameDao.getOrbitFrames(satelliteId, new Date(createdDate.getTime() - orbitSeconds));
-		minPV1 = 0.0;
-		maxPV1 = 0.0;
-
 	}
 
 	public void setHexFrameDao(HexFrameDao hexFrameDao) {

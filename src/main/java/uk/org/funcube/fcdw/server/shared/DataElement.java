@@ -34,7 +34,7 @@ public class DataElement {
 	
 	@SuppressWarnings("unchecked")
 	public void addDatum(Long value1, Double value2 ) {
-		LinkedList dataPair = new LinkedList();
+		LinkedList<Number> dataPair = new LinkedList<Number>();
 		dataPair.add(value1);
 		dataPair.add(value2);
 		data.add(dataPair);

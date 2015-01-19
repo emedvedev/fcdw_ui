@@ -30,6 +30,10 @@ public class FitterController extends AbstractService {
 	@Autowired
 	private FitterMessageDao fitterMessageDao;
 
+	public FitterController() {
+		super();
+	}
+
 	@Transactional(readOnly = true)
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView fitter(@QueryParam(value = "satelliteId") Long satelliteId) {

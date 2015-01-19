@@ -61,6 +61,10 @@ public class RealtimeFC2Controller extends AbstractService {
 	private MinMaxDao minMaxDao;
 	
 	
+	public RealtimeFC2Controller() {
+		super();
+	}
+
 	@Transactional(readOnly = true)
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView realtime(@QueryParam(value = "satelliteId") Long satelliteId) {

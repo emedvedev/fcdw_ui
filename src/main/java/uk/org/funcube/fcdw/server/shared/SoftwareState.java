@@ -291,7 +291,7 @@ public class SoftwareState {
 	}
 	
 	public String toString() {
-		return null;
+		return "Not supported";
 	}
 
 	public String toBinaryString() {
