@@ -28,18 +28,20 @@ public class UserRankingEntity implements UserRanking {
 	private Long number;
 	private Timestamp latestUploadDate;
 	private String siteAlias;
+	private Timestamp firstUploadDate;
 
 	public UserRankingEntity() {
 
 	}
 
-	public UserRankingEntity(Long satelliteId, String siteId, Long number,
-			Timestamp latestUploadDate) {
+	public UserRankingEntity(final Long satelliteId, final String siteId, final Long number,
+			final Timestamp latestUploadDate, final Timestamp firstUploadDate) {
 		super();
 		this.satelliteId = satelliteId;
 		this.siteId = siteId;
 		this.number = number;
 		this.latestUploadDate = latestUploadDate;
+        this.firstUploadDate = firstUploadDate;
 	}
 
 	public final Long getId() {
@@ -100,5 +102,13 @@ public class UserRankingEntity implements UserRanking {
 	public final void setSiteAlias(String siteAlias) {
 		this.siteAlias = siteAlias;
 	}
+
+    public final Timestamp getFirstUploadDate() {
+        return firstUploadDate;
+    }
+
+    public final void setFirstUploadDate(Timestamp firstUploadDate) {
+        this.firstUploadDate = firstUploadDate;
+    }
 
 }

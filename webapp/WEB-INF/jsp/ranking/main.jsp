@@ -6,6 +6,16 @@
 	list gives the site names of those who have uploaded the most data
 	frames:
 </p>
+<table style="width: 60%;">
+	<tr>
+		<td style="text-align: left; white-space: nowrap; width: 10%">Key:</td>
+		<td style="text-align: left; white-space: nowrap; width: 20%; color: LawnGreen">Within 1 week,</td>
+		<td style="text-align: left; white-space: nowrap; width: 20%; color: Orange">within 2 weeks,</td>
+		<td style="text-align: left; white-space: nowrap; width: 20%">greater than 2 weeks</td>
+		<td style="text-align: left; white-space: nowrap; width: 30%">&nbsp;</td>
+	</tr>
+</table>
+<p>
 <table style="width: 100%;">
 	<tr>
 		<td style="text-align: center; white-space: nowrap;">Site Id</td>
