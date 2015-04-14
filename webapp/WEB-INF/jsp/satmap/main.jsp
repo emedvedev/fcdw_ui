@@ -6,6 +6,8 @@
 		<script>
 			var norad = '40074';
 			var size = 'small';
+			var allpasses = '1';
+			var minelevation = '0';
 		</script>
 		<script type="text/javascript"
 			src="http://www.n2yo.com/js/webtracker.js"></script>
@@ -14,6 +16,8 @@
 		<script>
 			var norad = '39444';
 			var size = 'small';
+			var allpasses = '1';
+			var minelevation = '0';
 		</script>
 		<script type="text/javascript"
 			src="http://www.n2yo.com/js/webtracker.js"></script>
