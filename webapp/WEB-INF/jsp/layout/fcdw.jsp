@@ -112,6 +112,22 @@ Adapted    : 20130328 - Dave Johnson, G4DPZ, AMSAT-UK
 								<li><a href="http://www.funcube.org.uk" target="_blank">About</a></li>
 								-->
 							</c:when>
+							<c:when test="${satelliteId == 4}">
+								<li><a href="<c:url value='/realtimefc2.html?satelliteId=4'/>">Real Time Data</a></li>
+								<!--
+								<li><a href="<c:url value='/highres.html?satelliteId=4'/>">High Resolution Data</a></li>
+								<li><a href="<c:url value='/wod.html?satelliteId=4'/>">Whole Orbit Data</a></li></li>
+								-->
+								<li><a href="<c:url value='/fitter.html?satelliteId=4'/>">Fitter Messages</a></li>
+								<!--
+								<li><a href="<c:url value='/radio.html?satelliteId=4'/>">Amateur Radio Info</a></li>
+								-->
+								<li><a href="<c:url value='/satmap.html?satelliteId=4'/>">Satellite Position</a></li>
+								<li><a href="<c:url value='/ranking.html?satelliteId=4'/>">Upload Ranking</a></li>
+								<!--
+								<li><a href="http://www.funcube.org.uk" target="_blank">About</a></li>
+								-->
+							</c:when>
 							<c:otherwise>
 								<li><a href="<c:url value='/realtime.html?satelliteId=${satelliteId}'/>">Real Time Data</a></li>
 								<li><a href="<c:url value='/highres.html?satelliteId=${satelliteId}'/>">High Resolution Data</a></li>

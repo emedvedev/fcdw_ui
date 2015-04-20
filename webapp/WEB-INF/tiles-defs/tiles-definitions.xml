@@ -82,6 +82,17 @@
     <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
   </definition>
   
+  <definition name="realtimeeseo" template="/WEB-INF/jsp/layout/fcdw.jsp">
+    <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
+    <put-attribute name="page-title" value="ESEO Real Time Data"/> 
+    <put-attribute name="head-scripts" value="/WEB-INF/jsp/realtimeeseo/head-scripts.jsp" />
+    <put-attribute name="header" value="/WEB-INF/jsp/realtimeeseo/head.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+    <put-attribute name="main" value="/WEB-INF/jsp/realtimeeseo/main.jsp" />
+    <put-attribute name="footer"  value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-attribute name="end-body"  value="/WEB-INF/jsp/common/end-body-scripts.jsp" />
+  </definition>
+  
   <definition name="realtimefc2" template="/WEB-INF/jsp/layout/fcdw.jsp">
     <put-attribute name="site-name" value="FUNcube Data Warehouse"/> 
     <put-attribute name="page-title" value="UKube-1 Real Time Data"/> 

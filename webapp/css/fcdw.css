@@ -92,6 +92,13 @@ hr {
     background: #242424 url(images/funcube_logo.png) no-repeat;
 }
 
+#banner.eseo {
+	width: 860px;
+	height: 145px;
+	margin: 10px auto 0px auto;
+    background: #242424 url(images/eseo__2.png) no-repeat;
+}
+
 #banner h1, #banner h2 {
 	float: left;
 	margin: 0px;
