@@ -9,7 +9,7 @@ Adapted: 20130330 - Dave Johnson, G4DPZ
 /* jQuery UI theme fix */
 .ui-widget, .ui-widget-content
 {
-    font-size : 13px; 
+    font-size : 13px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
     color: #BBBBBB;
@@ -104,7 +104,7 @@ hr {
     display: none;
 }
 
-#banner h1  
+#banner h1
 {
     width: 180px;
     height: 130px;
@@ -169,8 +169,8 @@ hr {
 	color: #FFFFFF;
 }
 
-#menu a:hover { 
-	text-decoration: none; 
+#menu a:hover {
+	text-decoration: none;
 	color: #48ACDE;
 }
 
@@ -182,7 +182,7 @@ hr {
 
 /* Page
 ************************************************/
-#page-wrap 
+#page-wrap
 {
     position: relative;
 	width: 860px;
@@ -197,7 +197,7 @@ hr {
 	padding-top: 16px;
 }
 
-img.banner 
+img.banner
 {
     float: right;
 }
@@ -245,7 +245,7 @@ img.banner
 
 /* Sponsors
 ************************************************/
-#sponsors-wrap 
+#sponsors-wrap
 {
     width: 860px;
 	margin: 12px auto 0px auto;
@@ -296,7 +296,12 @@ img.banner
 	color: #FFFFFF;
 }
 
-
+/* Satellite map
+************************************************/
+#satmap iframe {
+    height: 465px;
+    width: 600px;
+}
 
 /* MISC - TEMP
 ************************************************/
