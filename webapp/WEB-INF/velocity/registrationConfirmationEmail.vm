@@ -3,12 +3,12 @@ for the FUNcube project.
 
 Your authorisation code is: $authKey
 
-Please click on the link below (or past it into a browser) to activate vour account
+Please click on the link below (or past it into a browser) to activate your account
 to enable you to upload data to the warehouse.
 
 http://warehouse.funcube.org.uk/authemail.html?s=$siteName&r=$registrationCode
 
-To upload data to the Warehouse, please go to the FUNcube Dashboard on you PC and 
+To upload data to the Warehouse, please go to the FUNcube Dashboard on your PC and
 enter in the:
 
 File -> Settings -> Warehouse menu
@@ -18,7 +18,7 @@ Auth Code: enter $authKey
 URL: enter http://data.funcube.org.uk
 Stream data to warehouse: check the box
 
-If you have any queries or problems please check the http://forum.funcube.org.uk site.  
+If you have any queries or problems please check the http://forum.funcube.org.uk site.
 
 THANK YOU for supporting the FUNcube project!
 

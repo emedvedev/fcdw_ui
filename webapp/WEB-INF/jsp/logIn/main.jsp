@@ -2,7 +2,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <h2>Login</h2>
 <p>Please enter your callsign or nickname and password below.</p>
-<p>If this is you first login, enter the authorisation code sent in
+<p>If this is your first login, enter the authorisation code sent in
 	your registration email.</p>
 <p>
 	If you don't have an account, please <a

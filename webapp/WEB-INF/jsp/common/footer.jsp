@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <p id="footer">
-	&copy; 2013,2014 <a href="http://amsat-uk.org">AMSAT-UK</a> - <a href="http://www.funcube.org.uk">FUNcube</a>. Site built and administered by <a href="http://www.g4dpz.me.uk">Dave Johnson, G4DPZ</a> of <a href="http://www.blackpepper.co.uk">Black Pepper Software Ltd.</a>
+	&copy; 2013–2018 <a href="http://amsat-uk.org">AMSAT-UK</a> - <a href="http://www.funcube.org.uk">FUNcube</a>. Site built and administered by <a href="http://www.g4dpz.me.uk">Dave Johnson, G4DPZ</a> of <a href="http://www.blackpepper.co.uk">Black Pepper Software Ltd.</a>
 </p>
 
 <script>

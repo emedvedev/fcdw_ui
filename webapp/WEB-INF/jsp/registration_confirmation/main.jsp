@@ -1,8 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <h2>Registration Confirmation</h2>
-<p>Thank you for registering to take part in the data upload for the FUNcube project
-<br>We have sent an 'authorisation code' to the email address you have entered. 
+<p>Thank you for registering to take part in the data upload for the FUNcube project.
+<br>We have sent an 'authorisation code' to the email address you have entered.
 <br>When you receive this, please click on the link which will authenticate your account.
 <p>Once this has been done, please set up the PC Dashboard in the File&rarr;Settings&rarr;Warehouse menu:
 
