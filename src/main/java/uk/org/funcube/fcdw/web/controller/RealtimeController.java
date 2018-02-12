@@ -56,14 +56,14 @@ public class RealtimeController extends AbstractService {
 
 	@Autowired
 	private HexFrameDao hexFrameDao;
-	
+
 	@Autowired
 	private MinMaxDao minMaxDao;
-	
+
 	@Transactional(readOnly = true)
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView realtime(@QueryParam(value = "satelliteId") Long satelliteId) {
-		
+
 		satelliteId = (satelliteId != null) ? satelliteId : new Long(2L);
 		List<MinMax> minMaxValues = minMaxDao.findBySatelliteId(satelliteId);
 
@@ -75,21 +75,21 @@ public class RealtimeController extends AbstractService {
 			mv.addObject("satelliteId", satelliteId);
 			return mv;
 		}
-		
+
 		final Long hfCount = hexFrameDao.countAll(satelliteId);
 		final String packetCount = String.format("%d (%5.1fMB)", hfCount, (double)hfCount * 2048 / 8 / 1000000);
-		
+
 		String latitude = latestFrame.getLatitude();
-		
+
 		final double latitudeValue = Double.parseDouble((latitude != null) ? latitude : "0");
 		if (latitudeValue > 0.0) {
 			latitude = String.format("%5.1f N", latitudeValue);
 		} else {
 			latitude = String.format("%5.1f S", Math.abs(latitudeValue));
 		}
-		
+
 		String longitude = latestFrame.getLongitude();
-		
+
 		final double longitudeValue = Double.parseDouble((longitude != null) ? longitude : "0");
 		if (longitudeValue > 180.0) {
 			longitude = String.format("%5.1f W", 360.0 - longitudeValue);
@@ -125,53 +125,53 @@ public class RealtimeController extends AbstractService {
 		List<StringPair> swValues = new ArrayList<StringPair>();
 
 		EPS eps = realTime.getEps();
-		
+
 		String minValue = "";
 		String maxValue = "";
-		
+
 		minValue = format("%4d", minMaxValues.get(0).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(0).getMaximum());
 		epsValues.add(new ValMinMax("Solar Panel Voltage X", String.format(MILLI_VOLT_FORMAT, eps.getC1()), minValue, maxValue));
-		
+
 		minValue = format("%4d", minMaxValues.get(1).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(1).getMaximum());
 		epsValues.add(new ValMinMax("Solar Panel Voltage Y", String.format(MILLI_VOLT_FORMAT, eps.getC2()), minValue, maxValue));
-		
+
 		minValue = format("%4d", minMaxValues.get(2).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(2).getMaximum());
 		epsValues.add(new ValMinMax("Solar Panel Voltage Z", String.format(MILLI_VOLT_FORMAT, eps.getC3()), minValue, maxValue));
-		
+
 		minValue = format("%4d", minMaxValues.get(3).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(3).getMaximum());
 		epsValues.add(new ValMinMax("Total Photo Current", String.format(MILLI_AMPS_FORMAT, eps.getC4()), minValue, maxValue));
-		
+
 		minValue = format("%4d", minMaxValues.get(4).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(4).getMaximum());
 		epsValues.add(new ValMinMax("Battery Voltage", String.format(MILLI_VOLT_FORMAT, eps.getC5()), minValue, maxValue));
-		
+
 		minValue = format("%4d", minMaxValues.get(5).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(5).getMaximum());
 		epsValues.add(new ValMinMax("Total System Current", String.format(MILLI_AMPS_FORMAT, eps.getC6()), minValue, maxValue));
-		
+
 		epsValues.add(new ValMinMax("Reboot Count", String.format("%4d", eps.getC7()), N_A, N_A));
 		epsValues.add(new ValMinMax("EPS Software Errors", String.format("%4d", eps.getC8()), N_A, N_A));
-		
+
 		minValue = format("%4d", minMaxValues.get(8).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(8).getMaximum());
 		epsValues.add(new ValMinMax("Boost Converter Temp X", String.format(TEMPERATURE_FORMAT, eps.getC9()), minValue, maxValue));
-		
+
 		minValue = format("%4d", minMaxValues.get(9).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(9).getMaximum());
 		epsValues.add(new ValMinMax("Boost Converter Temp Y", String.format(TEMPERATURE_FORMAT, eps.getC10()), minValue, maxValue));
-		
+
 		minValue = format("%4d", minMaxValues.get(10).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(10).getMaximum());
 		epsValues.add(new ValMinMax("Boost Converter Temp Z", String.format(TEMPERATURE_FORMAT, eps.getC11()), minValue, maxValue));
-		
+
 		minValue = format("%4d", minMaxValues.get(11).getMinimum());
 		maxValue = format("%4d", minMaxValues.get(11).getMaximum());
 		epsValues.add(new ValMinMax("Battery Temp", String.format(TEMPERATURE_FORMAT, eps.getC12()), minValue, maxValue));
-		
+
 		epsValues.add(new ValMinMax("Latch Up Count 5v1", String.format("%4d", eps.getC13()), N_A, N_A));
 		epsValues.add(new ValMinMax("Latch Up Count 3.3v1", String.format("%4d", eps.getC14()), N_A, N_A));
 		epsValues.add(new ValMinMax("Reset Cause", String.format("%4d", eps.getC15()), N_A, N_A));
@@ -180,23 +180,23 @@ public class RealtimeController extends AbstractService {
 		asibValues.add(new ValMinMax("Sun Sensor X+", String.format("%4.2f", SOL_ILLUMINATION[eps.getC17().intValue()]), N_A, N_A));
 		asibValues.add(new ValMinMax("Sun Sensor Y+", String.format("%4.2f", SOL_ILLUMINATION[eps.getC18().intValue()]), N_A, N_A));
 		asibValues.add(new ValMinMax("Sun Sensor Z+", String.format("%4.2f", SOL_ILLUMINATION[eps.getC19().intValue()]), N_A, N_A));
-		
-		minValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(19).getMinimum(), -0.2073, 158.239);		
+
+		minValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(19).getMinimum(), -0.2073, 158.239);
 		maxValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(19).getMaximum(), -0.2073, 158.239);
 		asibValues.add(new ValMinMax("Solar Panel Temp X+", String.format(SOL_TEMPERATURE_FORMAT,
 				scaleAndOffset(eps.getC20(), -0.2073, 158.239)), maxValue, minValue));
-		
-		minValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(20).getMinimum(), -0.2083, 159.227);		
+
+		minValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(20).getMinimum(), -0.2083, 159.227);
 		maxValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(20).getMaximum(), -0.2083, 159.227);
 		asibValues.add(new ValMinMax("Solar Panel Temp X-", String.format(SOL_TEMPERATURE_FORMAT,
 				scaleAndOffset(eps.getC21(), -0.2083, 159.227)), maxValue, minValue));
-		
-		minValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(21).getMinimum(), -0.2076, 158.656);		
+
+		minValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(21).getMinimum(), -0.2076, 158.656);
 		maxValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(21).getMaximum(), -0.2076, 158.656);
 		asibValues.add(new ValMinMax("Solar Panel Temp Y+", String.format(SOL_TEMPERATURE_FORMAT,
 				scaleAndOffset(eps.getC22(), -0.2076, 158.656)), maxValue, minValue));
-		
-		minValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(22).getMinimum(), -0.2087, 159.045);		
+
+		minValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(22).getMinimum(), -0.2087, 159.045);
 		maxValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(22).getMaximum(), -0.2087, 159.045);
 		asibValues.add(new ValMinMax("Solar Panel Temp Y-", String.format(SOL_TEMPERATURE_FORMAT,
 				scaleAndOffset(eps.getC23(), -0.2087, 159.045)), maxValue, minValue));
@@ -211,14 +211,14 @@ public class RealtimeController extends AbstractService {
 
 		minValue = format("%4d", minMaxValues.get(25).getMinimum() * 6);
 		maxValue = format("%4d", minMaxValues.get(25).getMaximum() * 6);
-		asibValues.add(new ValMinMax("5.0 Bus voltage", String.format(MILLI_VOLT_FORMAT, (int) (6.0 * eps.getC26())), minValue, maxValue));
+		asibValues.add(new ValMinMax("5.0 Bus Voltage", String.format(MILLI_VOLT_FORMAT, (int) (6.0 * eps.getC26())), minValue, maxValue));
 
 		RF rf = realTime.getRF();
 
 		rfValues.add(new ValMinMax("Receiver Doppler", String.format("%4d kHz", rf.getC1()), N_A, N_A));
 		rfValues.add(new ValMinMax("Receiver RSSI", String.format("%4d", rf.getC2()), N_A, N_A));
-		
-		minValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(28).getMinimum(), -0.857, 193.672);		
+
+		minValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(28).getMinimum(), -0.857, 193.672);
 		maxValue = scaleOffsetAndFormat("%5.1f", minMaxValues.get(28).getMaximum(), -0.857, 193.672);
 		rfValues.add(new ValMinMax("Temperature", String.format(SOL_TEMPERATURE_FORMAT, scaleAndOffset(rf.getC3(), -0.857, 193.672)), maxValue, minValue));
 
@@ -241,7 +241,7 @@ public class RealtimeController extends AbstractService {
 		minValue = format("%4d", (long)getPaTemp(minMaxValues.get(32).getMinimum()));
 		maxValue = format("%4d", (long)getPaTemp(minMaxValues.get(32).getMaximum()));
 		paValues.add(new ValMinMax("Device Temperature", String.format(PA_TEMPERATURE_FORMAT, getPaTemp(rf.getC9().intValue())), maxValue, minValue));
-		
+
 		minValue = format("%4d", (long)getPaCurrent(minMaxValues.get(33).getMinimum()));
 		maxValue = format("%4d", (long)getPaCurrent(minMaxValues.get(33).getMaximum()));
 		paValues.add(new ValMinMax("Bus Current", String.format(PA_MILLI_AMPS_FORMAT, getPaCurrent(rf.getC10())), minValue, maxValue));
@@ -299,9 +299,9 @@ public class RealtimeController extends AbstractService {
 		if (value == 99999 || value == -99999) {
 			return N_A;
 		}
-		
+
 		double calculatedValue = scaleAndOffset(value, multiplier, offset);
-		
+
 		return String.format(format, calculatedValue);
 	}
 
@@ -309,7 +309,7 @@ public class RealtimeController extends AbstractService {
 		if (value >= 99999 || value <= -99999) {
 			return N_A;
 		}
-		
+
 		return String.format(format, value);
 	}
 
